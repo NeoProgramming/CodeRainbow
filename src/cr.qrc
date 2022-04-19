@@ -1,0 +1,87 @@
+<RCC>
+    <qresource prefix="/app">
+        <file>res/app-about.png</file>
+        <file>res/app-exit.png</file>
+        <file>res/app-settings.png</file>
+        <file>res/app-whatsthis.png</file>
+    </qresource>
+    <qresource prefix="/misc">
+        <file>res/misc-noclr.png</file>
+        <file>res/misc-empty.png</file>
+    </qresource>
+    <qresource prefix="/edit">
+        <file>res/edit-copy.png</file>
+        <file>res/edit-cut.png</file>
+        <file>res/edit-paste.png</file>
+        <file>res/edit-redo.png</file>
+        <file>res/edit-undo.png</file>
+    </qresource>
+    <qresource prefix="/file">
+        <file>res/file-saveall.png</file>
+        <file>res/file-saveas.png</file>
+        <file>res/file-save.png</file>
+    </qresource>
+    <qresource prefix="/cmd">
+        <file>res/cmd-save.png</file>
+        <file>res/cmd-saveall.png</file>
+        <file>res/cmd-find.png</file>
+        <file>res/cmd-findprev.png</file>
+        <file>res/cmd-findnext.png</file>
+        <file>res/cmd-search.png</file>
+    </qresource>
+    <qresource prefix="/node">
+        <file>res/node-node.png</file>
+        <file>res/node-root.png</file>
+        <file>res/node-base.png</file>
+        <file>res/node-tags.png</file>
+        <file>res/node-file.png</file>
+        <file>res/node-dir.png</file>
+        <file>res/node-group.png</file>
+        <file>res/node-link.png</file>
+        <file>res/node-area.png</file>
+        <file>res/node-label.png</file>
+        <file>res/node-block.png</file>
+        <file>res/node-lsig.png</file>
+        <file>res/node-bsig.png</file>
+        <file>res/node-tag.png</file>
+        <file>res/node-outline.png</file>
+        <file>res/node-name.png</file>
+        <file>res/node-note.png</file>
+    </qresource>
+    <qresource prefix="/tree">
+        <file>res/tree-addchild.png</file>
+        <file>res/tree-additem.png</file>
+        <file>res/tree-addsibling.png</file>
+        <file>res/tree-delitem.png</file>
+        <file>res/tree-down.png</file>
+        <file>res/tree-left.png</file>
+        <file>res/tree-right.png</file>
+        <file>res/tree-up.png</file>
+    </qresource>
+    <qresource prefix="/">
+        <file>res/cr.png</file>
+    </qresource>
+    <qresource prefix="/nav">
+        <file>res/nav-next.png</file>
+        <file>res/nav-prev.png</file>
+    </qresource>
+    <qresource prefix="/mark">
+        <file>res/mark-area.png</file>
+        <file>res/mark-label.png</file>
+        <file>res/mark-block.png</file>
+        <file>res/mark-lsig.png</file>
+        <file>res/mark-bsig.png</file>
+        <file>res/mark-name.png</file>
+    </qresource>
+    <qresource prefix="/tools">
+        <file>res/tools-coverage.png</file>
+        <file>res/tools-edit.png</file>
+        <file>res/tools-lookup.png</file>
+        <file>res/tools-remove.png</file>
+        <file>res/tools-move.png</file>
+        <file>res/tools-info.png</file>
+        <file>res/tools-add.png</file>
+        <file>res/tools-active.png</file>
+        <file>res/tools-setbase.png</file>
+    </qresource>
+</RCC>

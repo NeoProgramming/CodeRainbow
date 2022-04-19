@@ -1,0 +1,656 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Form Files">
+      <UniqueIdentifier>{99349809-55BA-4b9d-BF79-8FDBB0286EB3}</UniqueIdentifier>
+      <Extensions>ui</Extensions>
+      <ParseFiles>false</ParseFiles>
+    </Filter>
+    <Filter Include="Form Files">
+      <UniqueIdentifier>{99349809-55BA-4b9d-BF79-8FDBB0286EB3}</UniqueIdentifier>
+      <Extensions>ui</Extensions>
+      <ParseFiles>false</ParseFiles>
+    </Filter>
+    <Filter Include="Generated Files">
+      <UniqueIdentifier>{71ED8ED8-ACB9-4CE9-BBE1-E00B30144E11}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;moc;h;def;odl;idl;res;</Extensions>
+    </Filter>
+    <Filter Include="Generated Files">
+      <UniqueIdentifier>{71ED8ED8-ACB9-4CE9-BBE1-E00B30144E11}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;moc;h;def;odl;idl;res;</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{D9D6E242-F8AF-46E4-B9FD-80ECBC20BA3E}</UniqueIdentifier>
+      <Extensions>qrc;*</Extensions>
+      <ParseFiles>false</ParseFiles>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{D9D6E242-F8AF-46E4-B9FD-80ECBC20BA3E}</UniqueIdentifier>
+      <Extensions>qrc;*</Extensions>
+      <ParseFiles>false</ParseFiles>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Distribution Files">
+      <UniqueIdentifier>{B83CAF91-C7BF-462F-B76C-EA11631F866C}</UniqueIdentifier>
+      <Extensions>*</Extensions>
+      <ParseFiles>false</ParseFiles>
+    </Filter>
+    <Filter Include="Distribution Files">
+      <UniqueIdentifier>{B83CAF91-C7BF-462F-B76C-EA11631F866C}</UniqueIdentifier>
+      <Extensions>*</Extensions>
+      <ParseFiles>false</ParseFiles>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\src\gui\widgets\colorbutton.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\gui\widgets\colormenu.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\qtplugin\contentview.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\qtplugin\contentwidgetfactory.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\qtplugin\crmodel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\core\crnode.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\qtplugin\croptionspage.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\qtplugin\croptionswidget.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\qtplugin\crplugin.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\qtplugin\crplugincore.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\qtplugin\crsettings.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\core\crtree.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\core\cruser.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\tools\ct.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\gui\dialogs\editrecentdlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\gui\gui.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\qtplugin\infopane.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\core\kw.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\gui\dialogs\linkdlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\core\markmaker.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\gui\dialogs\markupdlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\core\mcmt.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\gui\editor\memoform.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\gui\dialogs\newprojectdlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\gui\dialogs\nodedlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\gui\editor\noteedit.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\qtplugin\outputpane.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\gui\dialogs\prjpropsdlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\core\projectloader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\pugixml\pugixml.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\gui\dialogs\selnodedlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\qtplugin\tabbar.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\gui\tbstyle.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\tools\tdefs.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\gui\text.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\ted\text_encoding_detect.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\qtplugin\toolbar.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\tools\utf.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\src\tools\base_defs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <CustomBuild Include="..\src\gui\widgets\colorbutton.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\src\gui\widgets\colormenu.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\src\qtplugin\contentview.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <ClInclude Include="..\src\qtplugin\contentwidgetfactory.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\core\core.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\qtplugin\cr_global.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\qtplugin\crconstants.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <CustomBuild Include="..\src\qtplugin\crmodel.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <ClInclude Include="..\src\core\crnode.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <CustomBuild Include="..\src\qtplugin\croptionspage.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\src\qtplugin\croptionswidget.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\src\qtplugin\crplugin.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\src\qtplugin\crplugincore.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\src\qtplugin\crsettings.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <ClInclude Include="..\src\core\crtree.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\core\cruser.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\tools\ct.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <CustomBuild Include="..\src\gui\dialogs\editrecentdlg.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <ClInclude Include="..\src\gui\gui.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <CustomBuild Include="..\src\qtplugin\infopane.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <ClInclude Include="..\src\core\kw.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <CustomBuild Include="..\src\gui\dialogs\linkdlg.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <ClInclude Include="..\src\core\loc.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\core\mark.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\core\markmaker.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <CustomBuild Include="..\src\gui\dialogs\markupdlg.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <ClInclude Include="..\src\core\mcmt.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <CustomBuild Include="..\src\gui\editor\memoform.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\src\gui\dialogs\newprojectdlg.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <ClInclude Include="..\src\core\nlexer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <CustomBuild Include="..\src\gui\dialogs\nodedlg.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\src\gui\editor\noteedit.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\src\qtplugin\outputpane.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <ClInclude Include="..\src\core\parse.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <CustomBuild Include="..\src\gui\dialogs\prjpropsdlg.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <ClInclude Include="..\src\core\projectloader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\pugixml\pugixml.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <CustomBuild Include="..\..\qtcsrc451vs15r\src\shared\qtcreator_gui_pch.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <ClInclude Include="..\src\core\scan.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <CustomBuild Include="..\src\gui\dialogs\selnodedlg.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\src\qtplugin\tabbar.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <ClInclude Include="..\src\gui\tbstyle.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\gui\text.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\ted\text_encoding_detect.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\tools\tfbase.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\core\token.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <CustomBuild Include="..\src\qtplugin\toolbar.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <ClInclude Include="..\src\tools\utf.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="build\.moc\moc_colorbutton.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="build\.moc\moc_colormenu.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="build\.moc\moc_contentview.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="build\.moc\moc_crmodel.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="build\.moc\moc_croptionspage.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="build\.moc\moc_croptionswidget.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="build\.moc\moc_crplugin.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="build\.moc\moc_crplugincore.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="build\.moc\moc_crsettings.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="build\.moc\moc_editrecentdlg.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="build\.moc\moc_infopane.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="build\.moc\moc_linkdlg.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="build\.moc\moc_markupdlg.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="build\.moc\moc_memoform.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="build\.moc\moc_newprojectdlg.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="build\.moc\moc_nodedlg.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="build\.moc\moc_noteedit.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="build\.moc\moc_outputpane.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <CustomBuild Include="build\.moc\moc_predefs.h.cbt">
+      <Filter>Generated Files</Filter>
+    </CustomBuild>
+    <ClCompile Include="build\.moc\moc_prjpropsdlg.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="build\.moc\moc_selnodedlg.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="build\.moc\moc_tabbar.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="build\.moc\moc_toolbar.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="build\.rcc\qrc_cr.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\qtcsrc451vs15r\src\shared\qtcreator_gui_pch.h.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClInclude Include="ui\ui_croptionswidget.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ui\ui_editrecentdlg.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ui\ui_linkdlg.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ui\ui_markupdlg.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ui\ui_memoform.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ui\ui_newprojectdlg.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ui\ui_nodedlg.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ui\ui_prjpropsdlg.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ui\ui_selnodedlg.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="..\src\qtplugin\croptionswidget.ui">
+      <Filter>Form Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\src\gui\dialogs\editrecentdlg.ui">
+      <Filter>Form Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\src\gui\dialogs\linkdlg.ui">
+      <Filter>Form Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\src\gui\dialogs\markupdlg.ui">
+      <Filter>Form Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\src\gui\editor\memoform.ui">
+      <Filter>Form Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\src\gui\dialogs\newprojectdlg.ui">
+      <Filter>Form Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\src\gui\dialogs\nodedlg.ui">
+      <Filter>Form Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\src\gui\dialogs\prjpropsdlg.ui">
+      <Filter>Form Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="..\src\gui\dialogs\selnodedlg.ui">
+      <Filter>Form Files</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\src\res\app-about.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\src\res\app-exit.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\src\res\app-settings.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\src\res\app-whatsthis.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\src\res\cmd-find.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\src\res\cmd-findnext.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\src\res\cmd-findprev.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\src\res\cmd-save.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\src\res\cmd-saveall.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\src\res\cmd-search.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\src\res\cr.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <CustomBuild Include="..\src\cr.qrc">
+      <Filter>Resource Files</Filter>
+    </CustomBuild>
+    <None Include="..\src\res\edit-copy.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\src\res\edit-cut.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\src\res\edit-paste.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\src\res\edit-redo.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\src\res\edit-undo.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\src\res\file-save.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\src\res\file-saveall.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\src\res\file-saveas.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\src\res\mark-area.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\src\res\mark-block.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\src\res\mark-bsig.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\src\res\mark-label.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\src\res\mark-lsig.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\src\res\mark-name.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\src\res\misc-empty.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\src\res\misc-noclr.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\src\res\nav-next.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\src\res\nav-prev.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\src\res\node-area.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\src\res\node-base.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\src\res\node-block.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\src\res\node-bsig.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\src\res\node-dir.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\src\res\node-file.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\src\res\node-group.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\src\res\node-label.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\src\res\node-link.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\src\res\node-lsig.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\src\res\node-name.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\src\res\node-node.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\src\res\node-note.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\src\res\node-outline.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\src\res\node-root.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\src\res\node-tag.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\src\res\node-tags.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\src\res\tools-active.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\src\res\tools-add.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\src\res\tools-coverage.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\src\res\tools-edit.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\src\res\tools-info.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\src\res\tools-lookup.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\src\res\tools-move.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\src\res\tools-remove.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\src\res\tools-setbase.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\src\res\tree-addchild.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\src\res\tree-additem.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\src\res\tree-addsibling.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\src\res\tree-delitem.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\src\res\tree-down.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\src\res\tree-left.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\src\res\tree-right.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\src\res\tree-up.png">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include=".\CodeRainbow.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include=".\CodeRainbow_resource.rc" />
+    <ResourceCompile Include=".\CodeRainbowd_resource.rc" />
+  </ItemGroup>
+</Project>

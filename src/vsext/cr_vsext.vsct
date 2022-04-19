@@ -1,0 +1,466 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CommandTable xmlns="http://schemas.microsoft.com/VisualStudio/2005-10-18/CommandTable" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <!--  This is the file that defines the actual layout and type of the commands.
+        It is divided in different sections (e.g. command definition, command
+        placement, ...), with each defining a specific set of properties.
+        See the comment before each section for more details about how to
+        use it. -->
+
+  <!--  The VSCT compiler (the tool that translates this file into the binary 
+        format that VisualStudio will consume) has the ability to run a preprocessor 
+        on the vsct file; this preprocessor is (usually) the C++ preprocessor, so 
+        it is possible to define includes and macros with the same syntax used 
+        in C++ files. Using this ability of the compiler here, we include some files 
+        defining some of the constants that we will use inside the file. -->
+
+  <!--This is the file that defines the IDs for all the commands exposed by VisualStudio. -->
+  <Extern href="stdidcmd.h"/>
+
+  <!--This header contains the command ids for the menus provided by the shell. -->
+  <Extern href="vsshlids.h"/>
+
+  <!--Definition of some VSCT specific constants. In this sample we use it for the IDs inside the guidOfficeIcon group. -->
+  <!-- <Extern href="msobtnid.h"/> -->
+
+
+
+  <!--The Commands section is where we the commands, menus and menu groups are defined.
+      This section uses a Guid to identify the package that provides the command defined inside it. -->
+  <Commands package="guidcr_vsextPkg">
+    <!-- Inside this section we have different sub-sections: one for the menus, another  
+    for the menu groups, one for the buttons (the actual commands), one for the combos 
+    and the last one for the bitmaps used. Each element is identified by a command id that  
+    is a unique pair of guid and numeric identifier; the guid part of the identifier is usually  
+    called "command set" and is used to group different command inside a logically related  
+    group; your package should define its own command set in order to avoid collisions  
+    with command ids defined by other packages. -->
+
+    <Menus>
+      
+	  <!-- new: for sub menu in main menu -->
+      <Menu guid="guidcr_vsextCmdSet" id="CRMainToolsSubMenu" priority="0x0100" type="Menu">
+        <Parent guid="guidcr_vsextCmdSet" id="CRMainToolsMenuGroup"/>
+        <Strings>
+          <ButtonText>CodeRainbow</ButtonText>
+          <!-- CommandName>CRMainMenu</CommandName-->
+        </Strings>
+      </Menu>
+
+      <!-- new: for submenu in context menu -->
+      <Menu guid="guidcr_vsextCmdSet" id="CRContextSubMenu" priority="0x0100" type="Menu">
+        <Parent guid="guidcr_vsextCmdSet" id="CRContextMenuGroup"/>
+        <Strings>
+          <ButtonText>CodeRainbow</ButtonText>
+        </Strings>
+      </Menu>
+
+      <!-- new: toolbar -->
+      <Menu guid="guidcr_vsextCmdSet" id="CRToolbar" type="Toolbar" >
+        <CommandFlag>DefaultDocked</CommandFlag>
+        <Strings>
+          <ButtonText>CodeRainbow</ButtonText>
+          <CommandName>CodeRainbow</CommandName>
+        </Strings>
+      </Menu>
+      
+    </Menus>
+
+    
+    
+    <!-- In this section you can define new menu groups. A menu group is a container for 
+         other menus or buttons (commands); from a visual point of view you can see the 
+         group as the part of a menu contained between two lines. The parent of a group 
+         must be a menu. -->
+    <Groups>
+
+      <!-- group to embed in Main Menu / Tools -->
+      <Group guid="guidcr_vsextCmdSet" id="CRMainToolsMenuGroup" priority="0x0600">
+        <Parent guid="guidSHLMainMenu" id="IDM_VS_MENU_TOOLS"/>
+      </Group>
+      
+      <!-- group to embed in Context Menu -->
+      <Group guid="guidcr_vsextCmdSet" id="CRContextMenuGroup" priority="0x0600">
+        <Parent guid="guidSHLMainMenu" id="IDM_VS_CTXT_CODEWIN"/>
+      </Group>
+
+	    <!-- new: submenu group in MainMenu.Tools -->
+      <Group guid="guidcr_vsextCmdSet" id="CRMainToolsSubMenuGroup" priority="0x0000">
+        <Parent guid="guidcr_vsextCmdSet" id="CRMainToolsSubMenu"/>
+      </Group>
+
+      <!-- new: group 1 for submenu in ContextMenu -->
+      <Group guid="guidcr_vsextCmdSet" id="CRContextSubMenuGroup1" priority="0x0000">
+        <Parent guid="guidcr_vsextCmdSet" id="CRContextSubMenu"/>
+      </Group>
+
+      <!-- new: group 2 for submenu in ContextMenu -->
+      <Group guid="guidcr_vsextCmdSet" id="CRContextSubMenuGroup2" priority="0x0000">
+        <Parent guid="guidcr_vsextCmdSet" id="CRContextSubMenu"/>
+      </Group>
+
+      <!-- new: toolbar group -->
+      <Group guid="guidcr_vsextCmdSet" id="CRToolbarGroup" priority="0x0000">
+        <Parent guid="guidcr_vsextCmdSet" id="CRToolbar"/>
+      </Group>
+
+    </Groups>
+    
+    <!--Buttons section. -->
+    <!--This section defines the elements the user can interact with, like a menu command or a button 
+        or combo box in a toolbar. -->
+    <Buttons>
+      <!--To define a menu group you have to specify its ID, the parent menu and its display priority. 
+          The command is visible and enabled by default. If you need to change the visibility, status, etc, you can use
+          the CommandFlag node.
+          You can add more than one CommandFlag node e.g.:
+              <CommandFlag>DefaultInvisible</CommandFlag>
+              <CommandFlag>DynamicVisibility</CommandFlag>
+          If you do not want an image next to your command, remove the Icon node or set it to <Icon guid="guidOfficeIcon" id="msotcidNoIcon" /> -->
+
+      <!-- show tree panel; parent - system group "other windows" --> 
+      <Button guid="guidcr_vsextCmdSet" id="cmdidCRShowTree" priority="0x0100" type="Button">
+        <Parent guid="guidSHLMainMenu" id="IDG_VS_WNDO_OTRWNDWS1"/>
+        <Icon guid="guidMnuImages" id="bmpMnuTree" />
+        <Strings>
+          <CommandName>cmdidCRShowTree</CommandName>
+          <ButtonText>CodeRainbow Tree</ButtonText>
+        </Strings>
+      </Button>
+	  
+	  <!-- show information panel; parent - system group "other windows" -->
+	  <Button guid="guidcr_vsextCmdSet" id="cmdidCRShowInfo" priority="0x0100" type="Button">
+        <Parent guid="guidSHLMainMenu" id="IDG_VS_WNDO_OTRWNDWS1"/>
+        <Icon guid="guidMnuImages" id="bmpMnuEdit" />
+        <Strings>
+          <CommandName>cmdidCRShowInfo</CommandName>
+          <ButtonText>CodeRainbow Info</ButtonText>
+        </Strings>
+      </Button>
+      
+      <!-- show output panel; parent - system group "other windows" -->
+	  <Button guid="guidcr_vsextCmdSet" id="cmdidCRShowOut" priority="0x0100" type="Button">
+        <Parent guid="guidSHLMainMenu" id="IDG_VS_WNDO_OTRWNDWS1"/>
+        <Icon guid="guidMnuImages" id="bmpMnuList" />
+        <Strings>
+          <CommandName>cmdidCRShowOut</CommandName>
+          <ButtonText>CodeRainbow Out</ButtonText>
+        </Strings>
+      </Button>
+
+    <!-- new: Buttons for Context submenu -->
+      <Button guid="guidcr_vsextCmdSet" id="cmdidCRMarkArea" priority="0x0000" type="Button">
+        <Parent guid="guidcr_vsextCmdSet" id="CRContextSubMenuGroup1" />
+        <Strings>
+          <CommandName>cmdidCRMarkArea</CommandName>
+          <ButtonText>Mark Area</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="guidcr_vsextCmdSet" id="cmdidCRMarkLabel" priority="0x0000" type="Button">
+        <Parent guid="guidcr_vsextCmdSet" id="CRContextSubMenuGroup1" />
+        <Strings>
+          <CommandName>cmdidCRMarkLabel</CommandName>
+          <ButtonText>Mark Label</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="guidcr_vsextCmdSet" id="cmdidCRMarkBlock" priority="0x0000" type="Button">
+        <Parent guid="guidcr_vsextCmdSet" id="CRContextSubMenuGroup1" />
+        <Strings>
+          <CommandName>cmdidCRMarkBlock</CommandName>
+          <ButtonText>Mark Block</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="guidcr_vsextCmdSet" id="cmdidCRMarkLsig" priority="0x0000" type="Button">
+        <Parent guid="guidcr_vsextCmdSet" id="CRContextSubMenuGroup1" />
+        <Strings>
+          <CommandName>cmdidCRMarkLsig</CommandName>
+          <ButtonText>Mark Line Signature</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="guidcr_vsextCmdSet" id="cmdidCRMarkBsig" priority="0x0000" type="Button">
+        <Parent guid="guidcr_vsextCmdSet" id="CRContextSubMenuGroup1" />
+        <Strings>
+          <CommandName>cmdidCRMarkBsig</CommandName>
+          <ButtonText>Mark Block Signature</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="guidcr_vsextCmdSet" id="cmdidCRMarkName" priority="0x0000" type="Button">
+        <Parent guid="guidcr_vsextCmdSet" id="CRContextSubMenuGroup1" />
+        <Strings>
+          <CommandName>cmdidCRMarkName</CommandName>
+          <ButtonText>Mark Name</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="guidcr_vsextCmdSet" id="cmdidCRMarkPath" priority="0x0000" type="Button">
+        <Parent guid="guidcr_vsextCmdSet" id="CRContextSubMenuGroup1" />
+        <Strings>
+          <CommandName>cmdidCRMarkPath</CommandName>
+          <ButtonText>Insert this file path</ButtonText>
+        </Strings>
+      </Button>
+
+      <!-- separator inserted between gruops -->
+
+      <Button guid="guidcr_vsextCmdSet" id="cmdidCRMarkEdit" priority="0x0000" type="Button">
+        <Parent guid="guidcr_vsextCmdSet" id="CRContextSubMenuGroup2" />
+        <Strings>
+          <CommandName>cmdidCRMarkEdit</CommandName>
+          <ButtonText>Edit marker</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="guidcr_vsextCmdSet" id="cmdidCRMarkLook" priority="0x0000" type="Button">
+        <Parent guid="guidcr_vsextCmdSet" id="CRContextSubMenuGroup2" />
+        <Strings>
+          <CommandName>cmdidCRMarkLook</CommandName>
+          <ButtonText>Lookup marker info</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="guidcr_vsextCmdSet" id="cmdidCRMarkTree" priority="0x0000" type="Button">
+        <Parent guid="guidcr_vsextCmdSet" id="CRContextSubMenuGroup2" />
+        <Strings>
+          <CommandName>cmdidCRMarkTree</CommandName>
+          <ButtonText>Show in tree</ButtonText>
+        </Strings>
+      </Button>
+
+	  <!-- new: buttons for Main.Tools submenu -->
+      <Button guid="guidcr_vsextCmdSet" id="cmdidCROpen" priority="0x0000" type="Button">
+        <Parent guid="guidcr_vsextCmdSet" id="CRMainToolsSubMenuGroup" />
+        <Strings>
+          <CommandName>cmdidCROpen</CommandName>
+          <ButtonText>Open CR</ButtonText>
+        </Strings>
+      </Button>
+	    <Button guid="guidcr_vsextCmdSet" id="cmdidCRSave" priority="0x0000" type="Button">
+        <Parent guid="guidcr_vsextCmdSet" id="CRMainToolsSubMenuGroup" />
+        <Strings>
+          <CommandName>cmdidCRSave</CommandName>
+          <ButtonText>Save CR</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="guidcr_vsextCmdSet" id="cmdidCRSaveAs" priority="0x0000" type="Button">
+        <Parent guid="guidcr_vsextCmdSet" id="CRMainToolsSubMenuGroup" />
+        <Strings>
+          <CommandName>cmdidCRSaveAs</CommandName>
+          <ButtonText>Save CR As...</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="guidcr_vsextCmdSet" id="cmdidCRClear" priority="0x0000" type="Button">
+        <Parent guid="guidcr_vsextCmdSet" id="CRMainToolsSubMenuGroup" />
+        <Strings>
+          <CommandName>cmdidCRClear</CommandName>
+          <ButtonText>Clear CR</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="guidcr_vsextCmdSet" id="cmdidCRCreateByFolder" priority="0x0000" type="Button">
+        <Parent guid="guidcr_vsextCmdSet" id="CRMainToolsSubMenuGroup" />
+        <Strings>
+          <CommandName>cmdidCRCreateByFolder</CommandName>
+          <ButtonText>Create CR by Folder</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="guidcr_vsextCmdSet" id="cmdidCRUpdateByFolder" priority="0x0000" type="Button">
+        <Parent guid="guidcr_vsextCmdSet" id="CRMainToolsSubMenuGroup" />
+        <Strings>
+          <CommandName>cmdidCRUpdateByFolder</CommandName>
+          <ButtonText>Update CR by Folder</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="guidcr_vsextCmdSet" id="cmdidCRCreateByProject" priority="0x0000" type="Button">
+        <Parent guid="guidcr_vsextCmdSet" id="CRMainToolsSubMenuGroup" />
+        <Strings>
+          <CommandName>cmdidCRCreateByProject</CommandName>
+          <ButtonText>Create CR by Solution</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="guidcr_vsextCmdSet" id="cmdidCRUpdateByProject" priority="0x0000" type="Button">
+        <Parent guid="guidcr_vsextCmdSet" id="CRMainToolsSubMenuGroup" />
+        <Strings>
+          <CommandName>cmdidCRUpdateByProject</CommandName>
+          <ButtonText>Update CR by Solution</ButtonText>
+        </Strings>
+      </Button>
+
+      <Button guid="guidcr_vsextCmdSet" id="cmdidCRSplitBase" priority="0x0000" type="Button">
+        <Parent guid="guidcr_vsextCmdSet" id="CRMainToolsSubMenuGroup" />
+        <Strings>
+          <CommandName>cmdidCRSplitBase</CommandName>
+          <ButtonText>Split base into separate files</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="guidcr_vsextCmdSet" id="cmdidCRMergeBase" priority="0x0000" type="Button">
+        <Parent guid="guidcr_vsextCmdSet" id="CRMainToolsSubMenuGroup" />
+        <Strings>
+          <CommandName>cmdidCRMergeBase</CommandName>
+          <ButtonText>Merge base into one root file</ButtonText>
+        </Strings>
+      </Button>
+
+      <!-- new: toolbar buttons -->
+      <Button guid="guidcr_vsextCmdSet" id="cmdidCRToolArea" priority="0x0100" type="Button">
+        <Parent guid= "guidcr_vsextCmdSet" id="CRToolbarGroup" />
+        <Icon guid="guidBtnImages" id="bmpBtnArea" />
+        <Strings>
+          <CommandName>cmdidCRToolArea</CommandName>
+          <ButtonText>Mark Area</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="guidcr_vsextCmdSet" id="cmdidCRToolLabel" priority="0x0100" type="Button">
+        <Parent guid= "guidcr_vsextCmdSet" id="CRToolbarGroup" />
+        <Icon guid="guidBtnImages" id="bmpBtnLabel" />
+        <Strings>
+          <CommandName>cmdidCRToolLabel</CommandName>
+          <ButtonText>Mark as Label</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="guidcr_vsextCmdSet" id="cmdidCRToolBlock" priority="0x0100" type="Button">
+        <Parent guid= "guidcr_vsextCmdSet" id="CRToolbarGroup" />
+        <Icon guid="guidBtnImages" id="bmpBtnBlock" />
+        <Strings>
+          <CommandName>cmdidCRToolBlock</CommandName>
+          <ButtonText>Mark as Block</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="guidcr_vsextCmdSet" id="cmdidCRToolLsig" priority="0x0100" type="Button">
+        <Parent guid= "guidcr_vsextCmdSet" id="CRToolbarGroup" />
+        <Icon guid="guidBtnImages" id="bmpBtnLsig" />
+        <Strings>
+          <CommandName>cmdidCRToolLsig</CommandName>
+          <ButtonText>Mark as Line Signature</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="guidcr_vsextCmdSet" id="cmdidCRToolBsig" priority="0x0100" type="Button">
+        <Parent guid= "guidcr_vsextCmdSet" id="CRToolbarGroup" />
+        <Icon guid="guidBtnImages" id="bmpBtnBsig" />
+        <Strings>
+          <CommandName>cmdidCRToolBsig</CommandName>
+          <ButtonText>Mark as Block Signature</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="guidcr_vsextCmdSet" id="cmdidCRToolName" priority="0x0100" type="Button">
+        <Parent guid= "guidcr_vsextCmdSet" id="CRToolbarGroup" />
+        <Icon guid="guidBtnImages" id="bmpBtnName" />
+        <Strings>
+          <CommandName>cmdidCRToolName</CommandName>
+          <ButtonText>Mark as Name</ButtonText>
+        </Strings>
+      </Button>
+
+      <Button guid="guidcr_vsextCmdSet" id="cmdidCRToolEdit" priority="0x0100" type="Button">
+        <Parent guid= "guidcr_vsextCmdSet" id="CRToolbarGroup" />
+        <Icon guid="guidBtnImages" id="bmpBtnEdit" />
+        <Strings>
+          <CommandName>cmdidCRToolEdit</CommandName>
+          <ButtonText>Edit mark</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="guidcr_vsextCmdSet" id="cmdidCRToolLook" priority="0x0100" type="Button">
+        <Parent guid= "guidcr_vsextCmdSet" id="CRToolbarGroup" />
+        <Icon guid="guidBtnImages" id="bmpBtnLook" />
+        <Strings>
+          <CommandName>cmdidCRToolLook</CommandName>
+          <ButtonText>Open Annotation</ButtonText>
+        </Strings>
+      </Button>
+      <Button guid="guidcr_vsextCmdSet" id="cmdidCRToolTree" priority="0x0100" type="Button">
+        <Parent guid= "guidcr_vsextCmdSet" id="CRToolbarGroup" />
+        <Icon guid="guidBtnImages" id="bmpBtnTree" />
+        <Strings>
+          <CommandName>cmdidCRToolTree</CommandName>
+          <ButtonText>Show in Tree</ButtonText>
+        </Strings>
+      </Button>
+
+    </Buttons>
+   
+    <!--The bitmaps section is used to define the bitmaps that are used for the commands.-->
+    <Bitmaps>
+      <!--  The bitmap id is defined in a way that is a little bit different from the others: 
+            the declaration starts with a guid for the bitmap strip, then there is the resource id of the 
+            bitmap strip containing the bitmaps and then there are the numeric ids of the elements used 
+            inside a button definition. An important aspect of this declaration is that the element id 
+            must be the actual index (1-based) of the bitmap inside the bitmap strip. -->
+      <Bitmap guid="guidMnuImages" href="Resources\ImagesMnu_32bit.bmp" 
+              usedList="bmpMnuTree, bmpMnuList, bmpMnuEdit"/>
+      <Bitmap guid="guidBtnImages" href="Resources\ImagesBtn_32bit.bmp"
+              usedList="bmpBtnArea, bmpBtnLabel, bmpBtnBlock, bmpBtnLsig, bmpBtnBsig, bmpBtnName, bmpBtnEdit, bmpBtnLook, bmpBtnTree"/>
+    </Bitmaps>
+ 
+  </Commands>
+
+  <Symbols>
+    <!-- This is the package guid. -->
+    <GuidSymbol name="guidcr_vsextPkg" value="{56953d41-9f83-4875-94de-e32c1b20d868}" />
+    
+    <!-- This is the guid used to group the menu commands together -->
+    <GuidSymbol name="guidcr_vsextCmdSet" value="{cc799d46-2ca1-436e-8531-6b9e4b7d8034}">
+      <IDSymbol name="CRMainToolsMenuGroup" value="0x1020" />
+      <IDSymbol name="CRContextMenuGroup" value="0x1030" />
+      
+      <IDSymbol name="cmdidCRShowTree" value="0x2001" />
+      <IDSymbol name="cmdidCRShowInfo" value="0x2002" />
+      <IDSymbol name="cmdidCRShowOut"  value="0x2003" />
+ 
+	  <!-- items for our submenu -->
+      <IDSymbol name="CRMainToolsSubMenu" value="0x3100"/>
+      <IDSymbol name="CRMainToolsSubMenuGroup" value="0x3150"/>
+      <IDSymbol name="CRContextSubMenu" value="0x3200"/>
+      <IDSymbol name="CRContextSubMenuGroup1" value="0x3250"/>
+      <IDSymbol name="CRContextSubMenuGroup2" value="0x3260"/>
+      <IDSymbol name="CRToolbar" value="0x3300" />
+      <IDSymbol name="CRToolbarGroup" value="0x3350" />
+      
+      <IDSymbol name="cmdidCROpen" value="0x0105"/>
+	    <IDSymbol name="cmdidCRSave" value="0x0106"/>
+      <IDSymbol name="cmdidCRSaveAs" value="0x0107"/>
+      <IDSymbol name="cmdidCRClear" value="0x0108"/>
+      <IDSymbol name="cmdidCRCreateByFolder" value="0x0109"/>
+      <IDSymbol name="cmdidCRUpdateByFolder" value="0x010A"/>
+      <IDSymbol name="cmdidCRCreateByProject" value="0x010B"/>
+      <IDSymbol name="cmdidCRUpdateByProject" value="0x010C"/>
+      <IDSymbol name="cmdidCRSplitBase" value="0x010D"/>
+      <IDSymbol name="cmdidCRMergeBase" value="0x010E"/>
+
+      <IDSymbol name="cmdidCRMarkArea" value="0x0120"/>
+      <IDSymbol name="cmdidCRMarkLabel" value="0x0121"/>
+      <IDSymbol name="cmdidCRMarkBlock" value="0x0122"/>
+      <IDSymbol name="cmdidCRMarkLsig" value="0x0123"/>
+      <IDSymbol name="cmdidCRMarkBsig" value="0x0124"/>
+      <IDSymbol name="cmdidCRMarkName" value="0x0125"/>
+      <IDSymbol name="cmdidCRMarkEdit" value="0x0126"/>
+      <IDSymbol name="cmdidCRMarkLook" value="0x0127"/>
+      <IDSymbol name="cmdidCRMarkTree" value="0x0128"/>
+      <IDSymbol name="cmdidCRMarkPath" value="0x0129"/>
+
+      <IDSymbol name="cmdidCRToolArea" value="0x0130"/>
+      <IDSymbol name="cmdidCRToolLabel" value="0x0131"/>
+      <IDSymbol name="cmdidCRToolBlock" value="0x0132"/>
+      <IDSymbol name="cmdidCRToolLsig" value="0x0133"/>
+      <IDSymbol name="cmdidCRToolBsig" value="0x0134"/>
+      <IDSymbol name="cmdidCRToolName" value="0x0135"/>
+      <IDSymbol name="cmdidCRToolEdit" value="0x0136"/>
+      <IDSymbol name="cmdidCRToolLook" value="0x0137"/>
+      <IDSymbol name="cmdidCRToolTree" value="0x0138"/>
+    </GuidSymbol>
+        
+    <!-- icons within one bitmap -->
+    <GuidSymbol name="guidMnuImages" value="{77d24af1-320f-4c99-aa12-5a429e961343}" >
+      <IDSymbol name="bmpMnuTree" value="1" />
+      <IDSymbol name="bmpMnuList" value="2" />
+      <IDSymbol name="bmpMnuEdit" value="3" />
+    </GuidSymbol>
+
+    <GuidSymbol name="guidBtnImages" value="{773412aa-320f-4c99-aa12-5a429e961377}" >
+      <IDSymbol name="bmpBtnArea" value="1" />
+      <IDSymbol name="bmpBtnLabel" value="2" />
+      <IDSymbol name="bmpBtnBlock" value="3" />
+      <IDSymbol name="bmpBtnLsig" value="4" />
+      <IDSymbol name="bmpBtnBsig" value="5" />
+      <IDSymbol name="bmpBtnName" value="6" />
+      <IDSymbol name="bmpBtnEdit" value="7" />
+      <IDSymbol name="bmpBtnLook" value="8" />
+      <IDSymbol name="bmpBtnTree" value="9" />
+    </GuidSymbol>
+  </Symbols>
+
+</CommandTable>

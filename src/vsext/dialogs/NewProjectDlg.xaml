@@ -1,0 +1,44 @@
+﻿<Window x:Class="CodeRainbow.NewProjectDlg"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="NewProjectDlg" Height="142" Width="439">
+    <Grid Width="400">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25" />
+            <RowDefinition Height="25" />
+            <RowDefinition Height="25" />
+            <RowDefinition Height="25" />
+        </Grid.RowDefinitions>
+        
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Label Grid.Column="0" Content="Title" HorizontalAlignment="Stretch" Name="label2" VerticalAlignment="Stretch" />
+            <TextBox Grid.Column="1" HorizontalAlignment="Stretch" Name="textTitle" VerticalAlignment="Stretch" />
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50"/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="80"/>
+            </Grid.ColumnDefinitions>
+            <Label Grid.Column="0" Content="Base dir" HorizontalAlignment="Stretch" Name="label1" VerticalAlignment="Stretch"  />
+            <TextBox Grid.Column="1" HorizontalAlignment="Stretch" Name="textBase" VerticalAlignment="Stretch" />
+            <Button Grid.Column="2" Content="Browse" HorizontalAlignment="Stretch" Name="buttonBrowse" VerticalAlignment="Stretch" Click="buttonBrowse_Click" />
+        </Grid>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Label Grid.Column="0" Content="Filters" Height="23" HorizontalAlignment="Stretch" Name="label3" VerticalAlignment="Stretch" />
+            <TextBox Grid.Column="1" HorizontalAlignment="Stretch" Name="textFilters" />
+        </Grid>
+        <StackPanel Orientation="Horizontal"  Grid.Row="3" FlowDirection="RightToLeft">
+            <Button Content="Cancel" IsCancel="true" HorizontalAlignment="Left" Name="buttonCancel" VerticalAlignment="Top" Width="80" Click="buttonCancel_Click" />
+            <Button Content="OK" HorizontalAlignment="Left" Name="buttonOk" VerticalAlignment="Top" Click="buttonOk_Click" IsDefault="True" Width="80" />
+        </StackPanel>
+    </Grid>
+</Window>

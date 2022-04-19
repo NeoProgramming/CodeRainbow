@@ -1,0 +1,29 @@
+﻿<UserControl x:Class="CodeRainbow.InfoPane"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:vsfx="clr-namespace:Microsoft.VisualStudio.Shell;assembly=Microsoft.VisualStudio.Shell.10.0"
+             xmlns:ctrlSplitButton="clr-namespace:CodeRainbow.SplitButton"
+             xmlns:local="clr-namespace:CodeRainbow"
+             mc:Ignorable="d" 
+             d:DesignHeight="304" d:DesignWidth="300"
+             Name="CRInfoPane" >
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="40"></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            
+            <TextBox Grid.Column="1" HorizontalAlignment="Stretch" Name="textTitle" VerticalAlignment="Stretch" IsReadOnly="True" Background="Lime" FontSize="14" FontFamily="Verdana" />
+            <Button Content="Tree" HorizontalAlignment="Stretch" Name="button1" VerticalAlignment="Stretch" Click="onButtonTreeClick" />
+        </Grid>
+        <TextBox Grid.Row="1" HorizontalAlignment="Stretch" Name="textInfo" VerticalAlignment="Stretch" LostFocus="textInfo_LostFocus" FontSize="14" FontFamily="Verdana" AcceptsReturn="True" TextWrapping="Wrap" VerticalScrollBarVisibility="Visible" />
+    </Grid>
+</UserControl>

@@ -1,0 +1,11 @@
+{
+    \"Name\" : \"CodeRainbow\",
+    \"Version\" : \"0.0.1\",
+    \"CompatVersion\" : \"0.0.1\",
+    \"Vendor\" : \"NeoProgramming\",
+    \"Copyright\" : \"(C) NeoProgramming\",
+    \"License\" : \"Put your license information here\",
+    \"Description\" : \"Put a short description of your plugin here\",
+    \"Url\" : \"http://www.NeoProgramming.com\",
+    $$dependencyList
+}

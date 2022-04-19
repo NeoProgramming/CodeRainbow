@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<coderainbow>
+	<recent>
+		<area />
+		<label />
+		<block />
+		<lsig />
+		<bsig />
+		<name />
+	</recent>
+	<recent_colors>
+		<r name="" color="" />
+		<r name="" color="" />
+		<r name="" color="" />
+		<r name="" color="" />
+		<r name="" color="" />
+		<r name="" color="" />
+		<r name="" color="" />
+		<r name="" color="" />
+		<r name="" color="" />
+		<r name="" color="" />
+	</recent_colors>
+	<predef_colors>
+		<r name="" color="" />
+		<r name="" color="" />
+		<r name="" color="" />
+		<r name="" color="" />
+		<r name="" color="" />
+		<r name="" color="" />
+		<r name="" color="" />
+		<r name="" color="" />
+		<r name="" color="" />
+		<r name="" color="" />
+	</predef_colors>
+	<tags text="" name="TAGS" id="" path="" color="" ncolor="">
+		<group text="" name="1" id="" path="" color="" ncolor="">
+			<group text="" name="2" id="" path="" color="" ncolor="">
+				<group text="" name="21" id="" path="" color="" ncolor="" />
+				<group text="" name="23" id="" path="" color="" ncolor="" />
+			</group>
+		</group>
+		<group text="" name="22" id="" path="" color="" ncolor="" />
+		<group text="" name="3" id="" path="" color="" ncolor="" />
+	</tags>
+	<outline text="" name="OUTLINE" id="" path="" color="" ncolor="" />
+	<fbase text="" name="FILES" id="" path="" color="" ncolor="">
+		<file text="" name="scan.h" id="" path="src\core\scan.h" color="" ncolor="" />
+	</fbase>
+</coderainbow>

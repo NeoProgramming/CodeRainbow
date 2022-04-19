@@ -1,0 +1,15 @@
+{
+    "Name" : "CodeRainbow",
+    "Version" : "0.0.1",
+    "CompatVersion" : "0.0.1",
+    "Vendor" : "NeoProgramming",
+    "Copyright" : "(C) NeoProgramming",
+    "License" : "Free for non-commercial usage",
+    "Description" : "Tool for research and documenting of source code",
+    "Url" : "neoprogramming@gmail.com",
+    "Dependencies" : [
+        { "Name" : "Core", "Version" : "4.5.1" },
+        { "Name" : "TextEditor", "Version" : "4.5.1" },
+        { "Name" : "ProjectExplorer", "Version" : "4.5.1" }
+    ]
+}

@@ -1,0 +1,59 @@
+﻿<Window x:Class="CodeRainbow.NodeDlg"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:ccp="clr-namespace:CustomWPFColorPicker"
+        Title="NodeDlg" Height="299" Width="439">
+    <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch"> 
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25" />
+            <RowDefinition Height="25" />
+            <RowDefinition />
+            <RowDefinition Height="25" />
+            <RowDefinition Height="20" />
+            <RowDefinition Height="30" />
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50"/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="80"/>
+            </Grid.ColumnDefinitions>
+            <Label Grid.Column="0" Content="ID/Sig" HorizontalAlignment="Stretch" Name="label1" VerticalAlignment="Stretch"  />
+            <TextBox Grid.Column="1" HorizontalAlignment="Stretch" Name="textId" VerticalAlignment="Stretch" FontFamily="Courier New" FontSize="14" />
+            <ComboBox Grid.Column="2" HorizontalAlignment="Stretch" Name="comboType" VerticalAlignment="Stretch" Width="80" />
+        </Grid>
+        <Grid Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Label Grid.Column="0" Content="Title" HorizontalAlignment="Stretch" Name="label2" VerticalAlignment="Stretch" />
+            <TextBox Grid.Column="1" HorizontalAlignment="Stretch" Name="textName" VerticalAlignment="Stretch" FontFamily="Courier New" FontSize="14" />
+        </Grid>
+        <TextBox Grid.Row="2" HorizontalAlignment="Stretch" Name="textText" VerticalAlignment="Stretch" FontFamily="Courier New" FontSize="14" />
+        <Grid Grid.Row="3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50"/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="80"/>
+            </Grid.ColumnDefinitions>
+            <Label Grid.Column="0" Content="Path" Height="23" HorizontalAlignment="Stretch" Name="label3" VerticalAlignment="Stretch" />
+            <TextBox Grid.Column="1" HorizontalAlignment="Stretch" Name="textPath" FontFamily="Courier New" FontSize="14" />
+            <Button Grid.Column="2" Content="Overview..." HorizontalAlignment="Stretch" Name="buttonOverview" VerticalAlignment="Stretch" />
+        </Grid>
+        <Grid Grid.Row="4" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Label Grid.Column="0" Content="Base" Height="23" HorizontalAlignment="Stretch" Name="label4" VerticalAlignment="Stretch" />
+            <TextBox Grid.Column="1" HorizontalAlignment="Stretch" Name="textInc" IsReadOnly="True" FontFamily="Courier New" FontSize="14" />
+        </Grid>
+        <StackPanel Orientation="Horizontal" Grid.Row="5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <ccp:ColorPickerControlView x:Name="ColorNode" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="80" Margin="5" Padding="0" />
+            <CheckBox Content="Title+ID" Height="12" Name="checkMerge" Width="111" Margin="5" Padding="0" />
+            <Button Content="OK" HorizontalAlignment="Left" Name="buttonOk" VerticalAlignment="Top" Click="buttonOk_Click" IsDefault="True" Width="80" Padding="0" Margin="5" />
+            <Button Content="Cancel" IsCancel="true" HorizontalAlignment="Left" Name="buttonCancel" VerticalAlignment="Top" Width="80" Click="buttonCancel_Click" Margin="5" Padding="0" />
+        </StackPanel>
+    </Grid>
+</Window>

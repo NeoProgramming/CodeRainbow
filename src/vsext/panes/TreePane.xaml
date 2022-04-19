@@ -1,0 +1,474 @@
+﻿<UserControl x:Class="CodeRainbow.TreePane"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:vsfx="clr-namespace:Microsoft.VisualStudio.Shell;assembly=Microsoft.VisualStudio.Shell.10.0"
+             xmlns:ctrlSplitButton="clr-namespace:CodeRainbow.SplitButton"
+             xmlns:local="clr-namespace:CodeRainbow"
+             mc:Ignorable="d" 
+             d:DesignHeight="304" d:DesignWidth="300"
+             Name="CRTreePane"
+             Background="{DynamicResource {x:Static vsfx:VsBrushes.ToolWindowBackgroundKey}}">
+
+    <UserControl.CommandBindings>
+        <CommandBinding Command="{x:Static local:TreePane.SplitButtonMainCommand0}"
+                    Executed="SplitButtonMainExecuted_Button0" />
+        <CommandBinding Command="{x:Static local:TreePane.SplitButtonMainCommand1}"
+                        Executed="SplitButtonMainExecuted_Button1" />
+        <CommandBinding Command="{x:Static local:TreePane.SplitButtonMainCommand2}"
+                        Executed="SplitButtonMainExecuted_Button2" />
+        <CommandBinding Command="{x:Static local:TreePane.SplitButtonMainCommand3}"
+                        Executed="SplitButtonMainExecuted_Button3" />
+        <CommandBinding Command="{x:Static local:TreePane.SplitButtonMainCommand4}"
+                        Executed="SplitButtonMainExecuted_Button4" />
+        <CommandBinding Command="{x:Static local:TreePane.SplitButtonMainCommand5}"
+                        Executed="SplitButtonMainExecuted_Button5" />
+    </UserControl.CommandBindings>
+    <UserControl.Resources>
+        <ResourceDictionary x:Key="SharedSplitButton">
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../SplitButton/SplitButtonStyle.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary> 
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="28"></RowDefinition>
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" VerticalAlignment="Stretch">
+            <ToolBar Name="MyToolbar" Height="28" >
+                <Button Name="btnMoveUp" Click="onClickMoveUp">
+                    <Image Source="pack://application:,,,/cr_vsext;component/vsext/Resources/tree-up.png" ToolTip="Move item Up" />
+                </Button>
+                <Button Name="btnMoveDown" Click="onClickMoveDown" >
+                    <Image Source="pack://application:,,,/cr_vsext;component/vsext/Resources/tree-down.png" ToolTip="Move item Down" />
+                </Button>
+                <Button Name="btnMoveLeft" Click="onClickMoveLeft" >
+                    <Image Source="pack://application:,,,/cr_vsext;component/vsext/Resources/tree-left.png" ToolTip="Move item Left" />
+                </Button>
+                <Button Name="btnMoveRight" Click="onClickMoveRight" >
+                    <Image Source="pack://application:,,,/cr_vsext;component/vsext/Resources/tree-right.png" ToolTip="Move item Right" />
+                </Button>
+                <Separator/>
+                <Button Name="btnToolsCoverage" Click="onClickToolsCoverage" >
+                    <Image Source="pack://application:,,,/cr_vsext;component/vsext/Resources/tools-coverage.png" ToolTip="Check Coverage" />
+                </Button>
+                <Button Name="btnToolsEdit" Click="onClickToolsEdit" >
+                    <Image Source="pack://application:,,,/cr_vsext;component/vsext/Resources/tools-edit.png" ToolTip="Edit Mark" />
+                </Button>
+                <Button Name="btnToolsLoopup" Click="onClickToolsLookup" >
+                    <Image Source="pack://application:,,,/cr_vsext;component/vsext/Resources/tools-lookup.png" ToolTip="Info Lookup" />
+                </Button>
+                <Button Name="btnToolsTree" Click="onClickToolsTree" >
+                    <Image Source="pack://application:,,,/cr_vsext;component/vsext/Resources/tools-tree.png" ToolTip="Show in tree" />
+                </Button>
+                <Button Name="btnToolsAnn" Click="onClickToolsAnn" >
+                    <Image Source="pack://application:,,,/cr_vsext;component/vsext/Resources/tools-ann.png" ToolTip="Show annotation" />
+                </Button>
+            </ToolBar>
+        </Grid>
+        <Grid Grid.Row="1" VerticalAlignment="Stretch">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <ctrlSplitButton:SplitButton 
+                Grid.Column="0"
+                x:Name="mySplitBtn0"
+                HorizontalAlignment="Stretch" 
+                VerticalAlignment="Stretch"
+                Image="pack://application:,,,/cr_vsext;component/vsext/Resources/node-area.png"
+                Text=""
+                MainButtonCommand="{x:Static local:TreePane.SplitButtonMainCommand0}">
+                <ctrlSplitButton:SplitButton.DropDownContextMenu>
+                    <ContextMenu MenuItem.Click="DynamicMenuItemClick" x:Name="myCM0">
+                        <MenuItem Header="New..." Tag="200"/>
+                        <MenuItem Header="Edit">
+                            <MenuItem Header="&lt;Slot 1&gt;" Tag="100" x:Name="myEdit00"/>
+                            <MenuItem Header="&lt;Slot 2&gt;" Tag="101" x:Name="myEdit01"/>
+                            <MenuItem Header="&lt;Slot 3&gt;" Tag="102" x:Name="myEdit02"/>
+                            <MenuItem Header="&lt;Slot 4&gt;" Tag="103" x:Name="myEdit03"/>
+                            <MenuItem Header="&lt;Slot 5&gt;" Tag="104" x:Name="myEdit04"/>
+                            <MenuItem Header="&lt;Slot 6&gt;" Tag="105" x:Name="myEdit05"/>
+                            <MenuItem Header="&lt;Slot 7&gt;" Tag="106" x:Name="myEdit06"/>
+                            <MenuItem Header="&lt;Slot 8&gt;" Tag="107" x:Name="myEdit07"/>
+                            <MenuItem Header="&lt;Slot 9&gt;" Tag="108" x:Name="myEdit08"/>
+                            <MenuItem Header="&lt;Slot 10&gt;" Tag="109" x:Name="myEdit09"/>
+                        </MenuItem>
+                        <Separator />
+                        <MenuItem Header="&lt;Slot 1&gt;" Tag="0" x:Name="myItem00"/>
+                        <MenuItem Header="&lt;Slot 2&gt;" Tag="1" x:Name="myItem01"/>
+                        <MenuItem Header="&lt;Slot 3&gt;" Tag="2" x:Name="myItem02"/>
+                        <MenuItem Header="&lt;Slot 4&gt;" Tag="3" x:Name="myItem03"/>
+                        <MenuItem Header="&lt;Slot 5&gt;" Tag="4" x:Name="myItem04"/>
+                        <MenuItem Header="&lt;Slot 6&gt;" Tag="5" x:Name="myItem05"/>
+                        <MenuItem Header="&lt;Slot 7&gt;" Tag="6" x:Name="myItem06"/>
+                        <MenuItem Header="&lt;Slot 8&gt;" Tag="7" x:Name="myItem07"/>
+                        <MenuItem Header="&lt;Slot 9&gt;" Tag="8" x:Name="myItem08"/>
+                        <MenuItem Header="&lt;Slot 10&gt;" Tag="9" x:Name="myItem09"/>
+                    </ContextMenu>
+                </ctrlSplitButton:SplitButton.DropDownContextMenu>
+            </ctrlSplitButton:SplitButton>
+            <ctrlSplitButton:SplitButton 
+                Grid.Column="1"
+                x:Name="mySplitBtn1"
+                HorizontalAlignment="Stretch" 
+                VerticalAlignment="Stretch"
+                Image="pack://application:,,,/cr_vsext;component/vsext/Resources/node-label.png"
+                Text=""
+                MainButtonCommand="{x:Static local:TreePane.SplitButtonMainCommand1}" >
+                <ctrlSplitButton:SplitButton.DropDownContextMenu>
+                    <ContextMenu MenuItem.Click="DynamicMenuItemClick" x:Name="myCM1">
+                        <MenuItem Header="New..." Tag="201"/>
+                        <MenuItem Header="Edit">
+                            <MenuItem Header="&lt;Slot 1&gt;" Tag="110" x:Name="myEdit10"/>
+                            <MenuItem Header="&lt;Slot 2&gt;" Tag="111" x:Name="myEdit11"/>
+                            <MenuItem Header="&lt;Slot 3&gt;" Tag="112" x:Name="myEdit12"/>
+                            <MenuItem Header="&lt;Slot 4&gt;" Tag="113" x:Name="myEdit13"/>
+                            <MenuItem Header="&lt;Slot 5&gt;" Tag="114" x:Name="myEdit14"/>
+                            <MenuItem Header="&lt;Slot 6&gt;" Tag="115" x:Name="myEdit15"/>
+                            <MenuItem Header="&lt;Slot 7&gt;" Tag="116" x:Name="myEdit16"/>
+                            <MenuItem Header="&lt;Slot 8&gt;" Tag="117" x:Name="myEdit17"/>
+                            <MenuItem Header="&lt;Slot 9&gt;" Tag="118" x:Name="myEdit18"/>
+                            <MenuItem Header="&lt;Slot 10&gt;" Tag="119" x:Name="myEdit19"/>
+                        </MenuItem>
+                        <Separator />
+                        <MenuItem Header="&lt;Slot 1&gt;" Tag="10" x:Name="myItem10"/>
+                        <MenuItem Header="&lt;Slot 2&gt;" Tag="11" x:Name="myItem11"/>
+                        <MenuItem Header="&lt;Slot 3&gt;" Tag="12" x:Name="myItem12"/>
+                        <MenuItem Header="&lt;Slot 4&gt;" Tag="13" x:Name="myItem13"/>
+                        <MenuItem Header="&lt;Slot 5&gt;" Tag="14" x:Name="myItem14"/>
+                        <MenuItem Header="&lt;Slot 6&gt;" Tag="15" x:Name="myItem15"/>
+                        <MenuItem Header="&lt;Slot 7&gt;" Tag="16" x:Name="myItem16"/>
+                        <MenuItem Header="&lt;Slot 8&gt;" Tag="17" x:Name="myItem17"/>
+                        <MenuItem Header="&lt;Slot 9&gt;" Tag="18" x:Name="myItem18"/>
+                        <MenuItem Header="&lt;Slot 10&gt;" Tag="19" x:Name="myItem19"/>
+                    </ContextMenu>
+                </ctrlSplitButton:SplitButton.DropDownContextMenu>
+            </ctrlSplitButton:SplitButton>
+            <ctrlSplitButton:SplitButton 
+                Grid.Column="2"
+                x:Name="mySplitBtn2"
+                HorizontalAlignment="Stretch" 
+                VerticalAlignment="Stretch"
+                Image="pack://application:,,,/cr_vsext;component/vsext/Resources/node-block.png"
+                Text=""
+                MainButtonCommand="{x:Static local:TreePane.SplitButtonMainCommand2}">
+                <ctrlSplitButton:SplitButton.DropDownContextMenu>
+                    <ContextMenu MenuItem.Click="DynamicMenuItemClick" x:Name="myCM2">
+                        <MenuItem Header="New..." Tag="202"/>
+                        <MenuItem Header="Edit">
+                            <MenuItem Header="&lt;Slot 1&gt;" Tag="120" x:Name="myEdit20"/>
+                            <MenuItem Header="&lt;Slot 2&gt;" Tag="121" x:Name="myEdit21"/>
+                            <MenuItem Header="&lt;Slot 3&gt;" Tag="122" x:Name="myEdit22"/>
+                            <MenuItem Header="&lt;Slot 4&gt;" Tag="123" x:Name="myEdit23"/>
+                            <MenuItem Header="&lt;Slot 5&gt;" Tag="124" x:Name="myEdit24"/>
+                            <MenuItem Header="&lt;Slot 6&gt;" Tag="125" x:Name="myEdit25"/>
+                            <MenuItem Header="&lt;Slot 7&gt;" Tag="126" x:Name="myEdit26"/>
+                            <MenuItem Header="&lt;Slot 8&gt;" Tag="127" x:Name="myEdit27"/>
+                            <MenuItem Header="&lt;Slot 9&gt;" Tag="128" x:Name="myEdit28"/>
+                            <MenuItem Header="&lt;Slot 10&gt;" Tag="129" x:Name="myEdit29"/>
+                        </MenuItem>
+                        <Separator />
+                        <MenuItem Header="&lt;Slot 1&gt;" Tag="20" x:Name="myItem20"/>
+                        <MenuItem Header="&lt;Slot 2&gt;" Tag="21" x:Name="myItem21"/>
+                        <MenuItem Header="&lt;Slot 3&gt;" Tag="22" x:Name="myItem22"/>
+                        <MenuItem Header="&lt;Slot 4&gt;" Tag="23" x:Name="myItem23"/>
+                        <MenuItem Header="&lt;Slot 5&gt;" Tag="24" x:Name="myItem24"/>
+                        <MenuItem Header="&lt;Slot 6&gt;" Tag="25" x:Name="myItem25"/>
+                        <MenuItem Header="&lt;Slot 7&gt;" Tag="26" x:Name="myItem26"/>
+                        <MenuItem Header="&lt;Slot 8&gt;" Tag="27" x:Name="myItem27"/>
+                        <MenuItem Header="&lt;Slot 9&gt;" Tag="28" x:Name="myItem28"/>
+                        <MenuItem Header="&lt;Slot 10&gt;" Tag="29" x:Name="myItem29"/>
+                    </ContextMenu>
+                </ctrlSplitButton:SplitButton.DropDownContextMenu>
+            </ctrlSplitButton:SplitButton>
+            <ctrlSplitButton:SplitButton 
+                Grid.Column="3"
+                x:Name="mySplitBtn3"
+                HorizontalAlignment="Stretch" 
+                VerticalAlignment="Stretch"
+                Image="pack://application:,,,/cr_vsext;component/vsext/Resources/node-lsig.png"
+                Text=""
+                MainButtonCommand="{x:Static local:TreePane.SplitButtonMainCommand3}">
+                <ctrlSplitButton:SplitButton.DropDownContextMenu>
+                    <ContextMenu MenuItem.Click="DynamicMenuItemClick" x:Name="myCM3">
+                        <MenuItem Header="New..." Tag="203"/>
+                        <MenuItem Header="Edit">
+                            <MenuItem Header="&lt;Slot 1&gt;" Tag="130" x:Name="myEdit30"/>
+                            <MenuItem Header="&lt;Slot 2&gt;" Tag="131" x:Name="myEdit31"/>
+                            <MenuItem Header="&lt;Slot 3&gt;" Tag="132" x:Name="myEdit32"/>
+                            <MenuItem Header="&lt;Slot 4&gt;" Tag="133" x:Name="myEdit33"/>
+                            <MenuItem Header="&lt;Slot 5&gt;" Tag="134" x:Name="myEdit34"/>
+                            <MenuItem Header="&lt;Slot 6&gt;" Tag="135" x:Name="myEdit35"/>
+                            <MenuItem Header="&lt;Slot 7&gt;" Tag="136" x:Name="myEdit36"/>
+                            <MenuItem Header="&lt;Slot 8&gt;" Tag="137" x:Name="myEdit37"/>
+                            <MenuItem Header="&lt;Slot 9&gt;" Tag="138" x:Name="myEdit38"/>
+                            <MenuItem Header="&lt;Slot 10&gt;" Tag="139" x:Name="myEdit39"/>
+                        </MenuItem>
+                        <Separator />
+                        <MenuItem Header="&lt;Slot 1&gt;" Tag="30" x:Name="myItem30"/>
+                        <MenuItem Header="&lt;Slot 2&gt;" Tag="31" x:Name="myItem31"/>
+                        <MenuItem Header="&lt;Slot 3&gt;" Tag="32" x:Name="myItem32"/>
+                        <MenuItem Header="&lt;Slot 4&gt;" Tag="33" x:Name="myItem33"/>
+                        <MenuItem Header="&lt;Slot 5&gt;" Tag="34" x:Name="myItem34"/>
+                        <MenuItem Header="&lt;Slot 6&gt;" Tag="35" x:Name="myItem35"/>
+                        <MenuItem Header="&lt;Slot 7&gt;" Tag="36" x:Name="myItem36"/>
+                        <MenuItem Header="&lt;Slot 8&gt;" Tag="37" x:Name="myItem37"/>
+                        <MenuItem Header="&lt;Slot 9&gt;" Tag="38" x:Name="myItem38"/>
+                        <MenuItem Header="&lt;Slot 10&gt;" Tag="39" x:Name="myItem39"/>
+                    </ContextMenu>
+                </ctrlSplitButton:SplitButton.DropDownContextMenu>
+            </ctrlSplitButton:SplitButton>
+            <ctrlSplitButton:SplitButton 
+                Grid.Column="4"
+                x:Name="mySplitBtn4"
+                HorizontalAlignment="Stretch" 
+                VerticalAlignment="Stretch"
+                Image="pack://application:,,,/cr_vsext;component/vsext/Resources/node-bsig.png"
+                Text=""
+                MainButtonCommand="{x:Static local:TreePane.SplitButtonMainCommand4}">
+                <ctrlSplitButton:SplitButton.DropDownContextMenu>
+                    <ContextMenu MenuItem.Click="DynamicMenuItemClick" x:Name="myCM4">
+                        <MenuItem Header="New..." Tag="204"/>
+                        <MenuItem Header="Edit">
+                            <MenuItem Header="&lt;Slot 1&gt;" Tag="140" x:Name="myEdit40"/>
+                            <MenuItem Header="&lt;Slot 2&gt;" Tag="141" x:Name="myEdit41"/>
+                            <MenuItem Header="&lt;Slot 3&gt;" Tag="142" x:Name="myEdit42"/>
+                            <MenuItem Header="&lt;Slot 4&gt;" Tag="143" x:Name="myEdit43"/>
+                            <MenuItem Header="&lt;Slot 5&gt;" Tag="144" x:Name="myEdit44"/>
+                            <MenuItem Header="&lt;Slot 6&gt;" Tag="145" x:Name="myEdit45"/>
+                            <MenuItem Header="&lt;Slot 7&gt;" Tag="146" x:Name="myEdit46"/>
+                            <MenuItem Header="&lt;Slot 8&gt;" Tag="147" x:Name="myEdit47"/>
+                            <MenuItem Header="&lt;Slot 9&gt;" Tag="148" x:Name="myEdit48"/>
+                            <MenuItem Header="&lt;Slot 10&gt;" Tag="149" x:Name="myEdit49"/>
+                        </MenuItem>
+                        <Separator />
+                        <MenuItem Header="&lt;Slot 1&gt;" Tag="40" x:Name="myItem40"/>
+                        <MenuItem Header="&lt;Slot 2&gt;" Tag="41" x:Name="myItem41"/>
+                        <MenuItem Header="&lt;Slot 3&gt;" Tag="42" x:Name="myItem42"/>
+                        <MenuItem Header="&lt;Slot 4&gt;" Tag="43" x:Name="myItem43"/>
+                        <MenuItem Header="&lt;Slot 5&gt;" Tag="44" x:Name="myItem44"/>
+                        <MenuItem Header="&lt;Slot 6&gt;" Tag="45" x:Name="myItem45"/>
+                        <MenuItem Header="&lt;Slot 7&gt;" Tag="46" x:Name="myItem46"/>
+                        <MenuItem Header="&lt;Slot 8&gt;" Tag="47" x:Name="myItem47"/>
+                        <MenuItem Header="&lt;Slot 9&gt;" Tag="48" x:Name="myItem48"/>
+                        <MenuItem Header="&lt;Slot 10&gt;" Tag="49" x:Name="myItem49"/>
+                    </ContextMenu>
+                </ctrlSplitButton:SplitButton.DropDownContextMenu>
+            </ctrlSplitButton:SplitButton>
+            <ctrlSplitButton:SplitButton 
+                Grid.Column="5"
+                x:Name="mySplitBtn5"
+                HorizontalAlignment="Stretch" 
+                VerticalAlignment="Stretch"
+                Image="pack://application:,,,/cr_vsext;component/vsext/Resources/node-name.png"
+                Text=""
+                MainButtonCommand="{x:Static local:TreePane.SplitButtonMainCommand5}">
+                <ctrlSplitButton:SplitButton.DropDownContextMenu>
+                    <ContextMenu MenuItem.Click="DynamicMenuItemClick" x:Name="myCM5">
+                        <MenuItem Header="New..." Tag="205"/>
+                        <MenuItem Header="Edit">
+                            <MenuItem Header="&lt;Slot 1&gt;" Tag="150" x:Name="myEdit50"/>
+                            <MenuItem Header="&lt;Slot 2&gt;" Tag="151" x:Name="myEdit51"/>
+                            <MenuItem Header="&lt;Slot 3&gt;" Tag="152" x:Name="myEdit52"/>
+                            <MenuItem Header="&lt;Slot 4&gt;" Tag="153" x:Name="myEdit53"/>
+                            <MenuItem Header="&lt;Slot 5&gt;" Tag="154" x:Name="myEdit54"/>
+                            <MenuItem Header="&lt;Slot 6&gt;" Tag="155" x:Name="myEdit55"/>
+                            <MenuItem Header="&lt;Slot 7&gt;" Tag="156" x:Name="myEdit56"/>
+                            <MenuItem Header="&lt;Slot 8&gt;" Tag="157" x:Name="myEdit57"/>
+                            <MenuItem Header="&lt;Slot 9&gt;" Tag="158" x:Name="myEdit58"/>
+                            <MenuItem Header="&lt;Slot 10&gt;" Tag="159" x:Name="myEdit59"/>
+                        </MenuItem>
+                        <Separator />
+                        <MenuItem Header="&lt;Slot 1&gt;" Tag="50" x:Name="myItem50"/>
+                        <MenuItem Header="&lt;Slot 2&gt;" Tag="51" x:Name="myItem51"/>
+                        <MenuItem Header="&lt;Slot 3&gt;" Tag="52" x:Name="myItem52"/>
+                        <MenuItem Header="&lt;Slot 4&gt;" Tag="53" x:Name="myItem53"/>
+                        <MenuItem Header="&lt;Slot 5&gt;" Tag="54" x:Name="myItem54"/>
+                        <MenuItem Header="&lt;Slot 6&gt;" Tag="55" x:Name="myItem55"/>
+                        <MenuItem Header="&lt;Slot 7&gt;" Tag="56" x:Name="myItem56"/>
+                        <MenuItem Header="&lt;Slot 8&gt;" Tag="57" x:Name="myItem57"/>
+                        <MenuItem Header="&lt;Slot 9&gt;" Tag="58" x:Name="myItem58"/>
+                        <MenuItem Header="&lt;Slot 10&gt;" Tag="59" x:Name="myItem59"/>
+                    </ContextMenu>
+                </ctrlSplitButton:SplitButton.DropDownContextMenu>
+            </ctrlSplitButton:SplitButton>
+        </Grid>
+        <TreeView Grid.Row="2" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Name="treeContent"
+                  SelectedItemChanged="Tree_SelectedItemChanged" 
+                  MouseDoubleClick="OnItemMouseDoubleClick"
+                  TreeViewItem.PreviewMouseLeftButtonDown="TreeViewItem_PreviewMouseLeftButtonDown">
+            <TreeView.ItemContainerStyle>
+                <Style TargetType="{x:Type TreeViewItem}">
+                    <EventSetter Event="MouseDoubleClick" Handler="OnItemMouseDoubleClick" />
+                    <!-- We have to select the item which is right-clicked on -->
+                    <EventSetter Event="PreviewMouseRightButtonDown" Handler="OnPreviewMouseRightButtonDown"/>
+
+                    <!-- added 
+                    <Setter Property="IsExpanded" Value="{Binding IsExpanded, Mode=TwoWay}" />
+                    <Setter Property="IsSelected" Value="{Binding IsSelected, Mode=TwoWay}" />
+                    <Setter Property="FontWeight" Value="Normal" />
+                    <Style.Triggers>
+                        <Trigger Property="IsSelected" Value="True">
+                            <Setter Property="FontWeight" Value="Bold" />
+                        </Trigger>
+                    </Style.Triggers>-->
+                </Style>
+            </TreeView.ItemContainerStyle>
+            <!-- added 
+            <TreeView.ItemTemplate>
+                <HierarchicalDataTemplate ItemsSource="{Binding Children}">
+                    <TextBlock Text="{Binding Name}" />
+                </HierarchicalDataTemplate>
+            </TreeView.ItemTemplate>-->
+            
+            <TreeView.Resources>
+                
+                <!-- FOR SYSTEM NODES -->
+                
+                <ContextMenu x:Key ="ctxSys"  StaysOpen="true">
+                    <MenuItem Header="Set current" Click="onNodeSetActive"/>
+                    <MenuItem Header="Lookup"  Click="onNodeLookup">
+                        <MenuItem.Icon>
+                            <Image Height="16" Source="pack://application:,,,/cr_vsext;component/vsext/Resources/tools-lookup.png"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <Separator/>
+                    <MenuItem Header="Add node..." Click="onNodeAddNode">
+                        <MenuItem.Icon>
+                            <Image Height="16" Source="pack://application:,,,/cr_vsext;component/vsext/Resources/tools-add.png"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Header="Add group..." Click="onNodeAddGroup">
+                        <MenuItem.Icon>
+                            <Image Height="16" Source="pack://application:,,,/cr_vsext;component/vsext/Resources/node-group.png"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Header="Add file..." Click="onNodeAddFile">
+                        <MenuItem.Icon>
+                            <Image Height="16" Source="pack://application:,,,/cr_vsext;component/vsext/Resources/node-file.png"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Header="Add path..." Click="onNodeAddPath">
+                        <MenuItem.Icon>
+                            <Image Height="16" Source="pack://application:,,,/cr_vsext;component/vsext/Resources/tools-path.png"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Header="Add link..." Click="onNodeAddLink">
+                        <MenuItem.Icon>
+                            <Image Height="16" Source="pack://application:,,,/cr_vsext;component/vsext/Resources/node-link.png"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+
+                    <!--
+                    <MenuItem Header="Add note..." Click="onNodeAddNote">
+                        <MenuItem.Icon>
+                            <Image Height="16" Source="pack://application:,,,/cr_vsext;component/vsext/Resources/node-note.png"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    -->
+                    <MenuItem Header="Info..." Click="onNodeInfo">
+                        <!--MenuItem.Icon>
+                            <Image Height="16" Source="pack://application:,,,/cr_vsext;component/vsext/Resources/node-link.png"/>
+                        </MenuItem.Icon -->
+                    </MenuItem>
+                </ContextMenu>
+                
+                <!-- FOR ALL USER NODES  -->
+                
+                <ContextMenu x:Key="ctxNode"  StaysOpen="true">
+                    <MenuItem Header="Set current" Click="onNodeSetActive">
+                        <MenuItem.Icon>
+                            <Image Height="16" Source="pack://application:,,,/cr_vsext;component/vsext/Resources/tools-active.png"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Header="Set current as: Parent" x:Name="itemSetCurrAs">
+                        <MenuItem Header="Parent" IsCheckable="true" Click="onNodeSetAsPar" x:Name="itemSetCurrAsPar" IsChecked="true"></MenuItem>
+                        <MenuItem Header="Predecessor" IsCheckable="true" Click="onNodeSetAsPrev" x:Name="itemSetCurrAsPrev"></MenuItem>
+                        <MenuItem Header="Subsequent" IsCheckable="true" Click="onNodeSetAsNext" x:Name="itemSetCurrAsNext"></MenuItem>
+                        <MenuItem Header="Replacement" IsCheckable="true" Click="onNodeSetAsRepl" x:Name="itemSetCurrAsRepl"></MenuItem>
+                    </MenuItem>
+                    <MenuItem Header="Open file"  Click="onOpenFile"/>
+                    <MenuItem Header="Find all"  Click="onNodeFindAll"/>
+                    <MenuItem Header="Find in file"  Click="onNodeFindInFile"/>
+                    <MenuItem Header="Lookup"  Click="onNodeLookup">
+                        <MenuItem.Icon>
+                            <Image Height="16" Source="pack://application:,,,/cr_vsext;component/vsext/Resources/tools-lookup.png"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <Separator/>
+                    <MenuItem Header="Edit..."  Click="onNodeEdit">
+                        <MenuItem.Icon>
+                            <Image Height="16" Source="pack://application:,,,/cr_vsext;component/vsext/Resources/tools-edit.png"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Header="Move node..." Click="onNodeMoveTo">
+                        <MenuItem.Icon>
+                            <Image Height="16" Source="pack://application:,,,/cr_vsext;component/vsext/Resources/tools-move.png"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Header="Separate file" Click="onNodeSeparate">
+                        <MenuItem.Icon>
+                            <Image Height="16" Source="pack://application:,,,/cr_vsext;component/vsext/Resources/tools-setbase.png"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <Separator/>
+                    <MenuItem Header="Add node..." Click="onNodeAddNode">
+                        <MenuItem.Icon>
+                            <Image Height="16" Source="pack://application:,,,/cr_vsext;component/vsext/Resources/tools-add.png"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Header="Add group..." Click="onNodeAddGroup">
+                        <MenuItem.Icon>
+                            <Image Height="16" Source="pack://application:,,,/cr_vsext;component/vsext/Resources/node-group.png"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Header="Add file..." Click="onNodeAddFile">
+                        <MenuItem.Icon>
+                            <Image Height="16" Source="pack://application:,,,/cr_vsext;component/vsext/Resources/node-file.png"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Header="Add link..." Click="onNodeAddLink">
+                        <MenuItem.Icon>
+                            <Image Height="16" Source="pack://application:,,,/cr_vsext;component/vsext/Resources/node-link.png"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <Separator/>
+                    <MenuItem Header="Set tree color..." Click="onNodeSetColor">
+                    </MenuItem>
+                    <MenuItem Header="Set tree recent color" Click="onNodeSetRecentColor">
+                    </MenuItem>
+                    <MenuItem Header="Clear tree color" Click="onNodeClearColor">
+                    </MenuItem>
+                    <!--
+                    <MenuItem Header="Add note..." Click="onNodeAddNote">
+                        <MenuItem.Icon>
+                            <Image Height="16" Source="pack://application:,,,/cr_vsext;component/vsext/Resources/node-note.png"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    -->
+                    <Separator/>
+                    <MenuItem Header="Remove node" Click="onNodeRemove">
+                        <MenuItem.Icon>
+                            <Image Height="16" Source="pack://application:,,,/cr_vsext;component/vsext/Resources/tools-remove.png"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Header="Info..." Click="onNodeInfo">
+                        <!--MenuItem.Icon>
+                            <Image Height="16" Source="pack://application:,,,/cr_vsext;component/vsext/Resources/node-link.png"/>
+                        </MenuItem.Icon -->
+                    </MenuItem>
+                </ContextMenu>
+            </TreeView.Resources>
+        </TreeView>
+    </Grid>
+</UserControl>

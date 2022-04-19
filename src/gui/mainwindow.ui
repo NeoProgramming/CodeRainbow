@@ -1,0 +1,577 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <author>Pavel Malakhov</author>
+ <comment>*********************************************************************
+*********************************************************************</comment>
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1220</width>
+    <height>732</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>CodeRainbow</string>
+  </property>
+  <property name="iconSize">
+   <size>
+    <width>24</width>
+    <height>24</height>
+   </size>
+  </property>
+  <widget class="QWidget" name="__qt_central_widget"/>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1220</width>
+     <height>18</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuHelp">
+    <property name="title">
+     <string>&amp;Help</string>
+    </property>
+    <addaction name="actionAppAbout"/>
+    <addaction name="separator"/>
+   </widget>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>&amp;File</string>
+    </property>
+    <addaction name="separator"/>
+    <addaction name="separator"/>
+    <addaction name="actionFileSave"/>
+    <addaction name="actionSaveFileAs"/>
+    <addaction name="actionFileSaveAll"/>
+    <addaction name="separator"/>
+    <addaction name="separator"/>
+   </widget>
+   <widget class="QMenu" name="menuEdit">
+    <property name="title">
+     <string>&amp;Edit</string>
+    </property>
+    <addaction name="separator"/>
+    <addaction name="actionEditUndo"/>
+    <addaction name="actionEditRedo"/>
+    <addaction name="separator"/>
+    <addaction name="actionEditCut"/>
+    <addaction name="actionEditCopy"/>
+    <addaction name="actionEditPaste"/>
+    <addaction name="separator"/>
+    <addaction name="actionEditFind"/>
+    <addaction name="actionEditFindNext"/>
+    <addaction name="actionEditFindPrev"/>
+    <addaction name="separator"/>
+   </widget>
+   <widget class="QMenu" name="menuProject">
+    <property name="title">
+     <string>&amp;Project</string>
+    </property>
+    <addaction name="actionProjectNew"/>
+    <addaction name="actionProjectOpen"/>
+    <addaction name="actionProjectSave"/>
+    <addaction name="actionProjectSaveAs"/>
+    <addaction name="actionProjectProps"/>
+    <addaction name="separator"/>
+    <addaction name="separator"/>
+    <addaction name="actionAppExit"/>
+   </widget>
+   <widget class="QMenu" name="menuWindow">
+    <property name="title">
+     <string>Window</string>
+    </property>
+    <addaction name="separator"/>
+    <addaction name="actionWindowClose"/>
+    <addaction name="actionWindowCloseAll"/>
+    <addaction name="actionWindowTile"/>
+    <addaction name="actionWindowCascade"/>
+   </widget>
+   <widget class="QMenu" name="menuTools">
+    <property name="title">
+     <string>Tools</string>
+    </property>
+    <addaction name="actionToolsTest"/>
+   </widget>
+   <widget class="QMenu" name="menuView">
+    <property name="title">
+     <string>View</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menuMarkup">
+    <property name="title">
+     <string>Markup</string>
+    </property>
+    <addaction name="actionMarkArea"/>
+    <addaction name="actionMarkLabel"/>
+   </widget>
+   <addaction name="menuProject"/>
+   <addaction name="menuFile"/>
+   <addaction name="menuEdit"/>
+   <addaction name="menuMarkup"/>
+   <addaction name="menuTools"/>
+   <addaction name="menuView"/>
+   <addaction name="menuWindow"/>
+   <addaction name="menuHelp"/>
+  </widget>
+  <widget class="QToolBar" name="toolBarTree">
+   <property name="windowTitle">
+    <string>Tree</string>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionTreeUp"/>
+   <addaction name="actionTreeDown"/>
+   <addaction name="actionTreeLeft"/>
+   <addaction name="actionTreeRight"/>
+  </widget>
+  <widget class="QToolBar" name="toolBarFile">
+   <property name="windowTitle">
+    <string>File</string>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionFileSave"/>
+   <addaction name="actionFileSaveAll"/>
+  </widget>
+  <widget class="QToolBar" name="toolBarEdit">
+   <property name="windowTitle">
+    <string>Edit</string>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionEditUndo"/>
+   <addaction name="actionEditRedo"/>
+   <addaction name="separator"/>
+   <addaction name="actionEditCut"/>
+   <addaction name="actionEditCopy"/>
+   <addaction name="actionEditPaste"/>
+  </widget>
+  <widget class="QToolBar" name="toolBarMarkup">
+   <property name="windowTitle">
+    <string>Markup</string>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+  </widget>
+  <widget class="QToolBar" name="toolBarNav">
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionNavPrev"/>
+   <addaction name="actionNavNext"/>
+   <addaction name="actionNavLocate"/>
+  </widget>
+  <action name="actionAppExit">
+   <property name="icon">
+    <iconset>
+     <normaloff>:/app/images/app-exit.png</normaloff>:/app/images/app-exit.png</iconset>
+   </property>
+   <property name="text">
+    <string>E&amp;xit Application</string>
+   </property>
+   <property name="whatsThis">
+    <string>Exit Application</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Q</string>
+   </property>
+   <property name="menuRole">
+    <enum>QAction::QuitRole</enum>
+   </property>
+  </action>
+  <action name="actionEditCopy">
+   <property name="icon">
+    <iconset resource="../cr.qrc">
+     <normaloff>:/edit/res/edit-copy.png</normaloff>:/edit/res/edit-copy.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Copy</string>
+   </property>
+   <property name="whatsThis">
+    <string>Copy the selected text to the clipboard.</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+C</string>
+   </property>
+  </action>
+  <action name="actionEditFind">
+   <property name="icon">
+    <iconset>
+     <normaloff>:/edit/images/find-search.png</normaloff>:/edit/images/find-search.png</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Find in Text...</string>
+   </property>
+   <property name="whatsThis">
+    <string>Open the Find dialog. This will search the currently displayed page for the text you enter.</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+F</string>
+   </property>
+  </action>
+  <action name="actionEditFindNext">
+   <property name="text">
+    <string>Find &amp;Next</string>
+   </property>
+   <property name="shortcut">
+    <string>F3</string>
+   </property>
+  </action>
+  <action name="actionEditFindPrev">
+   <property name="text">
+    <string>Find &amp;Previous</string>
+   </property>
+   <property name="shortcut">
+    <string>Shift+F3</string>
+   </property>
+  </action>
+  <action name="actionAppAbout">
+   <property name="icon">
+    <iconset>
+     <normaloff>:/app/images/app-about.png</normaloff>:/app/images/app-about.png</iconset>
+   </property>
+   <property name="text">
+    <string>About</string>
+   </property>
+   <property name="whatsThis">
+    <string/>
+   </property>
+   <property name="menuRole">
+    <enum>QAction::AboutRole</enum>
+   </property>
+  </action>
+  <action name="actionFileSaveAll">
+   <property name="icon">
+    <iconset resource="../cr.qrc">
+     <normaloff>:/file/res/file-saveall.png</normaloff>:/file/res/file-saveall.png</iconset>
+   </property>
+   <property name="text">
+    <string>Save All</string>
+   </property>
+   <property name="toolTip">
+    <string>Save All</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Alt+S</string>
+   </property>
+  </action>
+  <action name="actionProjectSave">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>:/prj/images/prj-save.png</normaloff>:/prj/images/prj-save.png</iconset>
+   </property>
+   <property name="text">
+    <string>Save</string>
+   </property>
+   <property name="toolTip">
+    <string>Save project</string>
+   </property>
+  </action>
+  <action name="actionSaveFileAs">
+   <property name="icon">
+    <iconset resource="../cr.qrc">
+     <normaloff>:/file/res/file-saveas.png</normaloff>:/file/res/file-saveas.png</iconset>
+   </property>
+   <property name="text">
+    <string>Save As...</string>
+   </property>
+   <property name="toolTip">
+    <string>Save As</string>
+   </property>
+  </action>
+  <action name="actionEditUndo">
+   <property name="icon">
+    <iconset resource="../cr.qrc">
+     <normaloff>:/edit/res/edit-undo.png</normaloff>:/edit/res/edit-undo.png</iconset>
+   </property>
+   <property name="text">
+    <string>Undo</string>
+   </property>
+  </action>
+  <action name="actionEditRedo">
+   <property name="icon">
+    <iconset resource="../cr.qrc">
+     <normaloff>:/edit/res/edit-redo.png</normaloff>:/edit/res/edit-redo.png</iconset>
+   </property>
+   <property name="text">
+    <string>Redo</string>
+   </property>
+  </action>
+  <action name="actionEditPaste">
+   <property name="icon">
+    <iconset resource="../cr.qrc">
+     <normaloff>:/edit/res/edit-paste.png</normaloff>:/edit/res/edit-paste.png</iconset>
+   </property>
+   <property name="text">
+    <string>Paste</string>
+   </property>
+  </action>
+  <action name="actionEditCut">
+   <property name="icon">
+    <iconset resource="../cr.qrc">
+     <normaloff>:/edit/res/edit-cut.png</normaloff>:/edit/res/edit-cut.png</iconset>
+   </property>
+   <property name="text">
+    <string>Cut</string>
+   </property>
+  </action>
+  <action name="actionAppSettings">
+   <property name="icon">
+    <iconset>
+     <normaloff>:/app/images/app-settings.png</normaloff>:/app/images/app-settings.png</iconset>
+   </property>
+   <property name="text">
+    <string>Settings</string>
+   </property>
+  </action>
+  <action name="actionGoBackward">
+   <property name="icon">
+    <iconset resource="../cr.qrc">
+     <normaloff>:/go/res/go-backward.png</normaloff>:/go/res/go-backward.png</iconset>
+   </property>
+   <property name="text">
+    <string>Go backward</string>
+   </property>
+   <property name="toolTip">
+    <string>Go backward</string>
+   </property>
+   <property name="shortcut">
+    <string>F6</string>
+   </property>
+  </action>
+  <action name="actionGoForward">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="icon">
+    <iconset resource="../cr.qrc">
+     <normaloff>:/go/res/go-forward.png</normaloff>:/go/res/go-forward.png</iconset>
+   </property>
+   <property name="text">
+    <string>Go forward</string>
+   </property>
+   <property name="toolTip">
+    <string>Go forward</string>
+   </property>
+   <property name="shortcut">
+    <string>F7</string>
+   </property>
+  </action>
+  <action name="actionEditSelectAll">
+   <property name="text">
+    <string>Select all</string>
+   </property>
+   <property name="toolTip">
+    <string>Select all</string>
+   </property>
+   <property name="whatsThis">
+    <string>Copy the selected text to the clipboard.</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+A</string>
+   </property>
+  </action>
+  <action name="actionWindowClose">
+   <property name="text">
+    <string>Close</string>
+   </property>
+  </action>
+  <action name="actionWindowCloseAll">
+   <property name="text">
+    <string>Close All</string>
+   </property>
+  </action>
+  <action name="actionWindowTile">
+   <property name="text">
+    <string>Tile</string>
+   </property>
+  </action>
+  <action name="actionWindowCascade">
+   <property name="text">
+    <string>Cascade</string>
+   </property>
+  </action>
+  <action name="actionProjectNew">
+   <property name="text">
+    <string>New...</string>
+   </property>
+  </action>
+  <action name="actionFileSave">
+   <property name="icon">
+    <iconset resource="../cr.qrc">
+     <normaloff>:/file/res/file-save.png</normaloff>:/file/res/file-save.png</iconset>
+   </property>
+   <property name="text">
+    <string>Save</string>
+   </property>
+  </action>
+  <action name="actionProjectSaveAs">
+   <property name="text">
+    <string>Save As...</string>
+   </property>
+  </action>
+  <action name="actionMarkArea">
+   <property name="icon">
+    <iconset resource="../cr.qrc">
+     <normaloff>:/node/res/node-area.png</normaloff>:/node/res/node-area.png</iconset>
+   </property>
+   <property name="text">
+    <string>Area</string>
+   </property>
+  </action>
+  <action name="actionMarkLabel">
+   <property name="icon">
+    <iconset resource="../cr.qrc">
+     <normaloff>:/node/res/node-label.png</normaloff>:/node/res/node-label.png</iconset>
+   </property>
+   <property name="text">
+    <string>Label</string>
+   </property>
+  </action>
+  <action name="actionProjectOpen">
+   <property name="text">
+    <string>Open...</string>
+   </property>
+  </action>
+  <action name="actionProjectProps">
+   <property name="text">
+    <string>Properties...</string>
+   </property>
+  </action>
+  <action name="actionTreeUp">
+   <property name="icon">
+    <iconset resource="../cr.qrc">
+     <normaloff>:/tree/res/tree-up.png</normaloff>:/tree/res/tree-up.png</iconset>
+   </property>
+   <property name="text">
+    <string>Up</string>
+   </property>
+  </action>
+  <action name="actionTreeDown">
+   <property name="icon">
+    <iconset resource="../cr.qrc">
+     <normaloff>:/tree/res/tree-down.png</normaloff>:/tree/res/tree-down.png</iconset>
+   </property>
+   <property name="text">
+    <string>Down</string>
+   </property>
+  </action>
+  <action name="actionTreeLeft">
+   <property name="icon">
+    <iconset resource="../cr.qrc">
+     <normaloff>:/tree/res/tree-left.png</normaloff>:/tree/res/tree-left.png</iconset>
+   </property>
+   <property name="text">
+    <string>Left</string>
+   </property>
+  </action>
+  <action name="actionTreeRight">
+   <property name="icon">
+    <iconset resource="../cr.qrc">
+     <normaloff>:/tree/res/tree-right.png</normaloff>:/tree/res/tree-right.png</iconset>
+   </property>
+   <property name="text">
+    <string>Right</string>
+   </property>
+  </action>
+  <action name="actionMarkAreas">
+   <property name="icon">
+    <iconset resource="../cr.qrc">
+     <normaloff>:/node/res/node-areas.png</normaloff>:/node/res/node-areas.png</iconset>
+   </property>
+   <property name="text">
+    <string>Areas</string>
+   </property>
+   <property name="toolTip">
+    <string>Areas</string>
+   </property>
+  </action>
+  <action name="actionMarkLabels">
+   <property name="icon">
+    <iconset resource="../cr.qrc">
+     <normaloff>:/node/res/node-labels.png</normaloff>:/node/res/node-labels.png</iconset>
+   </property>
+   <property name="text">
+    <string>Labels</string>
+   </property>
+   <property name="toolTip">
+    <string>Labels</string>
+   </property>
+  </action>
+  <action name="actionNavPrev">
+   <property name="icon">
+    <iconset resource="../cr.qrc">
+     <normaloff>:/nav/res/nav-prev.png</normaloff>:/nav/res/nav-prev.png</iconset>
+   </property>
+   <property name="text">
+    <string>Go to previous</string>
+   </property>
+  </action>
+  <action name="actionNavNext">
+   <property name="icon">
+    <iconset resource="../cr.qrc">
+     <normaloff>:/nav/res/nav-next.png</normaloff>:/nav/res/nav-next.png</iconset>
+   </property>
+   <property name="text">
+    <string>Go to next</string>
+   </property>
+  </action>
+  <action name="actionNavLocate">
+   <property name="icon">
+    <iconset resource="../cr.qrc">
+     <normaloff>:/nav/res/nav-locate.png</normaloff>:/nav/res/nav-locate.png</iconset>
+   </property>
+   <property name="text">
+    <string>Locate</string>
+   </property>
+   <property name="toolTip">
+    <string>Locate</string>
+   </property>
+  </action>
+  <action name="actionToolsTest">
+   <property name="text">
+    <string>Test</string>
+   </property>
+  </action>
+ </widget>
+ <resources>
+  <include location="../cr.qrc"/>
+ </resources>
+ <connections/>
+</ui>

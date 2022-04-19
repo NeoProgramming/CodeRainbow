@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Vsix Version="1.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2010">
+  <Identifier Id="56953d41-9f83-4875-94de-e32c1b20d868">
+    <Name>CodeRainbow</Name>
+    <Author>NeoProgramming</Author>
+    <Version>1.0</Version>
+    <Description xml:space="preserve">Allows you to mark the code in different colors and maintains a markup database.</Description>
+    <Locale>1033</Locale>
+    <InstalledByMsi>false</InstalledByMsi>
+    <SupportedProducts>
+      <VisualStudio Version="10.0">
+        <Edition>Pro</Edition>
+      </VisualStudio>
+      <VisualStudio Version="14.0">
+        <Edition>Pro</Edition>
+		<Edition>Ultimate</Edition>
+		<Edition>Premium</Edition>
+		<Edition>Enterprise</Edition>
+		<Edition>Express_All</Edition>
+      </VisualStudio>
+    </SupportedProducts>
+    <SupportedFrameworkRuntimeEdition MinVersion="4.0" MaxVersion="4.0" />
+  </Identifier>
+  <References>
+        <Reference Id="Microsoft.VisualStudio.MPF" MinVersion="10.0">
+            <Name>Visual Studio MPF</Name>
+        </Reference>
+  </References>
+  <Content>
+    <VsPackage>|%CurrentProject%;PkgdefProjectOutputGroup|</VsPackage>
+	<MefComponent>|%CurrentProject%|</MefComponent>
+  </Content>
+</Vsix>

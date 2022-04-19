@@ -1,0 +1,766 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{AA41F971-4752-3383-8083-60182F3D5568}</ProjectGuid>
+    <RootNamespace>CodeRainbow</RootNamespace>
+    <Keyword>Qt4VSv1.0</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <PlatformToolset>v140</PlatformToolset>
+    <OutputDirectory>C:\Users\yura\AppData\Local\QtProject\qtcreator\plugins\4.5.1\</OutputDirectory>
+    <ATLMinimizesCRunTimeLibraryUsage>false</ATLMinimizesCRunTimeLibraryUsage>
+    <CharacterSet>NotSet</CharacterSet>
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <IntermediateDirectory>build\.obj\</IntermediateDirectory>
+    <PrimaryOutput>CodeRainbow4</PrimaryOutput>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <PlatformToolset>v140</PlatformToolset>
+    <OutputDirectory>C:\Users\yura\AppData\Local\QtProject\qtcreator\plugins\4.5.1\</OutputDirectory>
+    <ATLMinimizesCRunTimeLibraryUsage>false</ATLMinimizesCRunTimeLibraryUsage>
+    <CharacterSet>NotSet</CharacterSet>
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <IntermediateDirectory>build\.obj\</IntermediateDirectory>
+    <PrimaryOutput>CodeRainbowd4</PrimaryOutput>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <PropertyGroup Condition="'$(QtMsBuild)'=='' or !Exists('$(QtMsBuild)\qt.targets')">
+    <QtMsBuild>$(MSBuildProjectDirectory)\QtMsBuild</QtMsBuild>
+  </PropertyGroup>
+  <Target Name="QtMsBuildNotFound" BeforeTargets="CustomBuild;ClCompile" Condition="!Exists('$(QtMsBuild)\qt.targets') or !Exists('$(QtMsBuild)\qt.props')">
+    <Message Importance="High" Text="QtMsBuild: could not locate qt.targets, qt.props; project may not build correctly." />
+  </Target>
+  <ImportGroup Condition="Exists('$(QtMsBuild)\qt.props')">
+    <Import Project="$(QtMsBuild)\qt.props" />
+  </ImportGroup>
+  <ImportGroup Label="ExtensionSettings" />
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\Users\yura\AppData\Local\QtProject\qtcreator\plugins\4.5.1\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Platform)\$(Configuration)\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">CodeRainbow4</TargetName>
+    <IgnoreImportLibrary Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</IgnoreImportLibrary>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Users\yura\AppData\Local\QtProject\qtcreator\plugins\4.5.1\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Platform)\$(Configuration)\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">CodeRainbowd4</TargetName>
+    <IgnoreImportLibrary Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</IgnoreImportLibrary>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>.;d:\Libs\boost_1_69_0;d:\PRG\qtcsrc451vs15r\build\src;..\..\qtcsrc451vs15r\src;..\..\qtcsrc451vs15r\src\libs;D:/PRG/qtcsrc451vs15r/tools;..\..\qtcsrc451vs15r\src\plugins;.;$(QTDIR)\include;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtConcurrent;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtCore;build\.moc;ui;\include;$(QTDIR)\mkspecs\win32-msvc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>-Zc:rvalueCast -Zc:inline -Zc:strictStrings -Zc:throwingNew -w34100 -w34189 -w44996 -w44456 -w44457 -w44458 %(AdditionalOptions)</AdditionalOptions>
+      <AssemblerListingLocation>build\.obj\</AssemblerListingLocation>
+      <BrowseInformation>false</BrowseInformation>
+      <DebugInformationFormat>None</DebugInformationFormat>
+      <DisableSpecificWarnings>4577;4467;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <ForcedIncludeFiles>..\..\qtcsrc451vs15r\src\shared\qtcreator_gui_pch.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <Optimization>MaxSpeed</Optimization>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>..\..\qtcsrc451vs15r\src\shared\qtcreator_gui_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile>$(IntDir)\CodeRainbow.pch</PrecompiledHeaderOutputFile>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;_UNICODE;WIN32;CR_LIBRARY;QT_CODE;"RELATIVE_PLUGIN_PATH="../lib/qtcreator/plugins"";"RELATIVE_LIBEXEC_PATH="."";"RELATIVE_DATA_PATH="../share/qtcreator"";"RELATIVE_DOC_PATH="../share/doc/qtcreator"";IDE_LIBRARY_BASENAME="lib";QT_CREATOR;QT_NO_CAST_TO_ASCII;QT_RESTRICTED_CAST_FROM_ASCII;QT_DISABLE_DEPRECATED_BEFORE=0x050600;QT_USE_FAST_OPERATOR_PLUS;QT_USE_FAST_CONCATENATION;_CRT_SECURE_NO_WARNINGS;QT_NO_DEBUG;QT_PLUGIN;QT_WIDGETS_LIB;QT_GUI_LIB;QT_CONCURRENT_LIB;QT_NETWORK_LIB;QT_CORE_LIB;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessToFile>false</PreprocessToFile>
+      <ProgramDataBaseFileName>$(IntDir)vc$(PlatformToolsetVersion).pdb</ProgramDataBaseFileName>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <WarningLevel>Level3</WarningLevel>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>d:\PRG\qtcsrc451vs15r\build\lib\qtcreator\plugins\Core4.lib;d:\PRG\qtcsrc451vs15r\build\lib\qtcreator\plugins\TextEditor4.lib;d:\PRG\qtcsrc451vs15r\build\lib\qtcreator\plugins\ProjectExplorer4.lib;d:\PRG\qtcsrc451vs15r\build\lib\qtcreator\Aggregation4.lib;d:\PRG\qtcsrc451vs15r\build\lib\qtcreator\ExtensionSystem4.lib;d:\PRG\qtcsrc451vs15r\build\lib\qtcreator\QtcSsh4.lib;d:\PRG\qtcsrc451vs15r\build\lib\qtcreator\Utils4.lib;$(QTDIR)\lib\Qt5Widgets.lib;$(QTDIR)\lib\Qt5Gui.lib;$(QTDIR)\lib\Qt5Concurrent.lib;$(QTDIR)\lib\Qt5Network.lib;$(QTDIR)\lib\Qt5Core.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(QTDIR)\lib;d:\Libs\boost_1_69_0\stage\lib;d:\PRG\qtcsrc451vs15r\build\lib\qtcreator;d:\PRG\qtcsrc451vs15r\build\lib\qtcreator\plugins;C:\Users\yura\AppData\Local\QtProject\qtcreator\plugins\4.5.1;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <DataExecutionPrevention>true</DataExecutionPrevention>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreImportLibrary>true</IgnoreImportLibrary>
+      <LinkDLL>true</LinkDLL>
+      <LinkIncremental>false</LinkIncremental>
+      <OutputFile>$(OutDir)\CodeRainbow4.dll</OutputFile>
+      <RandomizedBaseAddress>true</RandomizedBaseAddress>
+      <SubSystem>Windows</SubSystem>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <Version>4.5</Version>
+    </Link>
+    <Midl>
+      <DefaultCharType>Unsigned</DefaultCharType>
+      <EnableErrorChecks>None</EnableErrorChecks>
+      <WarningLevel>0</WarningLevel>
+    </Midl>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;_UNICODE;WIN32;CR_LIBRARY;QT_CODE;"RELATIVE_PLUGIN_PATH=\"../lib/qtcreator/plugins\"";"RELATIVE_LIBEXEC_PATH=\".\"";"RELATIVE_DATA_PATH=\"../share/qtcreator\"";"RELATIVE_DOC_PATH=\"../share/doc/qtcreator\"";IDE_LIBRARY_BASENAME="lib";QT_CREATOR;QT_NO_CAST_TO_ASCII;QT_RESTRICTED_CAST_FROM_ASCII;QT_DISABLE_DEPRECATED_BEFORE=0x050600;QT_USE_FAST_OPERATOR_PLUS;QT_USE_FAST_CONCATENATION;_CRT_SECURE_NO_WARNINGS;QT_NO_DEBUG;QT_PLUGIN;QT_WIDGETS_LIB;QT_GUI_LIB;QT_CONCURRENT_LIB;QT_NETWORK_LIB;QT_CORE_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>.;d:\Libs\boost_1_69_0;d:\PRG\qtcsrc451vs15r\build\src;..\..\qtcsrc451vs15r\src;..\..\qtcsrc451vs15r\src\libs;D:/PRG/qtcsrc451vs15r/tools;..\..\qtcsrc451vs15r\src\plugins;.;$(QTDIR)\include;$(QTDIR)\include\QtWidgets;$(QTDIR)\include\QtGui;$(QTDIR)\include\QtANGLE;$(QTDIR)\include\QtTest;$(QTDIR)\include\QtConcurrent;$(QTDIR)\include\QtNetwork;$(QTDIR)\include\QtCore;build\.moc;ui;\include;$(QTDIR)\mkspecs\win32-msvc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>-Zc:rvalueCast -Zc:inline -Zc:strictStrings -Zc:throwingNew -w34100 -w34189 -w44996 -w44456 -w44457 -w44458 %(AdditionalOptions)</AdditionalOptions>
+      <AssemblerListingLocation>build\.obj\</AssemblerListingLocation>
+      <BrowseInformation>false</BrowseInformation>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4577;4467;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <ForcedIncludeFiles>..\..\qtcsrc451vs15r\src\shared\qtcreator_gui_pch.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>..\..\qtcsrc451vs15r\src\shared\qtcreator_gui_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile>$(IntDir)\CodeRainbowd.pch</PrecompiledHeaderOutputFile>
+      <PreprocessorDefinitions>_CONSOLE;UNICODE;_UNICODE;WIN32;CR_LIBRARY;QT_CODE;WITH_TESTS;"RELATIVE_PLUGIN_PATH="../lib/qtcreator/plugins"";"RELATIVE_LIBEXEC_PATH="."";"RELATIVE_DATA_PATH="../share/qtcreator"";"RELATIVE_DOC_PATH="../share/doc/qtcreator"";IDE_LIBRARY_BASENAME="lib";QT_CREATOR;QT_NO_CAST_TO_ASCII;QT_RESTRICTED_CAST_FROM_ASCII;QT_DISABLE_DEPRECATED_BEFORE=0x050600;QT_USE_FAST_OPERATOR_PLUS;QT_USE_FAST_CONCATENATION;_CRT_SECURE_NO_WARNINGS;QT_PLUGIN;QT_WIDGETS_LIB;QT_GUI_LIB;QT_TESTLIB_LIB;QT_CONCURRENT_LIB;QT_NETWORK_LIB;QT_CORE_LIB;QT_TESTCASE_BUILDDIR=".";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessToFile>false</PreprocessToFile>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <WarningLevel>Level3</WarningLevel>
+      <ProgramDataBaseFileName>$(IntDir)vc$(PlatformToolsetVersion).pdb</ProgramDataBaseFileName>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>Cored4.lib;TextEditord4.lib;ProjectExplorerd4.lib;Aggregationd4.lib;ExtensionSystemd4.lib;QtcSshd4.lib;Utilsd4.lib;$(QTDIR)\lib\Qt5Widgetsd.lib;$(QTDIR)\lib\Qt5Guid.lib;$(QTDIR)\lib\Qt5Testd.lib;$(QTDIR)\lib\Qt5Concurrentd.lib;$(QTDIR)\lib\Qt5Networkd.lib;$(QTDIR)\lib\Qt5Cored.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(QTDIR)\lib;d:\Libs\boost_1_69_0\stage\lib;d:\PRG\qtcsrc451vs15d\build\lib\qtcreator;d:\PRG\qtcsrc451vs15d\build\lib\qtcreator\plugins;C:\Users\yura\AppData\Local\QtProject\qtcreator\plugins\4.5.1;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <DataExecutionPrevention>true</DataExecutionPrevention>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreImportLibrary>true</IgnoreImportLibrary>
+      <LinkDLL>true</LinkDLL>
+      <LinkIncremental>false</LinkIncremental>
+      <OutputFile>$(OutDir)\CodeRainbowd4.dll</OutputFile>
+      <RandomizedBaseAddress>true</RandomizedBaseAddress>
+      <SubSystem>Console</SubSystem>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <Version>4.5</Version>
+    </Link>
+    <Midl>
+      <DefaultCharType>Unsigned</DefaultCharType>
+      <EnableErrorChecks>None</EnableErrorChecks>
+      <WarningLevel>0</WarningLevel>
+    </Midl>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_CONSOLE;UNICODE;_UNICODE;WIN32;CR_LIBRARY;QT_CODE;WITH_TESTS;"RELATIVE_PLUGIN_PATH=\"../lib/qtcreator/plugins\"";"RELATIVE_LIBEXEC_PATH=\".\"";"RELATIVE_DATA_PATH=\"../share/qtcreator\"";"RELATIVE_DOC_PATH=\"../share/doc/qtcreator\"";IDE_LIBRARY_BASENAME="lib";QT_CREATOR;QT_NO_CAST_TO_ASCII;QT_RESTRICTED_CAST_FROM_ASCII;QT_DISABLE_DEPRECATED_BEFORE=0x050600;QT_USE_FAST_OPERATOR_PLUS;QT_USE_FAST_CONCATENATION;_CRT_SECURE_NO_WARNINGS;QT_PLUGIN;QT_WIDGETS_LIB;QT_GUI_LIB;QT_TESTLIB_LIB;QT_CONCURRENT_LIB;QT_NETWORK_LIB;QT_CORE_LIB;QT_TESTCASE_BUILDDIR=".";_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\src\gui\widgets\colorbutton.cpp" />
+    <ClCompile Include="..\src\gui\widgets\colormenu.cpp" />
+    <ClCompile Include="..\src\qtplugin\contentview.cpp" />
+    <ClCompile Include="..\src\qtplugin\contentwidgetfactory.cpp" />
+    <ClCompile Include="..\src\qtplugin\crmodel.cpp" />
+    <ClCompile Include="..\src\core\crnode.cpp" />
+    <ClCompile Include="..\src\qtplugin\croptionspage.cpp" />
+    <ClCompile Include="..\src\qtplugin\croptionswidget.cpp" />
+    <ClCompile Include="..\src\qtplugin\crplugin.cpp" />
+    <ClCompile Include="..\src\qtplugin\crplugincore.cpp" />
+    <ClCompile Include="..\src\qtplugin\crsettings.cpp" />
+    <ClCompile Include="..\src\core\crtree.cpp" />
+    <ClCompile Include="..\src\core\cruser.cpp" />
+    <ClCompile Include="..\src\tools\ct.cpp" />
+    <ClCompile Include="..\src\gui\dialogs\editrecentdlg.cpp" />
+    <ClCompile Include="..\src\gui\gui.cpp" />
+    <ClCompile Include="..\src\qtplugin\infopane.cpp" />
+    <ClCompile Include="..\src\core\kw.cpp" />
+    <ClCompile Include="..\src\gui\dialogs\linkdlg.cpp" />
+    <ClCompile Include="..\src\core\markmaker.cpp" />
+    <ClCompile Include="..\src\gui\dialogs\markupdlg.cpp" />
+    <ClCompile Include="..\src\core\mcmt.cpp" />
+    <ClCompile Include="..\src\gui\editor\memoform.cpp" />
+    <ClCompile Include="..\src\gui\dialogs\newprojectdlg.cpp" />
+    <ClCompile Include="..\src\gui\dialogs\nodedlg.cpp" />
+    <ClCompile Include="..\src\gui\editor\noteedit.cpp" />
+    <ClCompile Include="..\src\qtplugin\outputpane.cpp" />
+    <ClCompile Include="..\src\gui\dialogs\prjpropsdlg.cpp" />
+    <ClCompile Include="..\src\core\projectloader.cpp" />
+    <ClCompile Include="..\src\pugixml\pugixml.cpp" />
+    <ClCompile Include="..\src\gui\dialogs\selnodedlg.cpp" />
+    <ClCompile Include="..\src\qtplugin\tabbar.cpp" />
+    <ClCompile Include="..\src\gui\tbstyle.cpp" />
+    <ClCompile Include="..\src\tools\tdefs.cpp" />
+    <ClCompile Include="..\src\gui\text.cpp" />
+    <ClCompile Include="..\src\ted\text_encoding_detect.cpp" />
+    <ClCompile Include="..\src\qtplugin\toolbar.cpp" />
+    <ClCompile Include="..\src\tools\utf.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\src\tools\base_defs.h" />
+    <CustomBuild Include="..\src\gui\widgets\colorbutton.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">..\src\gui\widgets\colorbutton.h;build\.moc\moc_predefs.h;$(QTDIR)\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -DCR_LIBRARY -DQT_CODE -D"RELATIVE_PLUGIN_PATH=\"../lib/qtcreator/plugins\"" -D"RELATIVE_LIBEXEC_PATH=\".\"" -D"RELATIVE_DATA_PATH=\"../share/qtcreator\"" -D"RELATIVE_DOC_PATH=\"../share/doc/qtcreator\"" -DIDE_LIBRARY_BASENAME="lib" -DQT_CREATOR -DQT_NO_CAST_TO_ASCII -DQT_RESTRICTED_CAST_FROM_ASCII -DQT_DISABLE_DEPRECATED_BEFORE=0x050600 -DQT_USE_FAST_OPERATOR_PLUS -DQT_USE_FAST_CONCATENATION -D_CRT_SECURE_NO_WARNINGS -DQT_NO_DEBUG -DQT_PLUGIN -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CONCURRENT_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include build/.moc/moc_predefs.h -I$(QTDIR)\mkspecs/win32-msvc -I. -I. -Id:/Libs/boost_1_69_0 -Id:/PRG/qtcsrc451vs15r/build/src -ID:/PRG/qtcsrc451vs15r/src -ID:/PRG/qtcsrc451vs15r/src/libs -ID:/PRG/qtcsrc451vs15r/tools -ID:/PRG/qtcsrc451vs15r/src/plugins -I. -I$(QTDIR)\include -I$(QTDIR)\include/QtWidgets -I$(QTDIR)\include/QtGui -I$(QTDIR)\include/QtANGLE -I$(QTDIR)\include/QtConcurrent -I$(QTDIR)\include/QtNetwork -I$(QTDIR)\include/QtCore -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\INCLUDE" -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\ATLMFC\INCLUDE" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\winrt" ..\src\gui\widgets\colorbutton.h -o build\.moc\moc_colorbutton.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MOC ../src/gui/widgets/colorbutton.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">build\.moc\moc_colorbutton.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\src\gui\widgets\colorbutton.h;build\.moc\moc_predefs.h;$(QTDIR)\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -DCR_LIBRARY -DQT_CODE -DWITH_TESTS -D"RELATIVE_PLUGIN_PATH=\"../lib/qtcreator/plugins\"" -D"RELATIVE_LIBEXEC_PATH=\".\"" -D"RELATIVE_DATA_PATH=\"../share/qtcreator\"" -D"RELATIVE_DOC_PATH=\"../share/doc/qtcreator\"" -DIDE_LIBRARY_BASENAME="lib" -DQT_CREATOR -DQT_NO_CAST_TO_ASCII -DQT_RESTRICTED_CAST_FROM_ASCII -DQT_DISABLE_DEPRECATED_BEFORE=0x050600 -DQT_USE_FAST_OPERATOR_PLUS -DQT_USE_FAST_CONCATENATION -D_CRT_SECURE_NO_WARNINGS -DQT_PLUGIN -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_TESTLIB_LIB -DQT_CONCURRENT_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_TESTCASE_BUILDDIR="." --compiler-flavor=msvc --include build/.moc/moc_predefs.h -I$(QTDIR)\mkspecs/win32-msvc -I. -I. -Id:/Libs/boost_1_69_0 -Id:/PRG/qtcsrc451vs15r/build/src -ID:/PRG/qtcsrc451vs15r/src -ID:/PRG/qtcsrc451vs15r/src/libs -ID:/PRG/qtcsrc451vs15r/tools -ID:/PRG/qtcsrc451vs15r/src/plugins -I. -I$(QTDIR)\include -I$(QTDIR)\include/QtWidgets -I$(QTDIR)\include/QtGui -I$(QTDIR)\include/QtANGLE -I$(QTDIR)\include/QtTest -I$(QTDIR)\include/QtConcurrent -I$(QTDIR)\include/QtNetwork -I$(QTDIR)\include/QtCore -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\INCLUDE" -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\ATLMFC\INCLUDE" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\winrt" ..\src\gui\widgets\colorbutton.h -o build\.moc\moc_colorbutton.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">MOC ../src/gui/widgets/colorbutton.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">build\.moc\moc_colorbutton.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\src\gui\widgets\colormenu.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">..\src\gui\widgets\colormenu.h;build\.moc\moc_predefs.h;$(QTDIR)\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -DCR_LIBRARY -DQT_CODE -D"RELATIVE_PLUGIN_PATH=\"../lib/qtcreator/plugins\"" -D"RELATIVE_LIBEXEC_PATH=\".\"" -D"RELATIVE_DATA_PATH=\"../share/qtcreator\"" -D"RELATIVE_DOC_PATH=\"../share/doc/qtcreator\"" -DIDE_LIBRARY_BASENAME="lib" -DQT_CREATOR -DQT_NO_CAST_TO_ASCII -DQT_RESTRICTED_CAST_FROM_ASCII -DQT_DISABLE_DEPRECATED_BEFORE=0x050600 -DQT_USE_FAST_OPERATOR_PLUS -DQT_USE_FAST_CONCATENATION -D_CRT_SECURE_NO_WARNINGS -DQT_NO_DEBUG -DQT_PLUGIN -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CONCURRENT_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include build/.moc/moc_predefs.h -I$(QTDIR)\mkspecs/win32-msvc -I. -I. -Id:/Libs/boost_1_69_0 -Id:/PRG/qtcsrc451vs15r/build/src -ID:/PRG/qtcsrc451vs15r/src -ID:/PRG/qtcsrc451vs15r/src/libs -ID:/PRG/qtcsrc451vs15r/tools -ID:/PRG/qtcsrc451vs15r/src/plugins -I. -I$(QTDIR)\include -I$(QTDIR)\include/QtWidgets -I$(QTDIR)\include/QtGui -I$(QTDIR)\include/QtANGLE -I$(QTDIR)\include/QtConcurrent -I$(QTDIR)\include/QtNetwork -I$(QTDIR)\include/QtCore -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\INCLUDE" -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\ATLMFC\INCLUDE" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\winrt" ..\src\gui\widgets\colormenu.h -o build\.moc\moc_colormenu.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MOC ../src/gui/widgets/colormenu.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">build\.moc\moc_colormenu.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\src\gui\widgets\colormenu.h;build\.moc\moc_predefs.h;$(QTDIR)\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -DCR_LIBRARY -DQT_CODE -DWITH_TESTS -D"RELATIVE_PLUGIN_PATH=\"../lib/qtcreator/plugins\"" -D"RELATIVE_LIBEXEC_PATH=\".\"" -D"RELATIVE_DATA_PATH=\"../share/qtcreator\"" -D"RELATIVE_DOC_PATH=\"../share/doc/qtcreator\"" -DIDE_LIBRARY_BASENAME="lib" -DQT_CREATOR -DQT_NO_CAST_TO_ASCII -DQT_RESTRICTED_CAST_FROM_ASCII -DQT_DISABLE_DEPRECATED_BEFORE=0x050600 -DQT_USE_FAST_OPERATOR_PLUS -DQT_USE_FAST_CONCATENATION -D_CRT_SECURE_NO_WARNINGS -DQT_PLUGIN -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_TESTLIB_LIB -DQT_CONCURRENT_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_TESTCASE_BUILDDIR="." --compiler-flavor=msvc --include build/.moc/moc_predefs.h -I$(QTDIR)\mkspecs/win32-msvc -I. -I. -Id:/Libs/boost_1_69_0 -Id:/PRG/qtcsrc451vs15r/build/src -ID:/PRG/qtcsrc451vs15r/src -ID:/PRG/qtcsrc451vs15r/src/libs -ID:/PRG/qtcsrc451vs15r/tools -ID:/PRG/qtcsrc451vs15r/src/plugins -I. -I$(QTDIR)\include -I$(QTDIR)\include/QtWidgets -I$(QTDIR)\include/QtGui -I$(QTDIR)\include/QtANGLE -I$(QTDIR)\include/QtTest -I$(QTDIR)\include/QtConcurrent -I$(QTDIR)\include/QtNetwork -I$(QTDIR)\include/QtCore -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\INCLUDE" -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\ATLMFC\INCLUDE" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\winrt" ..\src\gui\widgets\colormenu.h -o build\.moc\moc_colormenu.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">MOC ../src/gui/widgets/colormenu.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">build\.moc\moc_colormenu.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\src\qtplugin\contentview.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">..\src\qtplugin\contentview.h;build\.moc\moc_predefs.h;$(QTDIR)\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -DCR_LIBRARY -DQT_CODE -D"RELATIVE_PLUGIN_PATH=\"../lib/qtcreator/plugins\"" -D"RELATIVE_LIBEXEC_PATH=\".\"" -D"RELATIVE_DATA_PATH=\"../share/qtcreator\"" -D"RELATIVE_DOC_PATH=\"../share/doc/qtcreator\"" -DIDE_LIBRARY_BASENAME="lib" -DQT_CREATOR -DQT_NO_CAST_TO_ASCII -DQT_RESTRICTED_CAST_FROM_ASCII -DQT_DISABLE_DEPRECATED_BEFORE=0x050600 -DQT_USE_FAST_OPERATOR_PLUS -DQT_USE_FAST_CONCATENATION -D_CRT_SECURE_NO_WARNINGS -DQT_NO_DEBUG -DQT_PLUGIN -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CONCURRENT_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include build/.moc/moc_predefs.h -I$(QTDIR)\mkspecs/win32-msvc -I. -I. -Id:/Libs/boost_1_69_0 -Id:/PRG/qtcsrc451vs15r/build/src -ID:/PRG/qtcsrc451vs15r/src -ID:/PRG/qtcsrc451vs15r/src/libs -ID:/PRG/qtcsrc451vs15r/tools -ID:/PRG/qtcsrc451vs15r/src/plugins -I. -I$(QTDIR)\include -I$(QTDIR)\include/QtWidgets -I$(QTDIR)\include/QtGui -I$(QTDIR)\include/QtANGLE -I$(QTDIR)\include/QtConcurrent -I$(QTDIR)\include/QtNetwork -I$(QTDIR)\include/QtCore -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\INCLUDE" -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\ATLMFC\INCLUDE" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\winrt" ..\src\qtplugin\contentview.h -o build\.moc\moc_contentview.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MOC ../src/qtplugin/contentview.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">build\.moc\moc_contentview.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\src\qtplugin\contentview.h;build\.moc\moc_predefs.h;$(QTDIR)\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -DCR_LIBRARY -DQT_CODE -DWITH_TESTS -D"RELATIVE_PLUGIN_PATH=\"../lib/qtcreator/plugins\"" -D"RELATIVE_LIBEXEC_PATH=\".\"" -D"RELATIVE_DATA_PATH=\"../share/qtcreator\"" -D"RELATIVE_DOC_PATH=\"../share/doc/qtcreator\"" -DIDE_LIBRARY_BASENAME="lib" -DQT_CREATOR -DQT_NO_CAST_TO_ASCII -DQT_RESTRICTED_CAST_FROM_ASCII -DQT_DISABLE_DEPRECATED_BEFORE=0x050600 -DQT_USE_FAST_OPERATOR_PLUS -DQT_USE_FAST_CONCATENATION -D_CRT_SECURE_NO_WARNINGS -DQT_PLUGIN -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_TESTLIB_LIB -DQT_CONCURRENT_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_TESTCASE_BUILDDIR="." --compiler-flavor=msvc --include build/.moc/moc_predefs.h -I$(QTDIR)\mkspecs/win32-msvc -I. -I. -Id:/Libs/boost_1_69_0 -Id:/PRG/qtcsrc451vs15r/build/src -ID:/PRG/qtcsrc451vs15r/src -ID:/PRG/qtcsrc451vs15r/src/libs -ID:/PRG/qtcsrc451vs15r/tools -ID:/PRG/qtcsrc451vs15r/src/plugins -I. -I$(QTDIR)\include -I$(QTDIR)\include/QtWidgets -I$(QTDIR)\include/QtGui -I$(QTDIR)\include/QtANGLE -I$(QTDIR)\include/QtTest -I$(QTDIR)\include/QtConcurrent -I$(QTDIR)\include/QtNetwork -I$(QTDIR)\include/QtCore -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\INCLUDE" -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\ATLMFC\INCLUDE" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\winrt" ..\src\qtplugin\contentview.h -o build\.moc\moc_contentview.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">MOC ../src/qtplugin/contentview.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">build\.moc\moc_contentview.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <ClInclude Include="..\src\qtplugin\contentwidgetfactory.h" />
+    <ClInclude Include="..\src\core\core.h" />
+    <ClInclude Include="..\src\qtplugin\cr_global.h" />
+    <ClInclude Include="..\src\qtplugin\crconstants.h" />
+    <CustomBuild Include="..\src\qtplugin\crmodel.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">..\src\qtplugin\crmodel.h;build\.moc\moc_predefs.h;$(QTDIR)\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -DCR_LIBRARY -DQT_CODE -D"RELATIVE_PLUGIN_PATH=\"../lib/qtcreator/plugins\"" -D"RELATIVE_LIBEXEC_PATH=\".\"" -D"RELATIVE_DATA_PATH=\"../share/qtcreator\"" -D"RELATIVE_DOC_PATH=\"../share/doc/qtcreator\"" -DIDE_LIBRARY_BASENAME="lib" -DQT_CREATOR -DQT_NO_CAST_TO_ASCII -DQT_RESTRICTED_CAST_FROM_ASCII -DQT_DISABLE_DEPRECATED_BEFORE=0x050600 -DQT_USE_FAST_OPERATOR_PLUS -DQT_USE_FAST_CONCATENATION -D_CRT_SECURE_NO_WARNINGS -DQT_NO_DEBUG -DQT_PLUGIN -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CONCURRENT_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include build/.moc/moc_predefs.h -I$(QTDIR)\mkspecs/win32-msvc -I. -I. -Id:/Libs/boost_1_69_0 -Id:/PRG/qtcsrc451vs15r/build/src -ID:/PRG/qtcsrc451vs15r/src -ID:/PRG/qtcsrc451vs15r/src/libs -ID:/PRG/qtcsrc451vs15r/tools -ID:/PRG/qtcsrc451vs15r/src/plugins -I. -I$(QTDIR)\include -I$(QTDIR)\include/QtWidgets -I$(QTDIR)\include/QtGui -I$(QTDIR)\include/QtANGLE -I$(QTDIR)\include/QtConcurrent -I$(QTDIR)\include/QtNetwork -I$(QTDIR)\include/QtCore -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\INCLUDE" -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\ATLMFC\INCLUDE" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\winrt" ..\src\qtplugin\crmodel.h -o build\.moc\moc_crmodel.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MOC ../src/qtplugin/crmodel.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">build\.moc\moc_crmodel.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\src\qtplugin\crmodel.h;build\.moc\moc_predefs.h;$(QTDIR)\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -DCR_LIBRARY -DQT_CODE -DWITH_TESTS -D"RELATIVE_PLUGIN_PATH=\"../lib/qtcreator/plugins\"" -D"RELATIVE_LIBEXEC_PATH=\".\"" -D"RELATIVE_DATA_PATH=\"../share/qtcreator\"" -D"RELATIVE_DOC_PATH=\"../share/doc/qtcreator\"" -DIDE_LIBRARY_BASENAME="lib" -DQT_CREATOR -DQT_NO_CAST_TO_ASCII -DQT_RESTRICTED_CAST_FROM_ASCII -DQT_DISABLE_DEPRECATED_BEFORE=0x050600 -DQT_USE_FAST_OPERATOR_PLUS -DQT_USE_FAST_CONCATENATION -D_CRT_SECURE_NO_WARNINGS -DQT_PLUGIN -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_TESTLIB_LIB -DQT_CONCURRENT_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_TESTCASE_BUILDDIR="." --compiler-flavor=msvc --include build/.moc/moc_predefs.h -I$(QTDIR)\mkspecs/win32-msvc -I. -I. -Id:/Libs/boost_1_69_0 -Id:/PRG/qtcsrc451vs15r/build/src -ID:/PRG/qtcsrc451vs15r/src -ID:/PRG/qtcsrc451vs15r/src/libs -ID:/PRG/qtcsrc451vs15r/tools -ID:/PRG/qtcsrc451vs15r/src/plugins -I. -I$(QTDIR)\include -I$(QTDIR)\include/QtWidgets -I$(QTDIR)\include/QtGui -I$(QTDIR)\include/QtANGLE -I$(QTDIR)\include/QtTest -I$(QTDIR)\include/QtConcurrent -I$(QTDIR)\include/QtNetwork -I$(QTDIR)\include/QtCore -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\INCLUDE" -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\ATLMFC\INCLUDE" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\winrt" ..\src\qtplugin\crmodel.h -o build\.moc\moc_crmodel.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">MOC ../src/qtplugin/crmodel.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">build\.moc\moc_crmodel.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <ClInclude Include="..\src\core\crnode.h" />
+    <CustomBuild Include="..\src\qtplugin\croptionspage.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">..\src\qtplugin\croptionspage.h;build\.moc\moc_predefs.h;$(QTDIR)\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -DCR_LIBRARY -DQT_CODE -D"RELATIVE_PLUGIN_PATH=\"../lib/qtcreator/plugins\"" -D"RELATIVE_LIBEXEC_PATH=\".\"" -D"RELATIVE_DATA_PATH=\"../share/qtcreator\"" -D"RELATIVE_DOC_PATH=\"../share/doc/qtcreator\"" -DIDE_LIBRARY_BASENAME="lib" -DQT_CREATOR -DQT_NO_CAST_TO_ASCII -DQT_RESTRICTED_CAST_FROM_ASCII -DQT_DISABLE_DEPRECATED_BEFORE=0x050600 -DQT_USE_FAST_OPERATOR_PLUS -DQT_USE_FAST_CONCATENATION -D_CRT_SECURE_NO_WARNINGS -DQT_NO_DEBUG -DQT_PLUGIN -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CONCURRENT_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include build/.moc/moc_predefs.h -I$(QTDIR)\mkspecs/win32-msvc -I. -I. -Id:/Libs/boost_1_69_0 -Id:/PRG/qtcsrc451vs15r/build/src -ID:/PRG/qtcsrc451vs15r/src -ID:/PRG/qtcsrc451vs15r/src/libs -ID:/PRG/qtcsrc451vs15r/tools -ID:/PRG/qtcsrc451vs15r/src/plugins -I. -I$(QTDIR)\include -I$(QTDIR)\include/QtWidgets -I$(QTDIR)\include/QtGui -I$(QTDIR)\include/QtANGLE -I$(QTDIR)\include/QtConcurrent -I$(QTDIR)\include/QtNetwork -I$(QTDIR)\include/QtCore -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\INCLUDE" -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\ATLMFC\INCLUDE" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\winrt" ..\src\qtplugin\croptionspage.h -o build\.moc\moc_croptionspage.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MOC ../src/qtplugin/croptionspage.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">build\.moc\moc_croptionspage.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\src\qtplugin\croptionspage.h;build\.moc\moc_predefs.h;$(QTDIR)\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -DCR_LIBRARY -DQT_CODE -DWITH_TESTS -D"RELATIVE_PLUGIN_PATH=\"../lib/qtcreator/plugins\"" -D"RELATIVE_LIBEXEC_PATH=\".\"" -D"RELATIVE_DATA_PATH=\"../share/qtcreator\"" -D"RELATIVE_DOC_PATH=\"../share/doc/qtcreator\"" -DIDE_LIBRARY_BASENAME="lib" -DQT_CREATOR -DQT_NO_CAST_TO_ASCII -DQT_RESTRICTED_CAST_FROM_ASCII -DQT_DISABLE_DEPRECATED_BEFORE=0x050600 -DQT_USE_FAST_OPERATOR_PLUS -DQT_USE_FAST_CONCATENATION -D_CRT_SECURE_NO_WARNINGS -DQT_PLUGIN -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_TESTLIB_LIB -DQT_CONCURRENT_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_TESTCASE_BUILDDIR="." --compiler-flavor=msvc --include build/.moc/moc_predefs.h -I$(QTDIR)\mkspecs/win32-msvc -I. -I. -Id:/Libs/boost_1_69_0 -Id:/PRG/qtcsrc451vs15r/build/src -ID:/PRG/qtcsrc451vs15r/src -ID:/PRG/qtcsrc451vs15r/src/libs -ID:/PRG/qtcsrc451vs15r/tools -ID:/PRG/qtcsrc451vs15r/src/plugins -I. -I$(QTDIR)\include -I$(QTDIR)\include/QtWidgets -I$(QTDIR)\include/QtGui -I$(QTDIR)\include/QtANGLE -I$(QTDIR)\include/QtTest -I$(QTDIR)\include/QtConcurrent -I$(QTDIR)\include/QtNetwork -I$(QTDIR)\include/QtCore -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\INCLUDE" -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\ATLMFC\INCLUDE" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\winrt" ..\src\qtplugin\croptionspage.h -o build\.moc\moc_croptionspage.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">MOC ../src/qtplugin/croptionspage.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">build\.moc\moc_croptionspage.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\src\qtplugin\croptionswidget.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">..\src\qtplugin\croptionswidget.h;build\.moc\moc_predefs.h;$(QTDIR)\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -DCR_LIBRARY -DQT_CODE -D"RELATIVE_PLUGIN_PATH=\"../lib/qtcreator/plugins\"" -D"RELATIVE_LIBEXEC_PATH=\".\"" -D"RELATIVE_DATA_PATH=\"../share/qtcreator\"" -D"RELATIVE_DOC_PATH=\"../share/doc/qtcreator\"" -DIDE_LIBRARY_BASENAME="lib" -DQT_CREATOR -DQT_NO_CAST_TO_ASCII -DQT_RESTRICTED_CAST_FROM_ASCII -DQT_DISABLE_DEPRECATED_BEFORE=0x050600 -DQT_USE_FAST_OPERATOR_PLUS -DQT_USE_FAST_CONCATENATION -D_CRT_SECURE_NO_WARNINGS -DQT_NO_DEBUG -DQT_PLUGIN -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CONCURRENT_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include build/.moc/moc_predefs.h -I$(QTDIR)\mkspecs/win32-msvc -I. -I. -Id:/Libs/boost_1_69_0 -Id:/PRG/qtcsrc451vs15r/build/src -ID:/PRG/qtcsrc451vs15r/src -ID:/PRG/qtcsrc451vs15r/src/libs -ID:/PRG/qtcsrc451vs15r/tools -ID:/PRG/qtcsrc451vs15r/src/plugins -I. -I$(QTDIR)\include -I$(QTDIR)\include/QtWidgets -I$(QTDIR)\include/QtGui -I$(QTDIR)\include/QtANGLE -I$(QTDIR)\include/QtConcurrent -I$(QTDIR)\include/QtNetwork -I$(QTDIR)\include/QtCore -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\INCLUDE" -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\ATLMFC\INCLUDE" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\winrt" ..\src\qtplugin\croptionswidget.h -o build\.moc\moc_croptionswidget.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MOC ../src/qtplugin/croptionswidget.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">build\.moc\moc_croptionswidget.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\src\qtplugin\croptionswidget.h;build\.moc\moc_predefs.h;$(QTDIR)\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -DCR_LIBRARY -DQT_CODE -DWITH_TESTS -D"RELATIVE_PLUGIN_PATH=\"../lib/qtcreator/plugins\"" -D"RELATIVE_LIBEXEC_PATH=\".\"" -D"RELATIVE_DATA_PATH=\"../share/qtcreator\"" -D"RELATIVE_DOC_PATH=\"../share/doc/qtcreator\"" -DIDE_LIBRARY_BASENAME="lib" -DQT_CREATOR -DQT_NO_CAST_TO_ASCII -DQT_RESTRICTED_CAST_FROM_ASCII -DQT_DISABLE_DEPRECATED_BEFORE=0x050600 -DQT_USE_FAST_OPERATOR_PLUS -DQT_USE_FAST_CONCATENATION -D_CRT_SECURE_NO_WARNINGS -DQT_PLUGIN -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_TESTLIB_LIB -DQT_CONCURRENT_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_TESTCASE_BUILDDIR="." --compiler-flavor=msvc --include build/.moc/moc_predefs.h -I$(QTDIR)\mkspecs/win32-msvc -I. -I. -Id:/Libs/boost_1_69_0 -Id:/PRG/qtcsrc451vs15r/build/src -ID:/PRG/qtcsrc451vs15r/src -ID:/PRG/qtcsrc451vs15r/src/libs -ID:/PRG/qtcsrc451vs15r/tools -ID:/PRG/qtcsrc451vs15r/src/plugins -I. -I$(QTDIR)\include -I$(QTDIR)\include/QtWidgets -I$(QTDIR)\include/QtGui -I$(QTDIR)\include/QtANGLE -I$(QTDIR)\include/QtTest -I$(QTDIR)\include/QtConcurrent -I$(QTDIR)\include/QtNetwork -I$(QTDIR)\include/QtCore -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\INCLUDE" -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\ATLMFC\INCLUDE" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\winrt" ..\src\qtplugin\croptionswidget.h -o build\.moc\moc_croptionswidget.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">MOC ../src/qtplugin/croptionswidget.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">build\.moc\moc_croptionswidget.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\src\qtplugin\crplugin.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">..\src\qtplugin\crplugin.h;build\.moc\moc_predefs.h;$(QTDIR)\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -DCR_LIBRARY -DQT_CODE -D"RELATIVE_PLUGIN_PATH=\"../lib/qtcreator/plugins\"" -D"RELATIVE_LIBEXEC_PATH=\".\"" -D"RELATIVE_DATA_PATH=\"../share/qtcreator\"" -D"RELATIVE_DOC_PATH=\"../share/doc/qtcreator\"" -DIDE_LIBRARY_BASENAME="lib" -DQT_CREATOR -DQT_NO_CAST_TO_ASCII -DQT_RESTRICTED_CAST_FROM_ASCII -DQT_DISABLE_DEPRECATED_BEFORE=0x050600 -DQT_USE_FAST_OPERATOR_PLUS -DQT_USE_FAST_CONCATENATION -D_CRT_SECURE_NO_WARNINGS -DQT_NO_DEBUG -DQT_PLUGIN -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CONCURRENT_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include build/.moc/moc_predefs.h -I$(QTDIR)\mkspecs/win32-msvc -I. -I. -Id:/Libs/boost_1_69_0 -Id:/PRG/qtcsrc451vs15r/build/src -ID:/PRG/qtcsrc451vs15r/src -ID:/PRG/qtcsrc451vs15r/src/libs -ID:/PRG/qtcsrc451vs15r/tools -ID:/PRG/qtcsrc451vs15r/src/plugins -I. -I$(QTDIR)\include -I$(QTDIR)\include/QtWidgets -I$(QTDIR)\include/QtGui -I$(QTDIR)\include/QtANGLE -I$(QTDIR)\include/QtConcurrent -I$(QTDIR)\include/QtNetwork -I$(QTDIR)\include/QtCore -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\INCLUDE" -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\ATLMFC\INCLUDE" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\winrt" ..\src\qtplugin\crplugin.h -o build\.moc\moc_crplugin.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MOC ../src/qtplugin/crplugin.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">build\.moc\moc_crplugin.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\src\qtplugin\crplugin.h;build\.moc\moc_predefs.h;$(QTDIR)\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -DCR_LIBRARY -DQT_CODE -DWITH_TESTS -D"RELATIVE_PLUGIN_PATH=\"../lib/qtcreator/plugins\"" -D"RELATIVE_LIBEXEC_PATH=\".\"" -D"RELATIVE_DATA_PATH=\"../share/qtcreator\"" -D"RELATIVE_DOC_PATH=\"../share/doc/qtcreator\"" -DIDE_LIBRARY_BASENAME="lib" -DQT_CREATOR -DQT_NO_CAST_TO_ASCII -DQT_RESTRICTED_CAST_FROM_ASCII -DQT_DISABLE_DEPRECATED_BEFORE=0x050600 -DQT_USE_FAST_OPERATOR_PLUS -DQT_USE_FAST_CONCATENATION -D_CRT_SECURE_NO_WARNINGS -DQT_PLUGIN -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_TESTLIB_LIB -DQT_CONCURRENT_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_TESTCASE_BUILDDIR="." --compiler-flavor=msvc --include build/.moc/moc_predefs.h -I$(QTDIR)\mkspecs/win32-msvc -I. -I. -Id:/Libs/boost_1_69_0 -Id:/PRG/qtcsrc451vs15r/build/src -ID:/PRG/qtcsrc451vs15r/src -ID:/PRG/qtcsrc451vs15r/src/libs -ID:/PRG/qtcsrc451vs15r/tools -ID:/PRG/qtcsrc451vs15r/src/plugins -I. -I$(QTDIR)\include -I$(QTDIR)\include/QtWidgets -I$(QTDIR)\include/QtGui -I$(QTDIR)\include/QtANGLE -I$(QTDIR)\include/QtTest -I$(QTDIR)\include/QtConcurrent -I$(QTDIR)\include/QtNetwork -I$(QTDIR)\include/QtCore -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\INCLUDE" -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\ATLMFC\INCLUDE" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\winrt" ..\src\qtplugin\crplugin.h -o build\.moc\moc_crplugin.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">MOC ../src/qtplugin/crplugin.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">build\.moc\moc_crplugin.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\src\qtplugin\crplugincore.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">..\src\qtplugin\crplugincore.h;build\.moc\moc_predefs.h;$(QTDIR)\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -DCR_LIBRARY -DQT_CODE -D"RELATIVE_PLUGIN_PATH=\"../lib/qtcreator/plugins\"" -D"RELATIVE_LIBEXEC_PATH=\".\"" -D"RELATIVE_DATA_PATH=\"../share/qtcreator\"" -D"RELATIVE_DOC_PATH=\"../share/doc/qtcreator\"" -DIDE_LIBRARY_BASENAME="lib" -DQT_CREATOR -DQT_NO_CAST_TO_ASCII -DQT_RESTRICTED_CAST_FROM_ASCII -DQT_DISABLE_DEPRECATED_BEFORE=0x050600 -DQT_USE_FAST_OPERATOR_PLUS -DQT_USE_FAST_CONCATENATION -D_CRT_SECURE_NO_WARNINGS -DQT_NO_DEBUG -DQT_PLUGIN -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CONCURRENT_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include build/.moc/moc_predefs.h -I$(QTDIR)\mkspecs/win32-msvc -I. -I. -Id:/Libs/boost_1_69_0 -Id:/PRG/qtcsrc451vs15r/build/src -ID:/PRG/qtcsrc451vs15r/src -ID:/PRG/qtcsrc451vs15r/src/libs -ID:/PRG/qtcsrc451vs15r/tools -ID:/PRG/qtcsrc451vs15r/src/plugins -I. -I$(QTDIR)\include -I$(QTDIR)\include/QtWidgets -I$(QTDIR)\include/QtGui -I$(QTDIR)\include/QtANGLE -I$(QTDIR)\include/QtConcurrent -I$(QTDIR)\include/QtNetwork -I$(QTDIR)\include/QtCore -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\INCLUDE" -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\ATLMFC\INCLUDE" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\winrt" ..\src\qtplugin\crplugincore.h -o build\.moc\moc_crplugincore.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MOC ../src/qtplugin/crplugincore.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">build\.moc\moc_crplugincore.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\src\qtplugin\crplugincore.h;build\.moc\moc_predefs.h;$(QTDIR)\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -DCR_LIBRARY -DQT_CODE -DWITH_TESTS -D"RELATIVE_PLUGIN_PATH=\"../lib/qtcreator/plugins\"" -D"RELATIVE_LIBEXEC_PATH=\".\"" -D"RELATIVE_DATA_PATH=\"../share/qtcreator\"" -D"RELATIVE_DOC_PATH=\"../share/doc/qtcreator\"" -DIDE_LIBRARY_BASENAME="lib" -DQT_CREATOR -DQT_NO_CAST_TO_ASCII -DQT_RESTRICTED_CAST_FROM_ASCII -DQT_DISABLE_DEPRECATED_BEFORE=0x050600 -DQT_USE_FAST_OPERATOR_PLUS -DQT_USE_FAST_CONCATENATION -D_CRT_SECURE_NO_WARNINGS -DQT_PLUGIN -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_TESTLIB_LIB -DQT_CONCURRENT_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_TESTCASE_BUILDDIR="." --compiler-flavor=msvc --include build/.moc/moc_predefs.h -I$(QTDIR)\mkspecs/win32-msvc -I. -I. -Id:/Libs/boost_1_69_0 -Id:/PRG/qtcsrc451vs15r/build/src -ID:/PRG/qtcsrc451vs15r/src -ID:/PRG/qtcsrc451vs15r/src/libs -ID:/PRG/qtcsrc451vs15r/tools -ID:/PRG/qtcsrc451vs15r/src/plugins -I. -I$(QTDIR)\include -I$(QTDIR)\include/QtWidgets -I$(QTDIR)\include/QtGui -I$(QTDIR)\include/QtANGLE -I$(QTDIR)\include/QtTest -I$(QTDIR)\include/QtConcurrent -I$(QTDIR)\include/QtNetwork -I$(QTDIR)\include/QtCore -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\INCLUDE" -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\ATLMFC\INCLUDE" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\winrt" ..\src\qtplugin\crplugincore.h -o build\.moc\moc_crplugincore.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">MOC ../src/qtplugin/crplugincore.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">build\.moc\moc_crplugincore.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\src\qtplugin\crsettings.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">..\src\qtplugin\crsettings.h;build\.moc\moc_predefs.h;$(QTDIR)\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -DCR_LIBRARY -DQT_CODE -D"RELATIVE_PLUGIN_PATH=\"../lib/qtcreator/plugins\"" -D"RELATIVE_LIBEXEC_PATH=\".\"" -D"RELATIVE_DATA_PATH=\"../share/qtcreator\"" -D"RELATIVE_DOC_PATH=\"../share/doc/qtcreator\"" -DIDE_LIBRARY_BASENAME="lib" -DQT_CREATOR -DQT_NO_CAST_TO_ASCII -DQT_RESTRICTED_CAST_FROM_ASCII -DQT_DISABLE_DEPRECATED_BEFORE=0x050600 -DQT_USE_FAST_OPERATOR_PLUS -DQT_USE_FAST_CONCATENATION -D_CRT_SECURE_NO_WARNINGS -DQT_NO_DEBUG -DQT_PLUGIN -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CONCURRENT_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include build/.moc/moc_predefs.h -I$(QTDIR)\mkspecs/win32-msvc -I. -I. -Id:/Libs/boost_1_69_0 -Id:/PRG/qtcsrc451vs15r/build/src -ID:/PRG/qtcsrc451vs15r/src -ID:/PRG/qtcsrc451vs15r/src/libs -ID:/PRG/qtcsrc451vs15r/tools -ID:/PRG/qtcsrc451vs15r/src/plugins -I. -I$(QTDIR)\include -I$(QTDIR)\include/QtWidgets -I$(QTDIR)\include/QtGui -I$(QTDIR)\include/QtANGLE -I$(QTDIR)\include/QtConcurrent -I$(QTDIR)\include/QtNetwork -I$(QTDIR)\include/QtCore -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\INCLUDE" -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\ATLMFC\INCLUDE" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\winrt" ..\src\qtplugin\crsettings.h -o build\.moc\moc_crsettings.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MOC ../src/qtplugin/crsettings.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">build\.moc\moc_crsettings.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\src\qtplugin\crsettings.h;build\.moc\moc_predefs.h;$(QTDIR)\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -DCR_LIBRARY -DQT_CODE -DWITH_TESTS -D"RELATIVE_PLUGIN_PATH=\"../lib/qtcreator/plugins\"" -D"RELATIVE_LIBEXEC_PATH=\".\"" -D"RELATIVE_DATA_PATH=\"../share/qtcreator\"" -D"RELATIVE_DOC_PATH=\"../share/doc/qtcreator\"" -DIDE_LIBRARY_BASENAME="lib" -DQT_CREATOR -DQT_NO_CAST_TO_ASCII -DQT_RESTRICTED_CAST_FROM_ASCII -DQT_DISABLE_DEPRECATED_BEFORE=0x050600 -DQT_USE_FAST_OPERATOR_PLUS -DQT_USE_FAST_CONCATENATION -D_CRT_SECURE_NO_WARNINGS -DQT_PLUGIN -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_TESTLIB_LIB -DQT_CONCURRENT_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_TESTCASE_BUILDDIR="." --compiler-flavor=msvc --include build/.moc/moc_predefs.h -I$(QTDIR)\mkspecs/win32-msvc -I. -I. -Id:/Libs/boost_1_69_0 -Id:/PRG/qtcsrc451vs15r/build/src -ID:/PRG/qtcsrc451vs15r/src -ID:/PRG/qtcsrc451vs15r/src/libs -ID:/PRG/qtcsrc451vs15r/tools -ID:/PRG/qtcsrc451vs15r/src/plugins -I. -I$(QTDIR)\include -I$(QTDIR)\include/QtWidgets -I$(QTDIR)\include/QtGui -I$(QTDIR)\include/QtANGLE -I$(QTDIR)\include/QtTest -I$(QTDIR)\include/QtConcurrent -I$(QTDIR)\include/QtNetwork -I$(QTDIR)\include/QtCore -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\INCLUDE" -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\ATLMFC\INCLUDE" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\winrt" ..\src\qtplugin\crsettings.h -o build\.moc\moc_crsettings.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">MOC ../src/qtplugin/crsettings.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">build\.moc\moc_crsettings.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <ClInclude Include="..\src\core\crtree.h" />
+    <ClInclude Include="..\src\core\cruser.h" />
+    <ClInclude Include="..\src\tools\ct.h" />
+    <CustomBuild Include="..\src\gui\dialogs\editrecentdlg.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">..\src\gui\dialogs\editrecentdlg.h;build\.moc\moc_predefs.h;$(QTDIR)\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -DCR_LIBRARY -DQT_CODE -D"RELATIVE_PLUGIN_PATH=\"../lib/qtcreator/plugins\"" -D"RELATIVE_LIBEXEC_PATH=\".\"" -D"RELATIVE_DATA_PATH=\"../share/qtcreator\"" -D"RELATIVE_DOC_PATH=\"../share/doc/qtcreator\"" -DIDE_LIBRARY_BASENAME="lib" -DQT_CREATOR -DQT_NO_CAST_TO_ASCII -DQT_RESTRICTED_CAST_FROM_ASCII -DQT_DISABLE_DEPRECATED_BEFORE=0x050600 -DQT_USE_FAST_OPERATOR_PLUS -DQT_USE_FAST_CONCATENATION -D_CRT_SECURE_NO_WARNINGS -DQT_NO_DEBUG -DQT_PLUGIN -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CONCURRENT_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include build/.moc/moc_predefs.h -I$(QTDIR)\mkspecs/win32-msvc -I. -I. -Id:/Libs/boost_1_69_0 -Id:/PRG/qtcsrc451vs15r/build/src -ID:/PRG/qtcsrc451vs15r/src -ID:/PRG/qtcsrc451vs15r/src/libs -ID:/PRG/qtcsrc451vs15r/tools -ID:/PRG/qtcsrc451vs15r/src/plugins -I. -I$(QTDIR)\include -I$(QTDIR)\include/QtWidgets -I$(QTDIR)\include/QtGui -I$(QTDIR)\include/QtANGLE -I$(QTDIR)\include/QtConcurrent -I$(QTDIR)\include/QtNetwork -I$(QTDIR)\include/QtCore -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\INCLUDE" -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\ATLMFC\INCLUDE" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\winrt" ..\src\gui\dialogs\editrecentdlg.h -o build\.moc\moc_editrecentdlg.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MOC ../src/gui/dialogs/editrecentdlg.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">build\.moc\moc_editrecentdlg.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\src\gui\dialogs\editrecentdlg.h;build\.moc\moc_predefs.h;$(QTDIR)\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -DCR_LIBRARY -DQT_CODE -DWITH_TESTS -D"RELATIVE_PLUGIN_PATH=\"../lib/qtcreator/plugins\"" -D"RELATIVE_LIBEXEC_PATH=\".\"" -D"RELATIVE_DATA_PATH=\"../share/qtcreator\"" -D"RELATIVE_DOC_PATH=\"../share/doc/qtcreator\"" -DIDE_LIBRARY_BASENAME="lib" -DQT_CREATOR -DQT_NO_CAST_TO_ASCII -DQT_RESTRICTED_CAST_FROM_ASCII -DQT_DISABLE_DEPRECATED_BEFORE=0x050600 -DQT_USE_FAST_OPERATOR_PLUS -DQT_USE_FAST_CONCATENATION -D_CRT_SECURE_NO_WARNINGS -DQT_PLUGIN -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_TESTLIB_LIB -DQT_CONCURRENT_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_TESTCASE_BUILDDIR="." --compiler-flavor=msvc --include build/.moc/moc_predefs.h -I$(QTDIR)\mkspecs/win32-msvc -I. -I. -Id:/Libs/boost_1_69_0 -Id:/PRG/qtcsrc451vs15r/build/src -ID:/PRG/qtcsrc451vs15r/src -ID:/PRG/qtcsrc451vs15r/src/libs -ID:/PRG/qtcsrc451vs15r/tools -ID:/PRG/qtcsrc451vs15r/src/plugins -I. -I$(QTDIR)\include -I$(QTDIR)\include/QtWidgets -I$(QTDIR)\include/QtGui -I$(QTDIR)\include/QtANGLE -I$(QTDIR)\include/QtTest -I$(QTDIR)\include/QtConcurrent -I$(QTDIR)\include/QtNetwork -I$(QTDIR)\include/QtCore -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\INCLUDE" -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\ATLMFC\INCLUDE" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\winrt" ..\src\gui\dialogs\editrecentdlg.h -o build\.moc\moc_editrecentdlg.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">MOC ../src/gui/dialogs/editrecentdlg.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">build\.moc\moc_editrecentdlg.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <ClInclude Include="..\src\gui\gui.h" />
+    <CustomBuild Include="..\src\qtplugin\infopane.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">..\src\qtplugin\infopane.h;build\.moc\moc_predefs.h;$(QTDIR)\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -DCR_LIBRARY -DQT_CODE -D"RELATIVE_PLUGIN_PATH=\"../lib/qtcreator/plugins\"" -D"RELATIVE_LIBEXEC_PATH=\".\"" -D"RELATIVE_DATA_PATH=\"../share/qtcreator\"" -D"RELATIVE_DOC_PATH=\"../share/doc/qtcreator\"" -DIDE_LIBRARY_BASENAME="lib" -DQT_CREATOR -DQT_NO_CAST_TO_ASCII -DQT_RESTRICTED_CAST_FROM_ASCII -DQT_DISABLE_DEPRECATED_BEFORE=0x050600 -DQT_USE_FAST_OPERATOR_PLUS -DQT_USE_FAST_CONCATENATION -D_CRT_SECURE_NO_WARNINGS -DQT_NO_DEBUG -DQT_PLUGIN -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CONCURRENT_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include build/.moc/moc_predefs.h -I$(QTDIR)\mkspecs/win32-msvc -I. -I. -Id:/Libs/boost_1_69_0 -Id:/PRG/qtcsrc451vs15r/build/src -ID:/PRG/qtcsrc451vs15r/src -ID:/PRG/qtcsrc451vs15r/src/libs -ID:/PRG/qtcsrc451vs15r/tools -ID:/PRG/qtcsrc451vs15r/src/plugins -I. -I$(QTDIR)\include -I$(QTDIR)\include/QtWidgets -I$(QTDIR)\include/QtGui -I$(QTDIR)\include/QtANGLE -I$(QTDIR)\include/QtConcurrent -I$(QTDIR)\include/QtNetwork -I$(QTDIR)\include/QtCore -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\INCLUDE" -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\ATLMFC\INCLUDE" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\winrt" ..\src\qtplugin\infopane.h -o build\.moc\moc_infopane.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MOC ../src/qtplugin/infopane.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">build\.moc\moc_infopane.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\src\qtplugin\infopane.h;build\.moc\moc_predefs.h;$(QTDIR)\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -DCR_LIBRARY -DQT_CODE -DWITH_TESTS -D"RELATIVE_PLUGIN_PATH=\"../lib/qtcreator/plugins\"" -D"RELATIVE_LIBEXEC_PATH=\".\"" -D"RELATIVE_DATA_PATH=\"../share/qtcreator\"" -D"RELATIVE_DOC_PATH=\"../share/doc/qtcreator\"" -DIDE_LIBRARY_BASENAME="lib" -DQT_CREATOR -DQT_NO_CAST_TO_ASCII -DQT_RESTRICTED_CAST_FROM_ASCII -DQT_DISABLE_DEPRECATED_BEFORE=0x050600 -DQT_USE_FAST_OPERATOR_PLUS -DQT_USE_FAST_CONCATENATION -D_CRT_SECURE_NO_WARNINGS -DQT_PLUGIN -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_TESTLIB_LIB -DQT_CONCURRENT_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_TESTCASE_BUILDDIR="." --compiler-flavor=msvc --include build/.moc/moc_predefs.h -I$(QTDIR)\mkspecs/win32-msvc -I. -I. -Id:/Libs/boost_1_69_0 -Id:/PRG/qtcsrc451vs15r/build/src -ID:/PRG/qtcsrc451vs15r/src -ID:/PRG/qtcsrc451vs15r/src/libs -ID:/PRG/qtcsrc451vs15r/tools -ID:/PRG/qtcsrc451vs15r/src/plugins -I. -I$(QTDIR)\include -I$(QTDIR)\include/QtWidgets -I$(QTDIR)\include/QtGui -I$(QTDIR)\include/QtANGLE -I$(QTDIR)\include/QtTest -I$(QTDIR)\include/QtConcurrent -I$(QTDIR)\include/QtNetwork -I$(QTDIR)\include/QtCore -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\INCLUDE" -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\ATLMFC\INCLUDE" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\winrt" ..\src\qtplugin\infopane.h -o build\.moc\moc_infopane.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">MOC ../src/qtplugin/infopane.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">build\.moc\moc_infopane.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <ClInclude Include="..\src\core\kw.h" />
+    <CustomBuild Include="..\src\gui\dialogs\linkdlg.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">..\src\gui\dialogs\linkdlg.h;build\.moc\moc_predefs.h;$(QTDIR)\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -DCR_LIBRARY -DQT_CODE -D"RELATIVE_PLUGIN_PATH=\"../lib/qtcreator/plugins\"" -D"RELATIVE_LIBEXEC_PATH=\".\"" -D"RELATIVE_DATA_PATH=\"../share/qtcreator\"" -D"RELATIVE_DOC_PATH=\"../share/doc/qtcreator\"" -DIDE_LIBRARY_BASENAME="lib" -DQT_CREATOR -DQT_NO_CAST_TO_ASCII -DQT_RESTRICTED_CAST_FROM_ASCII -DQT_DISABLE_DEPRECATED_BEFORE=0x050600 -DQT_USE_FAST_OPERATOR_PLUS -DQT_USE_FAST_CONCATENATION -D_CRT_SECURE_NO_WARNINGS -DQT_NO_DEBUG -DQT_PLUGIN -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CONCURRENT_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include build/.moc/moc_predefs.h -I$(QTDIR)\mkspecs/win32-msvc -I. -I. -Id:/Libs/boost_1_69_0 -Id:/PRG/qtcsrc451vs15r/build/src -ID:/PRG/qtcsrc451vs15r/src -ID:/PRG/qtcsrc451vs15r/src/libs -ID:/PRG/qtcsrc451vs15r/tools -ID:/PRG/qtcsrc451vs15r/src/plugins -I. -I$(QTDIR)\include -I$(QTDIR)\include/QtWidgets -I$(QTDIR)\include/QtGui -I$(QTDIR)\include/QtANGLE -I$(QTDIR)\include/QtConcurrent -I$(QTDIR)\include/QtNetwork -I$(QTDIR)\include/QtCore -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\INCLUDE" -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\ATLMFC\INCLUDE" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\winrt" ..\src\gui\dialogs\linkdlg.h -o build\.moc\moc_linkdlg.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MOC ../src/gui/dialogs/linkdlg.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">build\.moc\moc_linkdlg.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\src\gui\dialogs\linkdlg.h;build\.moc\moc_predefs.h;$(QTDIR)\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -DCR_LIBRARY -DQT_CODE -DWITH_TESTS -D"RELATIVE_PLUGIN_PATH=\"../lib/qtcreator/plugins\"" -D"RELATIVE_LIBEXEC_PATH=\".\"" -D"RELATIVE_DATA_PATH=\"../share/qtcreator\"" -D"RELATIVE_DOC_PATH=\"../share/doc/qtcreator\"" -DIDE_LIBRARY_BASENAME="lib" -DQT_CREATOR -DQT_NO_CAST_TO_ASCII -DQT_RESTRICTED_CAST_FROM_ASCII -DQT_DISABLE_DEPRECATED_BEFORE=0x050600 -DQT_USE_FAST_OPERATOR_PLUS -DQT_USE_FAST_CONCATENATION -D_CRT_SECURE_NO_WARNINGS -DQT_PLUGIN -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_TESTLIB_LIB -DQT_CONCURRENT_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_TESTCASE_BUILDDIR="." --compiler-flavor=msvc --include build/.moc/moc_predefs.h -I$(QTDIR)\mkspecs/win32-msvc -I. -I. -Id:/Libs/boost_1_69_0 -Id:/PRG/qtcsrc451vs15r/build/src -ID:/PRG/qtcsrc451vs15r/src -ID:/PRG/qtcsrc451vs15r/src/libs -ID:/PRG/qtcsrc451vs15r/tools -ID:/PRG/qtcsrc451vs15r/src/plugins -I. -I$(QTDIR)\include -I$(QTDIR)\include/QtWidgets -I$(QTDIR)\include/QtGui -I$(QTDIR)\include/QtANGLE -I$(QTDIR)\include/QtTest -I$(QTDIR)\include/QtConcurrent -I$(QTDIR)\include/QtNetwork -I$(QTDIR)\include/QtCore -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\INCLUDE" -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\ATLMFC\INCLUDE" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\winrt" ..\src\gui\dialogs\linkdlg.h -o build\.moc\moc_linkdlg.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">MOC ../src/gui/dialogs/linkdlg.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">build\.moc\moc_linkdlg.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <ClInclude Include="..\src\core\loc.h" />
+    <ClInclude Include="..\src\core\mark.h" />
+    <ClInclude Include="..\src\core\markmaker.h" />
+    <CustomBuild Include="..\src\gui\dialogs\markupdlg.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">..\src\gui\dialogs\markupdlg.h;build\.moc\moc_predefs.h;$(QTDIR)\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -DCR_LIBRARY -DQT_CODE -D"RELATIVE_PLUGIN_PATH=\"../lib/qtcreator/plugins\"" -D"RELATIVE_LIBEXEC_PATH=\".\"" -D"RELATIVE_DATA_PATH=\"../share/qtcreator\"" -D"RELATIVE_DOC_PATH=\"../share/doc/qtcreator\"" -DIDE_LIBRARY_BASENAME="lib" -DQT_CREATOR -DQT_NO_CAST_TO_ASCII -DQT_RESTRICTED_CAST_FROM_ASCII -DQT_DISABLE_DEPRECATED_BEFORE=0x050600 -DQT_USE_FAST_OPERATOR_PLUS -DQT_USE_FAST_CONCATENATION -D_CRT_SECURE_NO_WARNINGS -DQT_NO_DEBUG -DQT_PLUGIN -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CONCURRENT_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include build/.moc/moc_predefs.h -I$(QTDIR)\mkspecs/win32-msvc -I. -I. -Id:/Libs/boost_1_69_0 -Id:/PRG/qtcsrc451vs15r/build/src -ID:/PRG/qtcsrc451vs15r/src -ID:/PRG/qtcsrc451vs15r/src/libs -ID:/PRG/qtcsrc451vs15r/tools -ID:/PRG/qtcsrc451vs15r/src/plugins -I. -I$(QTDIR)\include -I$(QTDIR)\include/QtWidgets -I$(QTDIR)\include/QtGui -I$(QTDIR)\include/QtANGLE -I$(QTDIR)\include/QtConcurrent -I$(QTDIR)\include/QtNetwork -I$(QTDIR)\include/QtCore -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\INCLUDE" -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\ATLMFC\INCLUDE" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\winrt" ..\src\gui\dialogs\markupdlg.h -o build\.moc\moc_markupdlg.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MOC ../src/gui/dialogs/markupdlg.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">build\.moc\moc_markupdlg.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\src\gui\dialogs\markupdlg.h;build\.moc\moc_predefs.h;$(QTDIR)\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -DCR_LIBRARY -DQT_CODE -DWITH_TESTS -D"RELATIVE_PLUGIN_PATH=\"../lib/qtcreator/plugins\"" -D"RELATIVE_LIBEXEC_PATH=\".\"" -D"RELATIVE_DATA_PATH=\"../share/qtcreator\"" -D"RELATIVE_DOC_PATH=\"../share/doc/qtcreator\"" -DIDE_LIBRARY_BASENAME="lib" -DQT_CREATOR -DQT_NO_CAST_TO_ASCII -DQT_RESTRICTED_CAST_FROM_ASCII -DQT_DISABLE_DEPRECATED_BEFORE=0x050600 -DQT_USE_FAST_OPERATOR_PLUS -DQT_USE_FAST_CONCATENATION -D_CRT_SECURE_NO_WARNINGS -DQT_PLUGIN -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_TESTLIB_LIB -DQT_CONCURRENT_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_TESTCASE_BUILDDIR="." --compiler-flavor=msvc --include build/.moc/moc_predefs.h -I$(QTDIR)\mkspecs/win32-msvc -I. -I. -Id:/Libs/boost_1_69_0 -Id:/PRG/qtcsrc451vs15r/build/src -ID:/PRG/qtcsrc451vs15r/src -ID:/PRG/qtcsrc451vs15r/src/libs -ID:/PRG/qtcsrc451vs15r/tools -ID:/PRG/qtcsrc451vs15r/src/plugins -I. -I$(QTDIR)\include -I$(QTDIR)\include/QtWidgets -I$(QTDIR)\include/QtGui -I$(QTDIR)\include/QtANGLE -I$(QTDIR)\include/QtTest -I$(QTDIR)\include/QtConcurrent -I$(QTDIR)\include/QtNetwork -I$(QTDIR)\include/QtCore -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\INCLUDE" -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\ATLMFC\INCLUDE" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\winrt" ..\src\gui\dialogs\markupdlg.h -o build\.moc\moc_markupdlg.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">MOC ../src/gui/dialogs/markupdlg.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">build\.moc\moc_markupdlg.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <ClInclude Include="..\src\core\mcmt.h" />
+    <CustomBuild Include="..\src\gui\editor\memoform.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">..\src\gui\editor\memoform.h;build\.moc\moc_predefs.h;$(QTDIR)\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -DCR_LIBRARY -DQT_CODE -D"RELATIVE_PLUGIN_PATH=\"../lib/qtcreator/plugins\"" -D"RELATIVE_LIBEXEC_PATH=\".\"" -D"RELATIVE_DATA_PATH=\"../share/qtcreator\"" -D"RELATIVE_DOC_PATH=\"../share/doc/qtcreator\"" -DIDE_LIBRARY_BASENAME="lib" -DQT_CREATOR -DQT_NO_CAST_TO_ASCII -DQT_RESTRICTED_CAST_FROM_ASCII -DQT_DISABLE_DEPRECATED_BEFORE=0x050600 -DQT_USE_FAST_OPERATOR_PLUS -DQT_USE_FAST_CONCATENATION -D_CRT_SECURE_NO_WARNINGS -DQT_NO_DEBUG -DQT_PLUGIN -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CONCURRENT_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include build/.moc/moc_predefs.h -I$(QTDIR)\mkspecs/win32-msvc -I. -I. -Id:/Libs/boost_1_69_0 -Id:/PRG/qtcsrc451vs15r/build/src -ID:/PRG/qtcsrc451vs15r/src -ID:/PRG/qtcsrc451vs15r/src/libs -ID:/PRG/qtcsrc451vs15r/tools -ID:/PRG/qtcsrc451vs15r/src/plugins -I. -I$(QTDIR)\include -I$(QTDIR)\include/QtWidgets -I$(QTDIR)\include/QtGui -I$(QTDIR)\include/QtANGLE -I$(QTDIR)\include/QtConcurrent -I$(QTDIR)\include/QtNetwork -I$(QTDIR)\include/QtCore -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\INCLUDE" -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\ATLMFC\INCLUDE" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\winrt" ..\src\gui\editor\memoform.h -o build\.moc\moc_memoform.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MOC ../src/gui/editor/memoform.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">build\.moc\moc_memoform.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\src\gui\editor\memoform.h;build\.moc\moc_predefs.h;$(QTDIR)\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -DCR_LIBRARY -DQT_CODE -DWITH_TESTS -D"RELATIVE_PLUGIN_PATH=\"../lib/qtcreator/plugins\"" -D"RELATIVE_LIBEXEC_PATH=\".\"" -D"RELATIVE_DATA_PATH=\"../share/qtcreator\"" -D"RELATIVE_DOC_PATH=\"../share/doc/qtcreator\"" -DIDE_LIBRARY_BASENAME="lib" -DQT_CREATOR -DQT_NO_CAST_TO_ASCII -DQT_RESTRICTED_CAST_FROM_ASCII -DQT_DISABLE_DEPRECATED_BEFORE=0x050600 -DQT_USE_FAST_OPERATOR_PLUS -DQT_USE_FAST_CONCATENATION -D_CRT_SECURE_NO_WARNINGS -DQT_PLUGIN -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_TESTLIB_LIB -DQT_CONCURRENT_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_TESTCASE_BUILDDIR="." --compiler-flavor=msvc --include build/.moc/moc_predefs.h -I$(QTDIR)\mkspecs/win32-msvc -I. -I. -Id:/Libs/boost_1_69_0 -Id:/PRG/qtcsrc451vs15r/build/src -ID:/PRG/qtcsrc451vs15r/src -ID:/PRG/qtcsrc451vs15r/src/libs -ID:/PRG/qtcsrc451vs15r/tools -ID:/PRG/qtcsrc451vs15r/src/plugins -I. -I$(QTDIR)\include -I$(QTDIR)\include/QtWidgets -I$(QTDIR)\include/QtGui -I$(QTDIR)\include/QtANGLE -I$(QTDIR)\include/QtTest -I$(QTDIR)\include/QtConcurrent -I$(QTDIR)\include/QtNetwork -I$(QTDIR)\include/QtCore -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\INCLUDE" -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\ATLMFC\INCLUDE" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\winrt" ..\src\gui\editor\memoform.h -o build\.moc\moc_memoform.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">MOC ../src/gui/editor/memoform.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">build\.moc\moc_memoform.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\src\gui\dialogs\newprojectdlg.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">..\src\gui\dialogs\newprojectdlg.h;build\.moc\moc_predefs.h;$(QTDIR)\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -DCR_LIBRARY -DQT_CODE -D"RELATIVE_PLUGIN_PATH=\"../lib/qtcreator/plugins\"" -D"RELATIVE_LIBEXEC_PATH=\".\"" -D"RELATIVE_DATA_PATH=\"../share/qtcreator\"" -D"RELATIVE_DOC_PATH=\"../share/doc/qtcreator\"" -DIDE_LIBRARY_BASENAME="lib" -DQT_CREATOR -DQT_NO_CAST_TO_ASCII -DQT_RESTRICTED_CAST_FROM_ASCII -DQT_DISABLE_DEPRECATED_BEFORE=0x050600 -DQT_USE_FAST_OPERATOR_PLUS -DQT_USE_FAST_CONCATENATION -D_CRT_SECURE_NO_WARNINGS -DQT_NO_DEBUG -DQT_PLUGIN -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CONCURRENT_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include build/.moc/moc_predefs.h -I$(QTDIR)\mkspecs/win32-msvc -I. -I. -Id:/Libs/boost_1_69_0 -Id:/PRG/qtcsrc451vs15r/build/src -ID:/PRG/qtcsrc451vs15r/src -ID:/PRG/qtcsrc451vs15r/src/libs -ID:/PRG/qtcsrc451vs15r/tools -ID:/PRG/qtcsrc451vs15r/src/plugins -I. -I$(QTDIR)\include -I$(QTDIR)\include/QtWidgets -I$(QTDIR)\include/QtGui -I$(QTDIR)\include/QtANGLE -I$(QTDIR)\include/QtConcurrent -I$(QTDIR)\include/QtNetwork -I$(QTDIR)\include/QtCore -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\INCLUDE" -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\ATLMFC\INCLUDE" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\winrt" ..\src\gui\dialogs\newprojectdlg.h -o build\.moc\moc_newprojectdlg.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MOC ../src/gui/dialogs/newprojectdlg.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">build\.moc\moc_newprojectdlg.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\src\gui\dialogs\newprojectdlg.h;build\.moc\moc_predefs.h;$(QTDIR)\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -DCR_LIBRARY -DQT_CODE -DWITH_TESTS -D"RELATIVE_PLUGIN_PATH=\"../lib/qtcreator/plugins\"" -D"RELATIVE_LIBEXEC_PATH=\".\"" -D"RELATIVE_DATA_PATH=\"../share/qtcreator\"" -D"RELATIVE_DOC_PATH=\"../share/doc/qtcreator\"" -DIDE_LIBRARY_BASENAME="lib" -DQT_CREATOR -DQT_NO_CAST_TO_ASCII -DQT_RESTRICTED_CAST_FROM_ASCII -DQT_DISABLE_DEPRECATED_BEFORE=0x050600 -DQT_USE_FAST_OPERATOR_PLUS -DQT_USE_FAST_CONCATENATION -D_CRT_SECURE_NO_WARNINGS -DQT_PLUGIN -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_TESTLIB_LIB -DQT_CONCURRENT_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_TESTCASE_BUILDDIR="." --compiler-flavor=msvc --include build/.moc/moc_predefs.h -I$(QTDIR)\mkspecs/win32-msvc -I. -I. -Id:/Libs/boost_1_69_0 -Id:/PRG/qtcsrc451vs15r/build/src -ID:/PRG/qtcsrc451vs15r/src -ID:/PRG/qtcsrc451vs15r/src/libs -ID:/PRG/qtcsrc451vs15r/tools -ID:/PRG/qtcsrc451vs15r/src/plugins -I. -I$(QTDIR)\include -I$(QTDIR)\include/QtWidgets -I$(QTDIR)\include/QtGui -I$(QTDIR)\include/QtANGLE -I$(QTDIR)\include/QtTest -I$(QTDIR)\include/QtConcurrent -I$(QTDIR)\include/QtNetwork -I$(QTDIR)\include/QtCore -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\INCLUDE" -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\ATLMFC\INCLUDE" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\winrt" ..\src\gui\dialogs\newprojectdlg.h -o build\.moc\moc_newprojectdlg.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">MOC ../src/gui/dialogs/newprojectdlg.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">build\.moc\moc_newprojectdlg.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <ClInclude Include="..\src\core\nlexer.h" />
+    <CustomBuild Include="..\src\gui\dialogs\nodedlg.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">..\src\gui\dialogs\nodedlg.h;build\.moc\moc_predefs.h;$(QTDIR)\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -DCR_LIBRARY -DQT_CODE -D"RELATIVE_PLUGIN_PATH=\"../lib/qtcreator/plugins\"" -D"RELATIVE_LIBEXEC_PATH=\".\"" -D"RELATIVE_DATA_PATH=\"../share/qtcreator\"" -D"RELATIVE_DOC_PATH=\"../share/doc/qtcreator\"" -DIDE_LIBRARY_BASENAME="lib" -DQT_CREATOR -DQT_NO_CAST_TO_ASCII -DQT_RESTRICTED_CAST_FROM_ASCII -DQT_DISABLE_DEPRECATED_BEFORE=0x050600 -DQT_USE_FAST_OPERATOR_PLUS -DQT_USE_FAST_CONCATENATION -D_CRT_SECURE_NO_WARNINGS -DQT_NO_DEBUG -DQT_PLUGIN -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CONCURRENT_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include build/.moc/moc_predefs.h -I$(QTDIR)\mkspecs/win32-msvc -I. -I. -Id:/Libs/boost_1_69_0 -Id:/PRG/qtcsrc451vs15r/build/src -ID:/PRG/qtcsrc451vs15r/src -ID:/PRG/qtcsrc451vs15r/src/libs -ID:/PRG/qtcsrc451vs15r/tools -ID:/PRG/qtcsrc451vs15r/src/plugins -I. -I$(QTDIR)\include -I$(QTDIR)\include/QtWidgets -I$(QTDIR)\include/QtGui -I$(QTDIR)\include/QtANGLE -I$(QTDIR)\include/QtConcurrent -I$(QTDIR)\include/QtNetwork -I$(QTDIR)\include/QtCore -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\INCLUDE" -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\ATLMFC\INCLUDE" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\winrt" ..\src\gui\dialogs\nodedlg.h -o build\.moc\moc_nodedlg.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MOC ../src/gui/dialogs/nodedlg.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">build\.moc\moc_nodedlg.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\src\gui\dialogs\nodedlg.h;build\.moc\moc_predefs.h;$(QTDIR)\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -DCR_LIBRARY -DQT_CODE -DWITH_TESTS -D"RELATIVE_PLUGIN_PATH=\"../lib/qtcreator/plugins\"" -D"RELATIVE_LIBEXEC_PATH=\".\"" -D"RELATIVE_DATA_PATH=\"../share/qtcreator\"" -D"RELATIVE_DOC_PATH=\"../share/doc/qtcreator\"" -DIDE_LIBRARY_BASENAME="lib" -DQT_CREATOR -DQT_NO_CAST_TO_ASCII -DQT_RESTRICTED_CAST_FROM_ASCII -DQT_DISABLE_DEPRECATED_BEFORE=0x050600 -DQT_USE_FAST_OPERATOR_PLUS -DQT_USE_FAST_CONCATENATION -D_CRT_SECURE_NO_WARNINGS -DQT_PLUGIN -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_TESTLIB_LIB -DQT_CONCURRENT_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_TESTCASE_BUILDDIR="." --compiler-flavor=msvc --include build/.moc/moc_predefs.h -I$(QTDIR)\mkspecs/win32-msvc -I. -I. -Id:/Libs/boost_1_69_0 -Id:/PRG/qtcsrc451vs15r/build/src -ID:/PRG/qtcsrc451vs15r/src -ID:/PRG/qtcsrc451vs15r/src/libs -ID:/PRG/qtcsrc451vs15r/tools -ID:/PRG/qtcsrc451vs15r/src/plugins -I. -I$(QTDIR)\include -I$(QTDIR)\include/QtWidgets -I$(QTDIR)\include/QtGui -I$(QTDIR)\include/QtANGLE -I$(QTDIR)\include/QtTest -I$(QTDIR)\include/QtConcurrent -I$(QTDIR)\include/QtNetwork -I$(QTDIR)\include/QtCore -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\INCLUDE" -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\ATLMFC\INCLUDE" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\winrt" ..\src\gui\dialogs\nodedlg.h -o build\.moc\moc_nodedlg.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">MOC ../src/gui/dialogs/nodedlg.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">build\.moc\moc_nodedlg.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\src\gui\editor\noteedit.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">..\src\gui\editor\noteedit.h;build\.moc\moc_predefs.h;$(QTDIR)\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -DCR_LIBRARY -DQT_CODE -D"RELATIVE_PLUGIN_PATH=\"../lib/qtcreator/plugins\"" -D"RELATIVE_LIBEXEC_PATH=\".\"" -D"RELATIVE_DATA_PATH=\"../share/qtcreator\"" -D"RELATIVE_DOC_PATH=\"../share/doc/qtcreator\"" -DIDE_LIBRARY_BASENAME="lib" -DQT_CREATOR -DQT_NO_CAST_TO_ASCII -DQT_RESTRICTED_CAST_FROM_ASCII -DQT_DISABLE_DEPRECATED_BEFORE=0x050600 -DQT_USE_FAST_OPERATOR_PLUS -DQT_USE_FAST_CONCATENATION -D_CRT_SECURE_NO_WARNINGS -DQT_NO_DEBUG -DQT_PLUGIN -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CONCURRENT_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include build/.moc/moc_predefs.h -I$(QTDIR)\mkspecs/win32-msvc -I. -I. -Id:/Libs/boost_1_69_0 -Id:/PRG/qtcsrc451vs15r/build/src -ID:/PRG/qtcsrc451vs15r/src -ID:/PRG/qtcsrc451vs15r/src/libs -ID:/PRG/qtcsrc451vs15r/tools -ID:/PRG/qtcsrc451vs15r/src/plugins -I. -I$(QTDIR)\include -I$(QTDIR)\include/QtWidgets -I$(QTDIR)\include/QtGui -I$(QTDIR)\include/QtANGLE -I$(QTDIR)\include/QtConcurrent -I$(QTDIR)\include/QtNetwork -I$(QTDIR)\include/QtCore -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\INCLUDE" -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\ATLMFC\INCLUDE" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\winrt" ..\src\gui\editor\noteedit.h -o build\.moc\moc_noteedit.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MOC ../src/gui/editor/noteedit.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">build\.moc\moc_noteedit.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\src\gui\editor\noteedit.h;build\.moc\moc_predefs.h;$(QTDIR)\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -DCR_LIBRARY -DQT_CODE -DWITH_TESTS -D"RELATIVE_PLUGIN_PATH=\"../lib/qtcreator/plugins\"" -D"RELATIVE_LIBEXEC_PATH=\".\"" -D"RELATIVE_DATA_PATH=\"../share/qtcreator\"" -D"RELATIVE_DOC_PATH=\"../share/doc/qtcreator\"" -DIDE_LIBRARY_BASENAME="lib" -DQT_CREATOR -DQT_NO_CAST_TO_ASCII -DQT_RESTRICTED_CAST_FROM_ASCII -DQT_DISABLE_DEPRECATED_BEFORE=0x050600 -DQT_USE_FAST_OPERATOR_PLUS -DQT_USE_FAST_CONCATENATION -D_CRT_SECURE_NO_WARNINGS -DQT_PLUGIN -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_TESTLIB_LIB -DQT_CONCURRENT_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_TESTCASE_BUILDDIR="." --compiler-flavor=msvc --include build/.moc/moc_predefs.h -I$(QTDIR)\mkspecs/win32-msvc -I. -I. -Id:/Libs/boost_1_69_0 -Id:/PRG/qtcsrc451vs15r/build/src -ID:/PRG/qtcsrc451vs15r/src -ID:/PRG/qtcsrc451vs15r/src/libs -ID:/PRG/qtcsrc451vs15r/tools -ID:/PRG/qtcsrc451vs15r/src/plugins -I. -I$(QTDIR)\include -I$(QTDIR)\include/QtWidgets -I$(QTDIR)\include/QtGui -I$(QTDIR)\include/QtANGLE -I$(QTDIR)\include/QtTest -I$(QTDIR)\include/QtConcurrent -I$(QTDIR)\include/QtNetwork -I$(QTDIR)\include/QtCore -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\INCLUDE" -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\ATLMFC\INCLUDE" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\winrt" ..\src\gui\editor\noteedit.h -o build\.moc\moc_noteedit.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">MOC ../src/gui/editor/noteedit.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">build\.moc\moc_noteedit.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\src\qtplugin\outputpane.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">..\src\qtplugin\outputpane.h;build\.moc\moc_predefs.h;$(QTDIR)\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -DCR_LIBRARY -DQT_CODE -D"RELATIVE_PLUGIN_PATH=\"../lib/qtcreator/plugins\"" -D"RELATIVE_LIBEXEC_PATH=\".\"" -D"RELATIVE_DATA_PATH=\"../share/qtcreator\"" -D"RELATIVE_DOC_PATH=\"../share/doc/qtcreator\"" -DIDE_LIBRARY_BASENAME="lib" -DQT_CREATOR -DQT_NO_CAST_TO_ASCII -DQT_RESTRICTED_CAST_FROM_ASCII -DQT_DISABLE_DEPRECATED_BEFORE=0x050600 -DQT_USE_FAST_OPERATOR_PLUS -DQT_USE_FAST_CONCATENATION -D_CRT_SECURE_NO_WARNINGS -DQT_NO_DEBUG -DQT_PLUGIN -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CONCURRENT_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include build/.moc/moc_predefs.h -I$(QTDIR)\mkspecs/win32-msvc -I. -I. -Id:/Libs/boost_1_69_0 -Id:/PRG/qtcsrc451vs15r/build/src -ID:/PRG/qtcsrc451vs15r/src -ID:/PRG/qtcsrc451vs15r/src/libs -ID:/PRG/qtcsrc451vs15r/tools -ID:/PRG/qtcsrc451vs15r/src/plugins -I. -I$(QTDIR)\include -I$(QTDIR)\include/QtWidgets -I$(QTDIR)\include/QtGui -I$(QTDIR)\include/QtANGLE -I$(QTDIR)\include/QtConcurrent -I$(QTDIR)\include/QtNetwork -I$(QTDIR)\include/QtCore -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\INCLUDE" -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\ATLMFC\INCLUDE" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\winrt" ..\src\qtplugin\outputpane.h -o build\.moc\moc_outputpane.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MOC ../src/qtplugin/outputpane.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">build\.moc\moc_outputpane.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\src\qtplugin\outputpane.h;build\.moc\moc_predefs.h;$(QTDIR)\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -DCR_LIBRARY -DQT_CODE -DWITH_TESTS -D"RELATIVE_PLUGIN_PATH=\"../lib/qtcreator/plugins\"" -D"RELATIVE_LIBEXEC_PATH=\".\"" -D"RELATIVE_DATA_PATH=\"../share/qtcreator\"" -D"RELATIVE_DOC_PATH=\"../share/doc/qtcreator\"" -DIDE_LIBRARY_BASENAME="lib" -DQT_CREATOR -DQT_NO_CAST_TO_ASCII -DQT_RESTRICTED_CAST_FROM_ASCII -DQT_DISABLE_DEPRECATED_BEFORE=0x050600 -DQT_USE_FAST_OPERATOR_PLUS -DQT_USE_FAST_CONCATENATION -D_CRT_SECURE_NO_WARNINGS -DQT_PLUGIN -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_TESTLIB_LIB -DQT_CONCURRENT_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_TESTCASE_BUILDDIR="." --compiler-flavor=msvc --include build/.moc/moc_predefs.h -I$(QTDIR)\mkspecs/win32-msvc -I. -I. -Id:/Libs/boost_1_69_0 -Id:/PRG/qtcsrc451vs15r/build/src -ID:/PRG/qtcsrc451vs15r/src -ID:/PRG/qtcsrc451vs15r/src/libs -ID:/PRG/qtcsrc451vs15r/tools -ID:/PRG/qtcsrc451vs15r/src/plugins -I. -I$(QTDIR)\include -I$(QTDIR)\include/QtWidgets -I$(QTDIR)\include/QtGui -I$(QTDIR)\include/QtANGLE -I$(QTDIR)\include/QtTest -I$(QTDIR)\include/QtConcurrent -I$(QTDIR)\include/QtNetwork -I$(QTDIR)\include/QtCore -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\INCLUDE" -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\ATLMFC\INCLUDE" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\winrt" ..\src\qtplugin\outputpane.h -o build\.moc\moc_outputpane.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">MOC ../src/qtplugin/outputpane.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">build\.moc\moc_outputpane.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <ClInclude Include="..\src\core\parse.h" />
+    <CustomBuild Include="..\src\gui\dialogs\prjpropsdlg.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">..\src\gui\dialogs\prjpropsdlg.h;build\.moc\moc_predefs.h;$(QTDIR)\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -DCR_LIBRARY -DQT_CODE -D"RELATIVE_PLUGIN_PATH=\"../lib/qtcreator/plugins\"" -D"RELATIVE_LIBEXEC_PATH=\".\"" -D"RELATIVE_DATA_PATH=\"../share/qtcreator\"" -D"RELATIVE_DOC_PATH=\"../share/doc/qtcreator\"" -DIDE_LIBRARY_BASENAME="lib" -DQT_CREATOR -DQT_NO_CAST_TO_ASCII -DQT_RESTRICTED_CAST_FROM_ASCII -DQT_DISABLE_DEPRECATED_BEFORE=0x050600 -DQT_USE_FAST_OPERATOR_PLUS -DQT_USE_FAST_CONCATENATION -D_CRT_SECURE_NO_WARNINGS -DQT_NO_DEBUG -DQT_PLUGIN -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CONCURRENT_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include build/.moc/moc_predefs.h -I$(QTDIR)\mkspecs/win32-msvc -I. -I. -Id:/Libs/boost_1_69_0 -Id:/PRG/qtcsrc451vs15r/build/src -ID:/PRG/qtcsrc451vs15r/src -ID:/PRG/qtcsrc451vs15r/src/libs -ID:/PRG/qtcsrc451vs15r/tools -ID:/PRG/qtcsrc451vs15r/src/plugins -I. -I$(QTDIR)\include -I$(QTDIR)\include/QtWidgets -I$(QTDIR)\include/QtGui -I$(QTDIR)\include/QtANGLE -I$(QTDIR)\include/QtConcurrent -I$(QTDIR)\include/QtNetwork -I$(QTDIR)\include/QtCore -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\INCLUDE" -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\ATLMFC\INCLUDE" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\winrt" ..\src\gui\dialogs\prjpropsdlg.h -o build\.moc\moc_prjpropsdlg.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MOC ../src/gui/dialogs/prjpropsdlg.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">build\.moc\moc_prjpropsdlg.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\src\gui\dialogs\prjpropsdlg.h;build\.moc\moc_predefs.h;$(QTDIR)\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -DCR_LIBRARY -DQT_CODE -DWITH_TESTS -D"RELATIVE_PLUGIN_PATH=\"../lib/qtcreator/plugins\"" -D"RELATIVE_LIBEXEC_PATH=\".\"" -D"RELATIVE_DATA_PATH=\"../share/qtcreator\"" -D"RELATIVE_DOC_PATH=\"../share/doc/qtcreator\"" -DIDE_LIBRARY_BASENAME="lib" -DQT_CREATOR -DQT_NO_CAST_TO_ASCII -DQT_RESTRICTED_CAST_FROM_ASCII -DQT_DISABLE_DEPRECATED_BEFORE=0x050600 -DQT_USE_FAST_OPERATOR_PLUS -DQT_USE_FAST_CONCATENATION -D_CRT_SECURE_NO_WARNINGS -DQT_PLUGIN -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_TESTLIB_LIB -DQT_CONCURRENT_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_TESTCASE_BUILDDIR="." --compiler-flavor=msvc --include build/.moc/moc_predefs.h -I$(QTDIR)\mkspecs/win32-msvc -I. -I. -Id:/Libs/boost_1_69_0 -Id:/PRG/qtcsrc451vs15r/build/src -ID:/PRG/qtcsrc451vs15r/src -ID:/PRG/qtcsrc451vs15r/src/libs -ID:/PRG/qtcsrc451vs15r/tools -ID:/PRG/qtcsrc451vs15r/src/plugins -I. -I$(QTDIR)\include -I$(QTDIR)\include/QtWidgets -I$(QTDIR)\include/QtGui -I$(QTDIR)\include/QtANGLE -I$(QTDIR)\include/QtTest -I$(QTDIR)\include/QtConcurrent -I$(QTDIR)\include/QtNetwork -I$(QTDIR)\include/QtCore -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\INCLUDE" -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\ATLMFC\INCLUDE" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\winrt" ..\src\gui\dialogs\prjpropsdlg.h -o build\.moc\moc_prjpropsdlg.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">MOC ../src/gui/dialogs/prjpropsdlg.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">build\.moc\moc_prjpropsdlg.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <ClInclude Include="..\src\core\projectloader.h" />
+    <ClInclude Include="..\src\pugixml\pugixml.hpp" />
+    <CustomBuild Include="..\..\qtcsrc451vs15r\src\shared\qtcreator_gui_pch.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">echo /*-------------------------------------------------------------------- &gt;..\..\qtcsrc451vs15r\src\shared\qtcreator_gui_pch.h.cpp
+if errorlevel 1 goto VCEnd
+echo * Precompiled header source file used by Visual Studio.NET to generate&gt;&gt;..\..\qtcsrc451vs15r\src\shared\qtcreator_gui_pch.h.cpp
+if errorlevel 1 goto VCEnd
+echo * the .pch file.&gt;&gt;..\..\qtcsrc451vs15r\src\shared\qtcreator_gui_pch.h.cpp
+if errorlevel 1 goto VCEnd
+echo *&gt;&gt;..\..\qtcsrc451vs15r\src\shared\qtcreator_gui_pch.h.cpp
+if errorlevel 1 goto VCEnd
+echo * Due to issues with the dependencies checker within the IDE, it&gt;&gt;..\..\qtcsrc451vs15r\src\shared\qtcreator_gui_pch.h.cpp
+if errorlevel 1 goto VCEnd
+echo * sometimes fails to recompile the PCH file, if we force the IDE to&gt;&gt;..\..\qtcsrc451vs15r\src\shared\qtcreator_gui_pch.h.cpp
+if errorlevel 1 goto VCEnd
+echo * create the PCH file directly from the header file.&gt;&gt;..\..\qtcsrc451vs15r\src\shared\qtcreator_gui_pch.h.cpp
+if errorlevel 1 goto VCEnd
+echo *&gt;&gt;..\..\qtcsrc451vs15r\src\shared\qtcreator_gui_pch.h.cpp
+if errorlevel 1 goto VCEnd
+echo * This file is auto-generated by qmake since no PRECOMPILED_SOURCE was&gt;&gt;..\..\qtcsrc451vs15r\src\shared\qtcreator_gui_pch.h.cpp
+if errorlevel 1 goto VCEnd
+echo * specified, and is used as the common stdafx.cpp. The file is only&gt;&gt;..\..\qtcsrc451vs15r\src\shared\qtcreator_gui_pch.h.cpp
+if errorlevel 1 goto VCEnd
+echo * generated when creating .vcxproj project files, and is not used for&gt;&gt;..\..\qtcsrc451vs15r\src\shared\qtcreator_gui_pch.h.cpp
+if errorlevel 1 goto VCEnd
+echo * command line compilations by nmake.&gt;&gt;..\..\qtcsrc451vs15r\src\shared\qtcreator_gui_pch.h.cpp
+if errorlevel 1 goto VCEnd
+echo *&gt;&gt;..\..\qtcsrc451vs15r\src\shared\qtcreator_gui_pch.h.cpp
+if errorlevel 1 goto VCEnd
+echo * WARNING: All changes made in this file will be lost.&gt;&gt;..\..\qtcsrc451vs15r\src\shared\qtcreator_gui_pch.h.cpp
+if errorlevel 1 goto VCEnd
+echo --------------------------------------------------------------------*/&gt;&gt;..\..\qtcsrc451vs15r\src\shared\qtcreator_gui_pch.h.cpp
+if errorlevel 1 goto VCEnd
+echo #include "qtcreator_gui_pch.h"&gt;&gt;..\..\qtcsrc451vs15r\src\shared\qtcreator_gui_pch.h.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Generating precompiled header source file '..\..\qtcsrc451vs15r\src\shared\qtcreator_gui_pch.h.cpp' ...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">..\..\qtcsrc451vs15r\src\shared\qtcreator_gui_pch.h.cpp;%(Outputs)</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">echo /*-------------------------------------------------------------------- &gt;..\..\qtcsrc451vs15r\src\shared\qtcreator_gui_pch.h.cpp
+if errorlevel 1 goto VCEnd
+echo * Precompiled header source file used by Visual Studio.NET to generate&gt;&gt;..\..\qtcsrc451vs15r\src\shared\qtcreator_gui_pch.h.cpp
+if errorlevel 1 goto VCEnd
+echo * the .pch file.&gt;&gt;..\..\qtcsrc451vs15r\src\shared\qtcreator_gui_pch.h.cpp
+if errorlevel 1 goto VCEnd
+echo *&gt;&gt;..\..\qtcsrc451vs15r\src\shared\qtcreator_gui_pch.h.cpp
+if errorlevel 1 goto VCEnd
+echo * Due to issues with the dependencies checker within the IDE, it&gt;&gt;..\..\qtcsrc451vs15r\src\shared\qtcreator_gui_pch.h.cpp
+if errorlevel 1 goto VCEnd
+echo * sometimes fails to recompile the PCH file, if we force the IDE to&gt;&gt;..\..\qtcsrc451vs15r\src\shared\qtcreator_gui_pch.h.cpp
+if errorlevel 1 goto VCEnd
+echo * create the PCH file directly from the header file.&gt;&gt;..\..\qtcsrc451vs15r\src\shared\qtcreator_gui_pch.h.cpp
+if errorlevel 1 goto VCEnd
+echo *&gt;&gt;..\..\qtcsrc451vs15r\src\shared\qtcreator_gui_pch.h.cpp
+if errorlevel 1 goto VCEnd
+echo * This file is auto-generated by qmake since no PRECOMPILED_SOURCE was&gt;&gt;..\..\qtcsrc451vs15r\src\shared\qtcreator_gui_pch.h.cpp
+if errorlevel 1 goto VCEnd
+echo * specified, and is used as the common stdafx.cpp. The file is only&gt;&gt;..\..\qtcsrc451vs15r\src\shared\qtcreator_gui_pch.h.cpp
+if errorlevel 1 goto VCEnd
+echo * generated when creating .vcxproj project files, and is not used for&gt;&gt;..\..\qtcsrc451vs15r\src\shared\qtcreator_gui_pch.h.cpp
+if errorlevel 1 goto VCEnd
+echo * command line compilations by nmake.&gt;&gt;..\..\qtcsrc451vs15r\src\shared\qtcreator_gui_pch.h.cpp
+if errorlevel 1 goto VCEnd
+echo *&gt;&gt;..\..\qtcsrc451vs15r\src\shared\qtcreator_gui_pch.h.cpp
+if errorlevel 1 goto VCEnd
+echo * WARNING: All changes made in this file will be lost.&gt;&gt;..\..\qtcsrc451vs15r\src\shared\qtcreator_gui_pch.h.cpp
+if errorlevel 1 goto VCEnd
+echo --------------------------------------------------------------------*/&gt;&gt;..\..\qtcsrc451vs15r\src\shared\qtcreator_gui_pch.h.cpp
+if errorlevel 1 goto VCEnd
+echo #include "qtcreator_gui_pch.h"&gt;&gt;..\..\qtcsrc451vs15r\src\shared\qtcreator_gui_pch.h.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Generating precompiled header source file '..\..\qtcsrc451vs15r\src\shared\qtcreator_gui_pch.h.cpp' ...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\..\qtcsrc451vs15r\src\shared\qtcreator_gui_pch.h.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <ClInclude Include="..\src\core\scan.h" />
+    <CustomBuild Include="..\src\gui\dialogs\selnodedlg.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">..\src\gui\dialogs\selnodedlg.h;build\.moc\moc_predefs.h;$(QTDIR)\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -DCR_LIBRARY -DQT_CODE -D"RELATIVE_PLUGIN_PATH=\"../lib/qtcreator/plugins\"" -D"RELATIVE_LIBEXEC_PATH=\".\"" -D"RELATIVE_DATA_PATH=\"../share/qtcreator\"" -D"RELATIVE_DOC_PATH=\"../share/doc/qtcreator\"" -DIDE_LIBRARY_BASENAME="lib" -DQT_CREATOR -DQT_NO_CAST_TO_ASCII -DQT_RESTRICTED_CAST_FROM_ASCII -DQT_DISABLE_DEPRECATED_BEFORE=0x050600 -DQT_USE_FAST_OPERATOR_PLUS -DQT_USE_FAST_CONCATENATION -D_CRT_SECURE_NO_WARNINGS -DQT_NO_DEBUG -DQT_PLUGIN -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CONCURRENT_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include build/.moc/moc_predefs.h -I$(QTDIR)\mkspecs/win32-msvc -I. -I. -Id:/Libs/boost_1_69_0 -Id:/PRG/qtcsrc451vs15r/build/src -ID:/PRG/qtcsrc451vs15r/src -ID:/PRG/qtcsrc451vs15r/src/libs -ID:/PRG/qtcsrc451vs15r/tools -ID:/PRG/qtcsrc451vs15r/src/plugins -I. -I$(QTDIR)\include -I$(QTDIR)\include/QtWidgets -I$(QTDIR)\include/QtGui -I$(QTDIR)\include/QtANGLE -I$(QTDIR)\include/QtConcurrent -I$(QTDIR)\include/QtNetwork -I$(QTDIR)\include/QtCore -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\INCLUDE" -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\ATLMFC\INCLUDE" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\winrt" ..\src\gui\dialogs\selnodedlg.h -o build\.moc\moc_selnodedlg.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MOC ../src/gui/dialogs/selnodedlg.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">build\.moc\moc_selnodedlg.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\src\gui\dialogs\selnodedlg.h;build\.moc\moc_predefs.h;$(QTDIR)\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -DCR_LIBRARY -DQT_CODE -DWITH_TESTS -D"RELATIVE_PLUGIN_PATH=\"../lib/qtcreator/plugins\"" -D"RELATIVE_LIBEXEC_PATH=\".\"" -D"RELATIVE_DATA_PATH=\"../share/qtcreator\"" -D"RELATIVE_DOC_PATH=\"../share/doc/qtcreator\"" -DIDE_LIBRARY_BASENAME="lib" -DQT_CREATOR -DQT_NO_CAST_TO_ASCII -DQT_RESTRICTED_CAST_FROM_ASCII -DQT_DISABLE_DEPRECATED_BEFORE=0x050600 -DQT_USE_FAST_OPERATOR_PLUS -DQT_USE_FAST_CONCATENATION -D_CRT_SECURE_NO_WARNINGS -DQT_PLUGIN -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_TESTLIB_LIB -DQT_CONCURRENT_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_TESTCASE_BUILDDIR="." --compiler-flavor=msvc --include build/.moc/moc_predefs.h -I$(QTDIR)\mkspecs/win32-msvc -I. -I. -Id:/Libs/boost_1_69_0 -Id:/PRG/qtcsrc451vs15r/build/src -ID:/PRG/qtcsrc451vs15r/src -ID:/PRG/qtcsrc451vs15r/src/libs -ID:/PRG/qtcsrc451vs15r/tools -ID:/PRG/qtcsrc451vs15r/src/plugins -I. -I$(QTDIR)\include -I$(QTDIR)\include/QtWidgets -I$(QTDIR)\include/QtGui -I$(QTDIR)\include/QtANGLE -I$(QTDIR)\include/QtTest -I$(QTDIR)\include/QtConcurrent -I$(QTDIR)\include/QtNetwork -I$(QTDIR)\include/QtCore -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\INCLUDE" -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\ATLMFC\INCLUDE" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\winrt" ..\src\gui\dialogs\selnodedlg.h -o build\.moc\moc_selnodedlg.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">MOC ../src/gui/dialogs/selnodedlg.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">build\.moc\moc_selnodedlg.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\src\qtplugin\tabbar.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">..\src\qtplugin\tabbar.h;build\.moc\moc_predefs.h;$(QTDIR)\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -DCR_LIBRARY -DQT_CODE -D"RELATIVE_PLUGIN_PATH=\"../lib/qtcreator/plugins\"" -D"RELATIVE_LIBEXEC_PATH=\".\"" -D"RELATIVE_DATA_PATH=\"../share/qtcreator\"" -D"RELATIVE_DOC_PATH=\"../share/doc/qtcreator\"" -DIDE_LIBRARY_BASENAME="lib" -DQT_CREATOR -DQT_NO_CAST_TO_ASCII -DQT_RESTRICTED_CAST_FROM_ASCII -DQT_DISABLE_DEPRECATED_BEFORE=0x050600 -DQT_USE_FAST_OPERATOR_PLUS -DQT_USE_FAST_CONCATENATION -D_CRT_SECURE_NO_WARNINGS -DQT_NO_DEBUG -DQT_PLUGIN -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CONCURRENT_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include build/.moc/moc_predefs.h -I$(QTDIR)\mkspecs/win32-msvc -I. -I. -Id:/Libs/boost_1_69_0 -Id:/PRG/qtcsrc451vs15r/build/src -ID:/PRG/qtcsrc451vs15r/src -ID:/PRG/qtcsrc451vs15r/src/libs -ID:/PRG/qtcsrc451vs15r/tools -ID:/PRG/qtcsrc451vs15r/src/plugins -I. -I$(QTDIR)\include -I$(QTDIR)\include/QtWidgets -I$(QTDIR)\include/QtGui -I$(QTDIR)\include/QtANGLE -I$(QTDIR)\include/QtConcurrent -I$(QTDIR)\include/QtNetwork -I$(QTDIR)\include/QtCore -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\INCLUDE" -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\ATLMFC\INCLUDE" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\winrt" ..\src\qtplugin\tabbar.h -o build\.moc\moc_tabbar.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MOC ../src/qtplugin/tabbar.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">build\.moc\moc_tabbar.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\src\qtplugin\tabbar.h;build\.moc\moc_predefs.h;$(QTDIR)\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -DCR_LIBRARY -DQT_CODE -DWITH_TESTS -D"RELATIVE_PLUGIN_PATH=\"../lib/qtcreator/plugins\"" -D"RELATIVE_LIBEXEC_PATH=\".\"" -D"RELATIVE_DATA_PATH=\"../share/qtcreator\"" -D"RELATIVE_DOC_PATH=\"../share/doc/qtcreator\"" -DIDE_LIBRARY_BASENAME="lib" -DQT_CREATOR -DQT_NO_CAST_TO_ASCII -DQT_RESTRICTED_CAST_FROM_ASCII -DQT_DISABLE_DEPRECATED_BEFORE=0x050600 -DQT_USE_FAST_OPERATOR_PLUS -DQT_USE_FAST_CONCATENATION -D_CRT_SECURE_NO_WARNINGS -DQT_PLUGIN -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_TESTLIB_LIB -DQT_CONCURRENT_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_TESTCASE_BUILDDIR="." --compiler-flavor=msvc --include build/.moc/moc_predefs.h -I$(QTDIR)\mkspecs/win32-msvc -I. -I. -Id:/Libs/boost_1_69_0 -Id:/PRG/qtcsrc451vs15r/build/src -ID:/PRG/qtcsrc451vs15r/src -ID:/PRG/qtcsrc451vs15r/src/libs -ID:/PRG/qtcsrc451vs15r/tools -ID:/PRG/qtcsrc451vs15r/src/plugins -I. -I$(QTDIR)\include -I$(QTDIR)\include/QtWidgets -I$(QTDIR)\include/QtGui -I$(QTDIR)\include/QtANGLE -I$(QTDIR)\include/QtTest -I$(QTDIR)\include/QtConcurrent -I$(QTDIR)\include/QtNetwork -I$(QTDIR)\include/QtCore -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\INCLUDE" -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\ATLMFC\INCLUDE" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\winrt" ..\src\qtplugin\tabbar.h -o build\.moc\moc_tabbar.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">MOC ../src/qtplugin/tabbar.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">build\.moc\moc_tabbar.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <ClInclude Include="..\src\gui\tbstyle.h" />
+    <ClInclude Include="..\src\gui\text.h" />
+    <ClInclude Include="..\src\ted\text_encoding_detect.h" />
+    <ClInclude Include="..\src\tools\tfbase.h" />
+    <ClInclude Include="..\src\core\token.h" />
+    <CustomBuild Include="..\src\qtplugin\toolbar.h">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">..\src\qtplugin\toolbar.h;build\.moc\moc_predefs.h;$(QTDIR)\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -DCR_LIBRARY -DQT_CODE -D"RELATIVE_PLUGIN_PATH=\"../lib/qtcreator/plugins\"" -D"RELATIVE_LIBEXEC_PATH=\".\"" -D"RELATIVE_DATA_PATH=\"../share/qtcreator\"" -D"RELATIVE_DOC_PATH=\"../share/doc/qtcreator\"" -DIDE_LIBRARY_BASENAME="lib" -DQT_CREATOR -DQT_NO_CAST_TO_ASCII -DQT_RESTRICTED_CAST_FROM_ASCII -DQT_DISABLE_DEPRECATED_BEFORE=0x050600 -DQT_USE_FAST_OPERATOR_PLUS -DQT_USE_FAST_CONCATENATION -D_CRT_SECURE_NO_WARNINGS -DQT_NO_DEBUG -DQT_PLUGIN -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CONCURRENT_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB --compiler-flavor=msvc --include build/.moc/moc_predefs.h -I$(QTDIR)\mkspecs/win32-msvc -I. -I. -Id:/Libs/boost_1_69_0 -Id:/PRG/qtcsrc451vs15r/build/src -ID:/PRG/qtcsrc451vs15r/src -ID:/PRG/qtcsrc451vs15r/src/libs -ID:/PRG/qtcsrc451vs15r/tools -ID:/PRG/qtcsrc451vs15r/src/plugins -I. -I$(QTDIR)\include -I$(QTDIR)\include/QtWidgets -I$(QTDIR)\include/QtGui -I$(QTDIR)\include/QtANGLE -I$(QTDIR)\include/QtConcurrent -I$(QTDIR)\include/QtNetwork -I$(QTDIR)\include/QtCore -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\INCLUDE" -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\ATLMFC\INCLUDE" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\winrt" ..\src\qtplugin\toolbar.h -o build\.moc\moc_toolbar.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MOC ../src/qtplugin/toolbar.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">build\.moc\moc_toolbar.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\src\qtplugin\toolbar.h;build\.moc\moc_predefs.h;$(QTDIR)\bin\moc.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe  -DUNICODE -D_UNICODE -DWIN32 -DCR_LIBRARY -DQT_CODE -DWITH_TESTS -D"RELATIVE_PLUGIN_PATH=\"../lib/qtcreator/plugins\"" -D"RELATIVE_LIBEXEC_PATH=\".\"" -D"RELATIVE_DATA_PATH=\"../share/qtcreator\"" -D"RELATIVE_DOC_PATH=\"../share/doc/qtcreator\"" -DIDE_LIBRARY_BASENAME="lib" -DQT_CREATOR -DQT_NO_CAST_TO_ASCII -DQT_RESTRICTED_CAST_FROM_ASCII -DQT_DISABLE_DEPRECATED_BEFORE=0x050600 -DQT_USE_FAST_OPERATOR_PLUS -DQT_USE_FAST_CONCATENATION -D_CRT_SECURE_NO_WARNINGS -DQT_PLUGIN -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_TESTLIB_LIB -DQT_CONCURRENT_LIB -DQT_NETWORK_LIB -DQT_CORE_LIB -DQT_TESTCASE_BUILDDIR="." --compiler-flavor=msvc --include build/.moc/moc_predefs.h -I$(QTDIR)\mkspecs/win32-msvc -I. -I. -Id:/Libs/boost_1_69_0 -Id:/PRG/qtcsrc451vs15r/build/src -ID:/PRG/qtcsrc451vs15r/src -ID:/PRG/qtcsrc451vs15r/src/libs -ID:/PRG/qtcsrc451vs15r/tools -ID:/PRG/qtcsrc451vs15r/src/plugins -I. -I$(QTDIR)\include -I$(QTDIR)\include/QtWidgets -I$(QTDIR)\include/QtGui -I$(QTDIR)\include/QtANGLE -I$(QTDIR)\include/QtTest -I$(QTDIR)\include/QtConcurrent -I$(QTDIR)\include/QtNetwork -I$(QTDIR)\include/QtCore -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\INCLUDE" -I"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\ATLMFC\INCLUDE" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\winrt" ..\src\qtplugin\toolbar.h -o build\.moc\moc_toolbar.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">MOC ../src/qtplugin/toolbar.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">build\.moc\moc_toolbar.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <ClInclude Include="..\src\tools\utf.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="build\.moc\moc_colorbutton.cpp" />
+    <ClCompile Include="build\.moc\moc_colormenu.cpp" />
+    <ClCompile Include="build\.moc\moc_contentview.cpp" />
+    <ClCompile Include="build\.moc\moc_crmodel.cpp" />
+    <ClCompile Include="build\.moc\moc_croptionspage.cpp" />
+    <ClCompile Include="build\.moc\moc_croptionswidget.cpp" />
+    <ClCompile Include="build\.moc\moc_crplugin.cpp" />
+    <ClCompile Include="build\.moc\moc_crplugincore.cpp" />
+    <ClCompile Include="build\.moc\moc_crsettings.cpp" />
+    <ClCompile Include="build\.moc\moc_editrecentdlg.cpp" />
+    <ClCompile Include="build\.moc\moc_infopane.cpp" />
+    <ClCompile Include="build\.moc\moc_linkdlg.cpp" />
+    <ClCompile Include="build\.moc\moc_markupdlg.cpp" />
+    <ClCompile Include="build\.moc\moc_memoform.cpp" />
+    <ClCompile Include="build\.moc\moc_newprojectdlg.cpp" />
+    <ClCompile Include="build\.moc\moc_nodedlg.cpp" />
+    <ClCompile Include="build\.moc\moc_noteedit.cpp" />
+    <ClCompile Include="build\.moc\moc_outputpane.cpp" />
+    <CustomBuild Include="build\.moc\moc_predefs.h.cbt">
+      <FileType>Document</FileType>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\mkspecs\features\data\dummy.cpp;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">cl -Bx"$(QTDIR)\bin\qmake.exe" -nologo -Zc:wchar_t -FS -Zc:rvalueCast -Zc:inline -Zc:strictStrings -Zc:throwingNew -O2 -MD -W3 -w34100 -w34189 -w44996 -w44456 -w44457 -w44458 -wd4577 -wd4467 -E $(QTDIR)\mkspecs\features\data\dummy.cpp 2&gt;NUL &gt;build\.moc\moc_predefs.h</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Generate moc_predefs.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">build\.moc\moc_predefs.h;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\mkspecs\features\data\dummy.cpp;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">cl -Bx"$(QTDIR)\bin\qmake.exe" -nologo -Zc:wchar_t -FS -Zc:rvalueCast -Zc:inline -Zc:strictStrings -Zc:throwingNew -Zi -MDd -W3 -w34100 -w34189 -w44996 -w44456 -w44457 -w44458 -wd4577 -wd4467 -E $(QTDIR)\mkspecs\features\data\dummy.cpp 2&gt;NUL &gt;build\.moc\moc_predefs.h</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Generate moc_predefs.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">build\.moc\moc_predefs.h;%(Outputs)</Outputs>
+    </CustomBuild>
+    <ClCompile Include="build\.moc\moc_prjpropsdlg.cpp" />
+    <ClCompile Include="build\.moc\moc_selnodedlg.cpp" />
+    <ClCompile Include="build\.moc\moc_tabbar.cpp" />
+    <ClCompile Include="build\.moc\moc_toolbar.cpp" />
+    <ClCompile Include="build\.rcc\qrc_cr.cpp" />
+    <ClCompile Include="..\..\qtcsrc451vs15r\src\shared\qtcreator_gui_pch.h.cpp">
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(NOINHERIT)</ForcedIncludeFiles>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">qtcreator_gui_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <ForcedIncludeFiles Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(NOINHERIT)</ForcedIncludeFiles>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">qtcreator_gui_pch.h</PrecompiledHeaderFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClInclude Include="ui\ui_croptionswidget.h" />
+    <ClInclude Include="ui\ui_editrecentdlg.h" />
+    <ClInclude Include="ui\ui_linkdlg.h" />
+    <ClInclude Include="ui\ui_markupdlg.h" />
+    <ClInclude Include="ui\ui_memoform.h" />
+    <ClInclude Include="ui\ui_newprojectdlg.h" />
+    <ClInclude Include="ui\ui_nodedlg.h" />
+    <ClInclude Include="ui\ui_prjpropsdlg.h" />
+    <ClInclude Include="ui\ui_selnodedlg.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="..\src\qtplugin\croptionswidget.ui">
+      <FileType>Document</FileType>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">..\src\qtplugin\croptionswidget.ui;$(QTDIR)\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\uic.exe -no-stringliteral ..\src\qtplugin\croptionswidget.ui -o ui\ui_croptionswidget.h</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">UIC ../src/qtplugin/croptionswidget.ui</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">ui\ui_croptionswidget.h;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\src\qtplugin\croptionswidget.ui;$(QTDIR)\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\uic.exe -no-stringliteral ..\src\qtplugin\croptionswidget.ui -o ui\ui_croptionswidget.h</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UIC ../src/qtplugin/croptionswidget.ui</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">ui\ui_croptionswidget.h;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\src\gui\dialogs\editrecentdlg.ui">
+      <FileType>Document</FileType>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">..\src\gui\dialogs\editrecentdlg.ui;$(QTDIR)\bin\uic.exe;..\src\gui\widgets\colorbutton.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\uic.exe -no-stringliteral ..\src\gui\dialogs\editrecentdlg.ui -o ui\ui_editrecentdlg.h</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">UIC ../src/gui/dialogs/editrecentdlg.ui</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">ui\ui_editrecentdlg.h;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\src\gui\dialogs\editrecentdlg.ui;$(QTDIR)\bin\uic.exe;..\src\gui\widgets\colorbutton.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\uic.exe -no-stringliteral ..\src\gui\dialogs\editrecentdlg.ui -o ui\ui_editrecentdlg.h</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UIC ../src/gui/dialogs/editrecentdlg.ui</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">ui\ui_editrecentdlg.h;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\src\gui\dialogs\linkdlg.ui">
+      <FileType>Document</FileType>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">..\src\gui\dialogs\linkdlg.ui;$(QTDIR)\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\uic.exe -no-stringliteral ..\src\gui\dialogs\linkdlg.ui -o ui\ui_linkdlg.h</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">UIC ../src/gui/dialogs/linkdlg.ui</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">ui\ui_linkdlg.h;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\src\gui\dialogs\linkdlg.ui;$(QTDIR)\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\uic.exe -no-stringliteral ..\src\gui\dialogs\linkdlg.ui -o ui\ui_linkdlg.h</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UIC ../src/gui/dialogs/linkdlg.ui</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">ui\ui_linkdlg.h;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\src\gui\dialogs\markupdlg.ui">
+      <FileType>Document</FileType>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">..\src\gui\dialogs\markupdlg.ui;$(QTDIR)\bin\uic.exe;..\src\gui\widgets\colorbutton.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\uic.exe -no-stringliteral ..\src\gui\dialogs\markupdlg.ui -o ui\ui_markupdlg.h</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">UIC ../src/gui/dialogs/markupdlg.ui</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">ui\ui_markupdlg.h;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\src\gui\dialogs\markupdlg.ui;$(QTDIR)\bin\uic.exe;..\src\gui\widgets\colorbutton.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\uic.exe -no-stringliteral ..\src\gui\dialogs\markupdlg.ui -o ui\ui_markupdlg.h</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UIC ../src/gui/dialogs/markupdlg.ui</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">ui\ui_markupdlg.h;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\src\gui\editor\memoform.ui">
+      <FileType>Document</FileType>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">..\src\gui\editor\memoform.ui;$(QTDIR)\bin\uic.exe;..\src\gui\editor\noteedit.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\uic.exe -no-stringliteral ..\src\gui\editor\memoform.ui -o ui\ui_memoform.h</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">UIC ../src/gui/editor/memoform.ui</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">ui\ui_memoform.h;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\src\gui\editor\memoform.ui;$(QTDIR)\bin\uic.exe;..\src\gui\editor\noteedit.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\uic.exe -no-stringliteral ..\src\gui\editor\memoform.ui -o ui\ui_memoform.h</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UIC ../src/gui/editor/memoform.ui</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">ui\ui_memoform.h;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\src\gui\dialogs\newprojectdlg.ui">
+      <FileType>Document</FileType>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">..\src\gui\dialogs\newprojectdlg.ui;$(QTDIR)\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\uic.exe -no-stringliteral ..\src\gui\dialogs\newprojectdlg.ui -o ui\ui_newprojectdlg.h</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">UIC ../src/gui/dialogs/newprojectdlg.ui</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">ui\ui_newprojectdlg.h;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\src\gui\dialogs\newprojectdlg.ui;$(QTDIR)\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\uic.exe -no-stringliteral ..\src\gui\dialogs\newprojectdlg.ui -o ui\ui_newprojectdlg.h</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UIC ../src/gui/dialogs/newprojectdlg.ui</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">ui\ui_newprojectdlg.h;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\src\gui\dialogs\nodedlg.ui">
+      <FileType>Document</FileType>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">..\src\gui\dialogs\nodedlg.ui;$(QTDIR)\bin\uic.exe;..\src\gui\widgets\colorbutton.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\uic.exe -no-stringliteral ..\src\gui\dialogs\nodedlg.ui -o ui\ui_nodedlg.h</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">UIC ../src/gui/dialogs/nodedlg.ui</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">ui\ui_nodedlg.h;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\src\gui\dialogs\nodedlg.ui;$(QTDIR)\bin\uic.exe;..\src\gui\widgets\colorbutton.h;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\uic.exe -no-stringliteral ..\src\gui\dialogs\nodedlg.ui -o ui\ui_nodedlg.h</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UIC ../src/gui/dialogs/nodedlg.ui</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">ui\ui_nodedlg.h;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\src\gui\dialogs\prjpropsdlg.ui">
+      <FileType>Document</FileType>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">..\src\gui\dialogs\prjpropsdlg.ui;$(QTDIR)\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\uic.exe -no-stringliteral ..\src\gui\dialogs\prjpropsdlg.ui -o ui\ui_prjpropsdlg.h</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">UIC ../src/gui/dialogs/prjpropsdlg.ui</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">ui\ui_prjpropsdlg.h;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\src\gui\dialogs\prjpropsdlg.ui;$(QTDIR)\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\uic.exe -no-stringliteral ..\src\gui\dialogs\prjpropsdlg.ui -o ui\ui_prjpropsdlg.h</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UIC ../src/gui/dialogs/prjpropsdlg.ui</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">ui\ui_prjpropsdlg.h;%(Outputs)</Outputs>
+    </CustomBuild>
+    <CustomBuild Include="..\src\gui\dialogs\selnodedlg.ui">
+      <FileType>Document</FileType>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">..\src\gui\dialogs\selnodedlg.ui;$(QTDIR)\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\uic.exe -no-stringliteral ..\src\gui\dialogs\selnodedlg.ui -o ui\ui_selnodedlg.h</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">UIC ../src/gui/dialogs/selnodedlg.ui</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">ui\ui_selnodedlg.h;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\src\gui\dialogs\selnodedlg.ui;$(QTDIR)\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\uic.exe -no-stringliteral ..\src\gui\dialogs\selnodedlg.ui -o ui\ui_selnodedlg.h</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">UIC ../src/gui/dialogs/selnodedlg.ui</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">ui\ui_selnodedlg.h;%(Outputs)</Outputs>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\src\res\app-about.png" />
+    <None Include="..\src\res\app-exit.png" />
+    <None Include="..\src\res\app-settings.png" />
+    <None Include="..\src\res\app-whatsthis.png" />
+    <None Include="..\src\res\cmd-find.png" />
+    <None Include="..\src\res\cmd-findnext.png" />
+    <None Include="..\src\res\cmd-findprev.png" />
+    <None Include="..\src\res\cmd-save.png" />
+    <None Include="..\src\res\cmd-saveall.png" />
+    <None Include="..\src\res\cmd-search.png" />
+    <None Include="..\src\res\cr.png" />
+    <CustomBuild Include="..\src\cr.qrc">
+      <FileType>Document</FileType>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">..\src\cr.qrc;$(QTDIR)\bin\rcc.exe;..\src\res\tools-info.png;..\src\res\tools-add.png;..\src\res\tools-setbase.png;..\src\res\tools-coverage.png;..\src\res\tools-edit.png;..\src\res\tools-remove.png;..\src\res\tools-active.png;..\src\res\tools-move.png;..\src\res\tools-lookup.png;..\src\res\edit-redo.png;..\src\res\edit-copy.png;..\src\res\edit-cut.png;..\src\res\edit-paste.png;..\src\res\edit-undo.png;..\src\res\file-save.png;..\src\res\file-saveall.png;..\src\res\file-saveas.png;..\src\res\mark-name.png;..\src\res\mark-label.png;..\src\res\mark-area.png;..\src\res\mark-lsig.png;..\src\res\mark-block.png;..\src\res\mark-bsig.png;..\src\res\node-group.png;..\src\res\node-label.png;..\src\res\node-bsig.png;..\src\res\node-outline.png;..\src\res\node-node.png;..\src\res\node-block.png;..\src\res\node-root.png;..\src\res\node-name.png;..\src\res\node-note.png;..\src\res\node-tags.png;..\src\res\node-link.png;..\src\res\node-area.png;..\src\res\node-tag.png;..\src\res\node-file.png;..\src\res\node-lsig.png;..\src\res\node-base.png;..\src\res\node-dir.png;..\src\res\cr.png;..\src\res\tree-right.png;..\src\res\tree-addchild.png;..\src\res\tree-left.png;..\src\res\tree-up.png;..\src\res\tree-addsibling.png;..\src\res\tree-delitem.png;..\src\res\tree-additem.png;..\src\res\tree-down.png;..\src\res\app-exit.png;..\src\res\app-whatsthis.png;..\src\res\app-about.png;..\src\res\app-settings.png;..\src\res\nav-next.png;..\src\res\nav-prev.png;..\src\res\cmd-find.png;..\src\res\cmd-search.png;..\src\res\cmd-save.png;..\src\res\cmd-findnext.png;..\src\res\cmd-findprev.png;..\src\res\cmd-saveall.png;..\src\res\misc-noclr.png;..\src\res\misc-empty.png;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\rcc.exe -name cr ..\src\cr.qrc -o build\.rcc\qrc_cr.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">RCC ../src/cr.qrc</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">build\.rcc\qrc_cr.cpp;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\src\cr.qrc;$(QTDIR)\bin\rcc.exe;..\src\res\tools-info.png;..\src\res\tools-add.png;..\src\res\tools-setbase.png;..\src\res\tools-coverage.png;..\src\res\tools-edit.png;..\src\res\tools-remove.png;..\src\res\tools-active.png;..\src\res\tools-move.png;..\src\res\tools-lookup.png;..\src\res\edit-redo.png;..\src\res\edit-copy.png;..\src\res\edit-cut.png;..\src\res\edit-paste.png;..\src\res\edit-undo.png;..\src\res\file-save.png;..\src\res\file-saveall.png;..\src\res\file-saveas.png;..\src\res\mark-name.png;..\src\res\mark-label.png;..\src\res\mark-area.png;..\src\res\mark-lsig.png;..\src\res\mark-block.png;..\src\res\mark-bsig.png;..\src\res\node-group.png;..\src\res\node-label.png;..\src\res\node-bsig.png;..\src\res\node-outline.png;..\src\res\node-node.png;..\src\res\node-block.png;..\src\res\node-root.png;..\src\res\node-name.png;..\src\res\node-note.png;..\src\res\node-tags.png;..\src\res\node-link.png;..\src\res\node-area.png;..\src\res\node-tag.png;..\src\res\node-file.png;..\src\res\node-lsig.png;..\src\res\node-base.png;..\src\res\node-dir.png;..\src\res\cr.png;..\src\res\tree-right.png;..\src\res\tree-addchild.png;..\src\res\tree-left.png;..\src\res\tree-up.png;..\src\res\tree-addsibling.png;..\src\res\tree-delitem.png;..\src\res\tree-additem.png;..\src\res\tree-down.png;..\src\res\app-exit.png;..\src\res\app-whatsthis.png;..\src\res\app-about.png;..\src\res\app-settings.png;..\src\res\nav-next.png;..\src\res\nav-prev.png;..\src\res\cmd-find.png;..\src\res\cmd-search.png;..\src\res\cmd-save.png;..\src\res\cmd-findnext.png;..\src\res\cmd-findprev.png;..\src\res\cmd-saveall.png;..\src\res\misc-noclr.png;..\src\res\misc-empty.png;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\rcc.exe -name cr ..\src\cr.qrc -o build\.rcc\qrc_cr.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">RCC ../src/cr.qrc</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">build\.rcc\qrc_cr.cpp;%(Outputs)</Outputs>
+    </CustomBuild>
+    <None Include="..\src\res\edit-copy.png" />
+    <None Include="..\src\res\edit-cut.png" />
+    <None Include="..\src\res\edit-paste.png" />
+    <None Include="..\src\res\edit-redo.png" />
+    <None Include="..\src\res\edit-undo.png" />
+    <None Include="..\src\res\file-save.png" />
+    <None Include="..\src\res\file-saveall.png" />
+    <None Include="..\src\res\file-saveas.png" />
+    <None Include="..\src\res\mark-area.png" />
+    <None Include="..\src\res\mark-block.png" />
+    <None Include="..\src\res\mark-bsig.png" />
+    <None Include="..\src\res\mark-label.png" />
+    <None Include="..\src\res\mark-lsig.png" />
+    <None Include="..\src\res\mark-name.png" />
+    <None Include="..\src\res\misc-empty.png" />
+    <None Include="..\src\res\misc-noclr.png" />
+    <None Include="..\src\res\nav-next.png" />
+    <None Include="..\src\res\nav-prev.png" />
+    <None Include="..\src\res\node-area.png" />
+    <None Include="..\src\res\node-base.png" />
+    <None Include="..\src\res\node-block.png" />
+    <None Include="..\src\res\node-bsig.png" />
+    <None Include="..\src\res\node-dir.png" />
+    <None Include="..\src\res\node-file.png" />
+    <None Include="..\src\res\node-group.png" />
+    <None Include="..\src\res\node-label.png" />
+    <None Include="..\src\res\node-link.png" />
+    <None Include="..\src\res\node-lsig.png" />
+    <None Include="..\src\res\node-name.png" />
+    <None Include="..\src\res\node-node.png" />
+    <None Include="..\src\res\node-note.png" />
+    <None Include="..\src\res\node-outline.png" />
+    <None Include="..\src\res\node-root.png" />
+    <None Include="..\src\res\node-tag.png" />
+    <None Include="..\src\res\node-tags.png" />
+    <None Include="..\src\res\tools-active.png" />
+    <None Include="..\src\res\tools-add.png" />
+    <None Include="..\src\res\tools-coverage.png" />
+    <None Include="..\src\res\tools-edit.png" />
+    <None Include="..\src\res\tools-info.png" />
+    <None Include="..\src\res\tools-lookup.png" />
+    <None Include="..\src\res\tools-move.png" />
+    <None Include="..\src\res\tools-remove.png" />
+    <None Include="..\src\res\tools-setbase.png" />
+    <None Include="..\src\res\tree-addchild.png" />
+    <None Include="..\src\res\tree-additem.png" />
+    <None Include="..\src\res\tree-addsibling.png" />
+    <None Include="..\src\res\tree-delitem.png" />
+    <None Include="..\src\res\tree-down.png" />
+    <None Include="..\src\res\tree-left.png" />
+    <None Include="..\src\res\tree-right.png" />
+    <None Include="..\src\res\tree-up.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include=".\CodeRainbow.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include=".\CodeRainbow_resource.rc">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ResourceCompile>
+    <ResourceCompile Include=".\CodeRainbowd_resource.rc">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ResourceCompile>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">
+    <Import Project="$(QtMsBuild)\qt.targets" />
+  </ImportGroup>
+  <ImportGroup Label="ExtensionTargets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties Qt5Version_x0020_Win32="msvc2015" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

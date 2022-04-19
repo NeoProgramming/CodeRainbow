@@ -1,0 +1,114 @@
+﻿<Window x:Class="CodeRainbow.MarkupDlg"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:osc="clr-namespace:OpenSourceControls"
+        xmlns:ccp="clr-namespace:CustomWPFColorPicker"
+        Title="Markup" Height="340" Width="640" FontSize="11">
+    <Grid HorizontalAlignment="Stretch"  VerticalAlignment="Stretch">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition Height="24"/>
+            <RowDefinition Height="30"/>
+        </Grid.RowDefinitions>
+        
+        <GroupBox Grid.Row="0" VerticalAlignment="Stretch" Header="Markup Attributes" HorizontalAlignment="Stretch" Name="groupBox1">
+            <Grid HorizontalAlignment="Stretch"  VerticalAlignment="Stretch">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="24"/>
+                    <RowDefinition Height="24"/>
+                    <RowDefinition Height="24"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="50"/>
+                        <ColumnDefinition Width="50"/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="50"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Column="0" Content="ID/Sig" HorizontalAlignment="Stretch" Name="label1" VerticalAlignment="Stretch"/>
+                    <Button Grid.Column="1" Content="Clear" HorizontalAlignment="Stretch" Name="buttonClear" VerticalAlignment="Stretch"/>
+                    <TextBox Grid.Column="2" HorizontalAlignment="Stretch" Name="textId" VerticalAlignment="Stretch" FontSize="14" FontFamily="Courier New" />
+                    <Button Grid.Column="3" Content="Gen" HorizontalAlignment="Stretch" Name="buttonGen" VerticalAlignment="Stretch" />
+                </Grid>
+                <Grid Grid.Row="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="10*" />
+                        <RowDefinition Height="14*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="50"/>
+                        <ColumnDefinition Width="20"/> <!-- empty cell for beauty -->
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <Button Content="Tags" HorizontalAlignment="Stretch" Name="buttonAddTag" VerticalAlignment="Stretch" Grid.RowSpan="2" />
+                    <CheckBox Grid.Column="2" Content="Auto UID" HorizontalAlignment="Stretch" Name="checkGenID" VerticalAlignment="Center" HorizontalContentAlignment="Left" Margin="0,5" Grid.RowSpan="2" />
+                    <CheckBox Grid.Column="3" Content="Add to FILES" HorizontalAlignment="Stretch" Name="checkFiles" VerticalAlignment="Center" Margin="0,5" Grid.RowSpan="2" />
+                    <CheckBox Grid.Column="4" Content="Add to TAGS" HorizontalAlignment="Stretch" Name="checkTags" VerticalAlignment="Center" Margin="0,5" Grid.RowSpan="2" />
+                    <CheckBox Grid.Column="5" Content="Add to OUTLINE" HorizontalAlignment="Stretch" Name="checkOutline" VerticalAlignment="Center" Margin="0,5" Grid.RowSpan="2" />
+                </Grid>
+                <Grid Grid.Row="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="50"/>
+                        <ColumnDefinition Width="20"/>
+                        <!-- empty cell for beauty -->
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <ComboBox Grid.Column="3" IsEnabled="{Binding ElementName=checkFiles, Path=IsChecked}" HorizontalAlignment="Stretch" Name="comboFiles" VerticalAlignment="Stretch" Margin="1,2,3,2" DataContext="{Binding}" />
+                    <ComboBox Grid.Column="4" IsEnabled="{Binding ElementName=checkTags, Path=IsChecked}" HorizontalAlignment="Stretch" Name="comboTags" VerticalAlignment="Stretch" Margin="1,2,3,2" />
+                    <ComboBox Grid.Column="5" IsEnabled="{Binding ElementName=checkOutline, Path=IsChecked}" HorizontalAlignment="Stretch" Name="comboOutline" VerticalAlignment="Stretch" Margin="1,2,3,2" />
+                </Grid>
+                <Grid Grid.Row="3">
+                    <TextBox HorizontalAlignment="Stretch" Name="textTags" VerticalAlignment="Stretch" FontSize="14" FontFamily="Courier New" />
+                </Grid>
+            </Grid>
+        </GroupBox>
+        <GroupBox Grid.Row="1" VerticalAlignment="Stretch" Header="Additional Node Attributes" HorizontalAlignment="Stretch" Name="groupBox2">
+            <Grid HorizontalAlignment="Stretch"  VerticalAlignment="Stretch">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="26"></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <TextBox Grid.Row="0" HorizontalAlignment="Stretch" Name="textName" VerticalAlignment="Stretch" FontSize="14" FontFamily="Courier New" />
+                <TextBox Grid.Row="1" HorizontalAlignment="Stretch" Name="textText" VerticalAlignment="Stretch" FontSize="14" FontFamily="Courier New" />
+            </Grid>
+        </GroupBox>
+        <Grid Grid.Row="2" VerticalAlignment="Stretch">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50"></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" Content="Add to..." HorizontalAlignment="Stretch" Name="buttonTree" VerticalAlignment="Stretch" Click="buttonTree_Click" />
+            <TextBox Grid.Column="1" HorizontalAlignment="Stretch" Name="textLoc" VerticalAlignment="Stretch" FontSize="14" FontFamily="Courier New" IsReadOnly="True" Background="#FF5BD2FF" />
+        </Grid>
+        <Grid Grid.Row="3" VerticalAlignment="Stretch">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <!-- <osc:SmallColorPicker Grid.Column="0" x:Name="ColorPicker" SelectedColor="Red" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" ColorChanged="ColorPicker_ColorChanged" /> -->
+            <ccp:ColorPickerControlView  Grid.Column="0" x:Name="colorPickerMark" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" ColorChanged="colorPickerMark_ColorChanged" />
+            <ccp:ColorPickerControlView  Grid.Column="1" x:Name="colorPickerTree" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" ColorChanged="colorPickerTree_ColorChanged" />
+       <!--     <osc:ComboColorPicker Grid.Column="1" x:Name="ColorRecent" SelectedColor="White" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" ColorChanged="ColorRecent_ColorChanged" /> -->
+       <!--     <osc:ComboColorPicker Grid.Column="2" x:Name="ColorPredef" SelectedColor="White" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" ColorChanged="ColorPredef_ColorChanged" /> -->
+            <CheckBox Content="Title+ID" Grid.Column="2" HorizontalAlignment="Stretch" Name="checkMerge" VerticalAlignment="Stretch" Margin="0,6,0,0" />
+            <CheckBox Content="Inline" Grid.Column="3" Height="23" HorizontalAlignment="Stretch" Name="checkBoxInline" VerticalAlignment="Center" Checked="checkBoxInline_Checked" Margin="0,6,0,0" />
+            <Button Content="OK"  Grid.Column="4" Name="buttonOk" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="buttonOk_Click" IsDefault="True" />
+            <Button Content="Cancel" Grid.Column="5" IsCancel="true" Name="buttonCancel" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Click="buttonCancel_Click" />
+            
+        </Grid>
+    </Grid>
+</Window>

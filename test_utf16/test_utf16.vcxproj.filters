@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="cr_core">
+      <UniqueIdentifier>{bf65f31f-ddb5-4e70-9c2c-6efdb95f1a0c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="tools">
+      <UniqueIdentifier>{62655dc4-5221-47c8-9671-9e6d38df3f10}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="pugixml">
+      <UniqueIdentifier>{d23c73aa-4140-4574-ae22-d1e30fcf2b0b}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stdafx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\core\core.h">
+      <Filter>cr_core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\core\crnode.h">
+      <Filter>cr_core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\core\crtree.h">
+      <Filter>cr_core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\core\kw.h">
+      <Filter>cr_core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\core\loc.h">
+      <Filter>cr_core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\core\mark.h">
+      <Filter>cr_core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\core\markmaker.h">
+      <Filter>cr_core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\core\mcmt.h">
+      <Filter>cr_core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\core\nlexer.h">
+      <Filter>cr_core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\core\parse.h">
+      <Filter>cr_core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\core\projectloader.h">
+      <Filter>cr_core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\core\recent.h">
+      <Filter>cr_core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\core\token.h">
+      <Filter>cr_core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\tools\base_defs.h">
+      <Filter>tools</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\tools\ct.h">
+      <Filter>tools</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\tools\dosmatch.h">
+      <Filter>tools</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\tools\tdefs.h">
+      <Filter>tools</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\tools\tfbase.h">
+      <Filter>tools</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\tools\utf.h">
+      <Filter>tools</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\pugixml\pugiconfig.hpp">
+      <Filter>pugixml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\pugixml\pugixml.hpp">
+      <Filter>pugixml</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="test_utf16.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\core\crnode.cpp">
+      <Filter>cr_core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\core\crtree.cpp">
+      <Filter>cr_core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\core\kw.cpp">
+      <Filter>cr_core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\core\markmaker.cpp">
+      <Filter>cr_core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\core\mcmt.cpp">
+      <Filter>cr_core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\core\projectloader.cpp">
+      <Filter>cr_core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\core\recent.cpp">
+      <Filter>cr_core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\tools\ct.cpp">
+      <Filter>tools</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\tools\tdefs.cpp">
+      <Filter>tools</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\tools\utf.cpp">
+      <Filter>tools</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\pugixml\pugixml.cpp">
+      <Filter>pugixml</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

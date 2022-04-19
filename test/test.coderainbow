@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<coderainbow>
+	<recent>
+		<area />
+		<label>
+			<r id="123" name="123" color="#0000ff" />
+		</label>
+		<areas />
+		<labels />
+	</recent>
+	<base text="This is ROOT!!!" name="test" path="test">
+		<file text="" name="test.cpp" path="test.cpp">
+			<label text="" name="123" path="123" />
+		</file>
+	</base>
+</coderainbow>

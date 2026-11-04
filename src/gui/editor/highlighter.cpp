@@ -93,7 +93,7 @@ void Highlighter::highlightLineSyntax(const QString &text, int prev_state, int &
 
 	const ushort *beg = text.utf16();
 	int size = text.size();
-    NLexer<Utf16> lexer(beg, size);
+    NLexer<Utf16> lexer((const wchar_t*)beg, size);
     NLexer<Utf16>::token_t tok;
 	lexer.skipLineCmts = false;
 	lexer.blockCmt = (prev_state & mcmt::BS_MLCMT) ? true : false;
@@ -104,7 +104,7 @@ void Highlighter::highlightLineSyntax(const QString &text, int prev_state, int &
 
 		QTextCharFormat bc;
 		bc.setBackground(QColor(255,brc*36,255));
-        setFormat(tok.ptr-beg, tok.length, bc);
+        setFormat(tok.ptr-(const utf16_t*)beg, tok.length, bc);
 	}
 	
 	curr_state &= mcmt::BS_BRCMASK;
@@ -148,21 +148,21 @@ void Highlighter::highlightRainbowCmt(const QString &text, int prev_state, int &
     QTextCursor cursor(block);
     QTextBlockFormat bf = block.blockFormat();
 
-    CRInfo info;
-    mcmt::MarkType mt = parseLine(text, info);
+	CRMark info;
+    CR::Type mt = parseLine(text.toStdWString(), info);
 
-    if(mt == mcmt::MT_LABEL) {
+    if(mt == CR::NT_LABEL) {
         // new single-line label
-        bf.setBackground(QBrush(QColor(info.clr | 0xff000000)));
+        bf.setBackground(QBrush(QColor(info.mclr | 0xff000000)));
     }
-    else if(mt == mcmt::MT_AREA_START) {
+    else if(mt == CR::NT_AREA) {
         // begin of multiline area;
         curr_state &= ~mcmt::BS_CLRMASK;
-        curr_state |= info.clr;
+        curr_state |= info.mclr;
         curr_state |= mcmt::BS_CLRVALID;
         setBkColor(bf, curr_state);
     }
-    else if(mt == mcmt::MT_AREA_END) {
+    else if(mt == CR::NT_AEND) {
         // end of multiline area; calculate color for next lines
         curr_state &= ~mcmt::BS_CLRVALID;
         setBkColor(bf, prev_state);

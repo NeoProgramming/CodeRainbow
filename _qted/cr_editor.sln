@@ -1,20 +1,25 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CR_Editor", "cr_editor.vcxproj", "{97408D9B-C200-47D0-91E7-188C78343F4D}"
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1340
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "cr_editor", "cr_editor.vcxproj", "{20292402-3DA7-328F-ABE4-396B4D7DC2CC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|Win32 = Debug|Win32
-		Release|Win32 = Release|Win32
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{97408D9B-C200-47D0-91E7-188C78343F4D}.Debug|Win32.ActiveCfg = Debug|Win32
-		{97408D9B-C200-47D0-91E7-188C78343F4D}.Debug|Win32.Build.0 = Debug|Win32
-		{97408D9B-C200-47D0-91E7-188C78343F4D}.Release|Win32.ActiveCfg = Release|Win32
-		{97408D9B-C200-47D0-91E7-188C78343F4D}.Release|Win32.Build.0 = Release|Win32
+		{20292402-3DA7-328F-ABE4-396B4D7DC2CC}.Debug|x86.ActiveCfg = Debug|Win32
+		{20292402-3DA7-328F-ABE4-396B4D7DC2CC}.Debug|x86.Build.0 = Debug|Win32
+		{20292402-3DA7-328F-ABE4-396B4D7DC2CC}.Release|x86.ActiveCfg = Release|Win32
+		{20292402-3DA7-328F-ABE4-396B4D7DC2CC}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E70CAA39-8996-494C-A523-89C85A15FF55}
 	EndGlobalSection
 EndGlobal

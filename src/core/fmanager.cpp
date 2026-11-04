@@ -15,7 +15,7 @@ FItem* FManager::getFileItem(const String &fpath)
 	if(fpath.empty())
 		return nullptr;
 	for(auto i=m_flist.begin(), e=m_flist.end(); i!=e; ++i) {
-		if( boost::filesystem::equivalent( (*i)->fpath, fpath) )
+		if( std::filesystem::equivalent( (*i)->fpath, fpath) )
 			return (*i);
 	}
 	return nullptr;

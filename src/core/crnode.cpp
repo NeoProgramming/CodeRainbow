@@ -2,7 +2,7 @@
 #include "crtree.h"
 #include "parse.h"
 #include <tchar.h>
-#include <boost/algorithm/string.hpp>
+//@ #include <boost/algorithm/string.hpp>
 #include "../tools/tdefs.h"
 
 namespace CR {
@@ -85,9 +85,24 @@ Type typeValue(CStr name)
 
 } //end CR
 
+//@ String CRMark::tagStr()
+//@ {
+//@     return boost::algorithm::join(tags, _T(","));
+//@ }
 String CRMark::tagStr()
 {
-    return boost::algorithm::join(tags, _T(","));
+	String result;
+	if (tags.empty())
+		return result;
+
+	auto it = tags.begin();
+	result = *it++;
+	for (; it != tags.end(); ++it)
+	{
+		result += _T(',');
+		result += *it;
+	}
+	return result;
 }
 
 void CRMark::setTags(const String &str)
@@ -245,16 +260,6 @@ CRNode* CRNode::getParent()
     return parent;
 }
 
-void* CRNode::getParam()
-{
-    return gparam;
-}
-
-void CRNode::setParam(void *p)
-{
-    gparam = p;
-}
-
 CRNode* CRNode::walkNodes(const std::function<CRNode*(CRNode*)> &fn)
 {
     CRNode* res = fn(this);
@@ -273,7 +278,7 @@ CRNode* CRNode::findFile(const String &fpath)
     // find a node with a specific path (in the node and all its children)
     if(CR::isFile(type) && fitem) {
         //if(!path.compare(fpath, Qt::CaseInsensitive))
-        if(boost::filesystem::equivalent(fitem->fpath, fpath))
+        if(std::filesystem::equivalent(fitem->fpath, fpath))
             return this;
     }
     for(NList::iterator i = branches.begin(), e = branches.end(); i!=e; ++i) {
@@ -288,7 +293,7 @@ CRNode* CRNode::findChildPath(const String& wanted_path)
     // find the path in the node and all its children
     if(wanted_path.empty())
         return nullptr;
-    if(fitem && boost::filesystem::equivalent(fitem->fpath, wanted_path))
+    if(fitem && std::filesystem::equivalent(fitem->fpath, wanted_path))
         return this;
     for(NList::iterator i = branches.begin(), e = branches.end(); i!=e; ++i) {
         CRNode *node = (*i)->findChildPath(wanted_path);

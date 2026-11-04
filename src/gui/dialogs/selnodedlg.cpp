@@ -2,6 +2,7 @@
 #include "ui_selnodedlg.h"
 #include "../../core/crtree.h"
 #include "../gui.h"
+#include <QDebug>
 
 SelNodeDlg::SelNodeDlg(QWidget *parent)
     : QDialog(parent)

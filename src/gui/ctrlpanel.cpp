@@ -85,18 +85,18 @@ void CtrlPanel::loadTree()
 	ui.treeContents->clear();
 	QTreeWidgetItem *root = new QTreeWidgetItem();
 	ui.treeContents->addTopLevelItem(root);
-    loadTreeNode(root, pCR->getRootNode());
+    loadTreeNode(root, pCR->getRoot());
 	setCursor(Qt::ArrowCursor);
 }
 
 void CtrlPanel::updateNode(QTreeWidgetItem *item, CRNode* node)
 {
     item->setData(0, Qt::UserRole, QVariant::fromValue<CRNode*>(node));
-    item->setText(0, node->dispName());
+    item->setText(0, QString::fromStdWString ( node->dispName() ));
     item->setIcon(0, Gui::getTreeIcon(node->type));
 
-    node->item = item; //<<bad??? bad align
-    qDebug() << "updateNode " << node << " " << item << " " << node->item;
+    node->setParam(item); //<<bad??? bad align
+    qDebug() << "updateNode " << node << " " << item << " " << node->getParam<QTreeWidgetItem*>();
 
     if(node->flags & CRNode::NF_ACTIVE)
         setItemBold(item, true);
@@ -142,19 +142,19 @@ void CtrlPanel::onTreeContextMenu(const QPoint &pos)
     CRNode *node = getSelNode();
     if(!node) return;
     switch(node->type) {
-    case CRNode::NT_FILE:
-    case CRNode::NT_GROUP:
-    case CRNode::NT_AREA:
-    case CRNode::NT_LABEL:
-    case CRNode::NT_BLOCK:
-    case CRNode::NT_LSIG:
-    case CRNode::NT_BSIG:
-    case CRNode::NT_TAG:
-    case CRNode::NT_LINK:
+    case CR::NT_FILE:
+    case CR::NT_GROUP:
+    case CR::NT_AREA:
+    case CR::NT_LABEL:
+    case CR::NT_BLOCK:
+    case CR::NT_LSIG:
+    case CR::NT_BSIG:
+    case CR::NT_TAG:
+    case CR::NT_LINK:
         menuNode.exec(ui.treeContents->viewport()->mapToGlobal(pos));
 		break;
-    case CRNode::NT_BASE:
-    case CRNode::NT_DIR:
+    case CR::NT_FBASE:
+    case CR::NT_DIR:
         menuBase.exec(ui.treeContents->viewport()->mapToGlobal(pos));
         break;
 	}
@@ -226,11 +226,28 @@ void CtrlPanel::onNodeEdit()
     CRNode* node = getSelNode();
     if(!node)
         return;
-    if(CRNode::isSys(node->type))
+    if(CR::isSys(node->type))
         return;
-    MarkupDlg dlg(node->getFile(), node, this);
+
+	//@// собрать CRMark из узла
+	CRMark mi;
+	mi.type = node->type;
+	mi.id = node->id;
+	mi.mclr = node->nclr;
+	if (CR::isTag(node->type))
+		mi.tags.push_back(node->id);
+	CR::Type st = node->getSysType();
+	mi.mk_fuid = (st == CR::NT_FBASE);
+	mi.mk_elem = (st == CR::NT_OUTLINE);
+	mi.mk_tsig = (st == CR::NT_TAGS);
+	mi.gen_uid = false;
+
+
+	//@ const String &fpath, CRMark *markEdit, CRInfo *infoEdit, QWidget *parent = 0
+    //@MarkupDlg dlg(node->getFile(), node, this);
+	MarkupDlg dlg(node->getPath(), &mi, node, this);
     if(dlg.execDlg()) {
-        updateNode(node->item, node);
+        updateNode(node->getParam<QTreeWidgetItem*>(), node);
     }
 }
 
@@ -241,7 +258,7 @@ void CtrlPanel::onNodeAddGroup()
     QString name = QInputDialog::getText(NULL, "Input group name",
            "Name:", QLineEdit::Normal, "");
     if(!name.isEmpty()) {
-         addChild(node, CRNode::NT_GROUP, name, "");
+         addChild(node, CR::NT_GROUP, name, "");
     }
 }
 
@@ -252,7 +269,7 @@ void CtrlPanel::onNodeAddFile()
     QString path = QFileDialog::getOpenFileName(this, tr("Select file"), "", "*.*");
     if(!path.isEmpty()) {
         QString name = QFileInfo(path).fileName();
-        addChild(node, CRNode::NT_FILE, name, path);
+        addChild(node, CR::NT_FILE, name, path);
     }
 }
 
@@ -265,7 +282,7 @@ void CtrlPanel::onNodeAddLink()
         QString name = QUrl(dlg.m_path).host();
         if(name.isEmpty())
             name = QFileInfo(dlg.m_path).fileName();
-        addChild(node, CRNode::NT_LINK, name, dlg.m_path);
+        addChild(node, CR::NT_LINK, name, dlg.m_path);
     }
 }
 
@@ -274,22 +291,22 @@ void CtrlPanel::onNodeRemove()
     CRNode* node = getSelNode();
     if(!node)
         return;
-    if(CRNode::isSys(node->type))
+    if(CR::isSys(node->type))
         return;
     int ret = QMessageBox::warning(this, AppName, tr("Remove node?"),
         QMessageBox::Yes | QMessageBox::Cancel, QMessageBox::Cancel);
     if (ret == QMessageBox::Yes) {
         if(pCR->removeNode(node))
-            removeTreeItem(node->item);
+            removeTreeItem(node->getParam<QTreeWidgetItem*>());
         else
             QMessageBox::warning(this, AppName, tr("Unable to remove node"), QMessageBox::Ok);
     }
 }
 
-void CtrlPanel::addChild(CRNode *parNode, CRNode::Type t, const QString &name, const QString &path)
+void CtrlPanel::addChild(CRNode *parNode, CR::Type t, const QString &name, const QString &path)
 {
-    CRNode *child = pCR->addNode(parNode, t, name, path, "", "", -1);
-    addTreeItem(parNode->item, child);
+    CRNode *child = pCR->addNode(parNode, t, name.toStdWString(), path.toStdWString(), _T(""), _T(""), -1);
+    addTreeItem(parNode->getParam<QTreeWidgetItem*>(), child);
 }
 
 void CtrlPanel::moveItemUp()

@@ -29,6 +29,9 @@ struct MarkBtn : RecentListGui {
     QSignalMapper *mapper;
 
     MarkBtn() :  tb(nullptr), menu(nullptr), mapper(nullptr) {}
+	
+	//@add
+	static int Idx(int i) {	return i - CR::NT_AREA;	}
 };
 
 inline MarkItem* MItem(RecentItem &it);

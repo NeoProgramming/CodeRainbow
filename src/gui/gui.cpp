@@ -1,5 +1,7 @@
 #include "gui.h"
 #include <QObject>
+#include <QDebug>
+#include <QPainter>
 #include "../qtplugin/crconstants.h"
 
 // static singleton pointer
@@ -180,6 +182,10 @@ void Gui::updateMarkMenuItem(RecentItem &item)
 QMenu* Gui::createToolMenu(RecentList *rl, QObject *wgt, const char *slotNew, const char *slotRecent)
 {
     MarkBtn *mb = MBtn(*rl);
+	//@
+	if (!mb)
+		return nullptr;
+
     mb->mapper = new QSignalMapper(wgt);
     QAction *actionNew = new QAction(QObject::tr("New..."), wgt);
     QObject::connect(actionNew, SIGNAL(triggered()), wgt, slotNew);
@@ -208,6 +214,10 @@ void Gui::createMultiTool(QToolBar *tbar, RecentList *rl, QObject *wgt, const ch
                           const char *slotNew, const char *slotMenu, const char *slotClicked)
 {
     MarkBtn *mb = MBtn(*rl);
+	//@
+	if (!mb)
+		return;
+
     mb->menu = createToolMenu(rl, wgt, slotNew, slotMenu);
     mb->img = QImage(QLatin1String(res));
     mb->tip = tip;

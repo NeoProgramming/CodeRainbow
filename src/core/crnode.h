@@ -160,7 +160,10 @@ public:
     bool removeBranch(CRNode* &branch);
     void removeBranches();
 
-    String absPath();
+	String getPath() //@added
+	{
+		return fitem ? fitem->fpath : _T("");
+	}
 public:
     typedef std::vector<CRNode*>	NList;
     CRNode* parent;             
@@ -182,8 +185,13 @@ public:
     CRNode* getCurrActive();
 	String getDir();
 
-    void* getParam();
-    void setParam(void *p);
+	template<typename T>
+	T getParam() { 
+		return (T)gparam; 
+	}
+    void setParam(void *p) {
+		gparam = p;
+	}
 
     CRNode* findFile(const String &fpath);
     CRNode* findTag(const StrList &tags);

@@ -159,7 +159,7 @@ void MainWindow::readSettings()
     QSettings settings("NeoProgramming", "CodeRainbow");
 	QPoint pos = settings.value("pos", QPoint(200, 200)).toPoint();
 	QSize size = settings.value("size", QSize(400, 400)).toSize();
-    pCR->pathRecentProject = settings.value("recentProject", "").toString();
+    pathRecentProject = settings.value("recentProject", "").toString();
 	
 	resize(size);
 	move(pos);
@@ -170,27 +170,27 @@ void MainWindow::writeSettings()
     QSettings settings("NeoProgramming", "CodeRainbow");
 	settings.setValue("pos", pos());
 	settings.setValue("size", size());
-    settings.setValue("recentProject", pCR->pathRecentProject);
+    settings.setValue("recentProject", pathRecentProject);
 }
 
 
 void MainWindow::onInit()
 {
-    loadProject(pCR->pathRecentProject);
+    loadProject(pathRecentProject);
 
-    Gui::createMultiTool(ui.toolBarMarkup, &pCR->markButtons[MarkBtn::Idx(CRNode::NT_AREA)], this,
+    Gui::createMultiTool(ui.toolBarMarkup, &pCR->user.markButtons[MarkBtn::Idx(CR::NT_AREA)], this,
             ":/mark/res/mark-area.png", tr("Area"),
             SLOT(onMarkAreaNew()), SLOT(onMarkAreaMenu(int)), SLOT(onMarkAreaClicked()));
-    Gui::createMultiTool(ui.toolBarMarkup, &pCR->markButtons[MarkBtn::Idx(CRNode::NT_LABEL)], this,
+    Gui::createMultiTool(ui.toolBarMarkup, &pCR->user.markButtons[MarkBtn::Idx(CR::NT_LABEL)], this,
             ":/mark/res/mark-label.png", tr("Label"),
             SLOT(onMarkLabelNew()), SLOT(onMarkLabelMenu(int)), SLOT(onMarkLabelClicked()));
-    Gui::createMultiTool(ui.toolBarMarkup, &pCR->markButtons[MarkBtn::Idx(CRNode::NT_BLOCK)], this,
+    Gui::createMultiTool(ui.toolBarMarkup, &pCR->user.markButtons[MarkBtn::Idx(CR::NT_BLOCK)], this,
             ":/mark/res/mark-block.png",tr("Block"),
             SLOT(onMarkAreasNew()), SLOT(onMarkAreasMenu(int)),SLOT(onMarkAreasClicked()));
-    Gui::createMultiTool(ui.toolBarMarkup, &pCR->markButtons[MarkBtn::Idx(CRNode::NT_LSIG)], this,
+    Gui::createMultiTool(ui.toolBarMarkup, &pCR->user.markButtons[MarkBtn::Idx(CR::NT_LSIG)], this,
             ":/mark/res/mark-lsig.png", tr("Label Signature"),
             SLOT(onMarkLSigNew()), SLOT(onMarkLSigMenu(int)), SLOT(onMarkLSigClicked()));
-    Gui::createMultiTool(ui.toolBarMarkup, &pCR->markButtons[MarkBtn::Idx(CRNode::NT_BSIG)], this,
+    Gui::createMultiTool(ui.toolBarMarkup, &pCR->user.markButtons[MarkBtn::Idx(CR::NT_BSIG)], this,
             ":/mark/res/mark-bsig.png", tr("Block Signature"),
             SLOT(onMarkBSigNew()), SLOT(onMarkBSigMenu(int)), SLOT(onMarkBSigClicked()));
 }
@@ -222,7 +222,7 @@ void MainWindow::onProjectNew()
     // select project source: file or dir
     NewProjectDlg dlg;
     if(dlg.execDlg()) {
-        pCR->create(dlg.m_name, dlg.m_base, dlg.m_filters);
+        pCR->createByDir(dlg.m_name.toStdWString(), dlg.m_base.toStdWString(), dlg.m_filters.toStdWString(), 0);
         panelCtrl->loadTree();
         setCurrentProject("");
     }
@@ -244,7 +244,7 @@ void MainWindow::onProjectOpen()
 
 void MainWindow::onProjectSave()
 {
-    if(!pCR->save(pCR->pathRecentProject))
+    if(!pCR->saveCR(pathRecentProject.toStdWString()))
         onProjectSaveAs();
 }
 
@@ -254,13 +254,13 @@ void MainWindow::onProjectSaveAs()
     QString path = QFileDialog::getSaveFileName(
                 this,
                 tr("Save File As"),
-                pCR->pathRecentProject,
+                pathRecentProject,
                 filter,
                 &filter);
     if(!path.isEmpty()) {
         if (!path.endsWith(AppFileExt))
             path += AppFileExt;
-        if(!pCR->save(path))
+        if(!pCR->saveCR(path.toStdWString()))
             QMessageBox::warning(this, "Save error", "Save error", QMessageBox::Ok);
         else
             setCurrentProject(path);
@@ -319,7 +319,7 @@ bool MainWindow::isModified()
 
 void MainWindow::loadProject(const QString& path)
 {
-    if( pCR->load(path) ) {
+    if( pCR->loadCR(path.toStdWString()) ) {
         panelCtrl->loadTree();
         setCurrentProject(path);
     }
@@ -327,8 +327,8 @@ void MainWindow::loadProject(const QString& path)
 
 void MainWindow::setCurrentProject(const QString &path)
 {
-    pCR->pathRecentProject = path;
-    if(pCR->pathRecentProject.isEmpty())
+    pathRecentProject = path;
+    if(pathRecentProject.isEmpty())
         setWindowTitle("<new project> - CodeRainbow");
     else
         setWindowTitle(path + " - CodeRainbow");
@@ -341,7 +341,7 @@ void MainWindow::selectNode(CRNode *node)
 
 void MainWindow::openDoc(CRNode *node, const QString &mcmt)
 {
-    if(!QFileInfo::exists(node->path))
+    if(!QFileInfo::exists(QString::fromStdWString( node->getPath() )))
         return (void)QMessageBox::warning(this, AppName, "Doc path not exists", QMessageBox::Ok);
     qApp->setOverrideCursor(Qt::WaitCursor);
     ChildWindow* child = openExistingDoc(node);
@@ -358,18 +358,18 @@ void MainWindow::openNode(CRNode *node)
 {
     if(!node)
 		return;
-    else if(node->type == CRNode::NT_BASE || node->type == CRNode::NT_DIR || node->type == CRNode::NT_GROUP)
+    else if(node->type == CR::NT_FBASE || node->type == CR::NT_DIR || node->type == CR::NT_GROUP)
         return;
 
-    if(node->type == CRNode::NT_FILE) {
+    if(node->type == CR::NT_FILE) {
         openDoc(node);
     }
-    else if(node->type == CRNode::NT_LINK) {
-        QDesktopServices::openUrl(QUrl(node->path));
+    else if(node->type == CR::NT_LINK) {
+        QDesktopServices::openUrl(QUrl( QString::fromStdWString( node->getPath() )));
     }
-    else if(CRNode::isMark(node->type)) {
-        CRNode *fnode = node->getFile();
-        openDoc(fnode, node->path);
+    else if(CR::isMark(node->type)) {
+        CRNode *fnode = node->getPathNode();
+        openDoc(fnode, QString::fromStdWString(node->getPath()));
     }
 }
 
@@ -475,84 +475,84 @@ void MainWindow::onMarkAreaMenu(int i)
 {
     ChildWindow *wnd = getActiveDoc();
     if(wnd)
-        wnd->markMcmt(i, CRNode::NT_AREA);
+        wnd->markMcmt(i, CR::NT_AREA);
 }
 
 void MainWindow::onMarkLabelMenu(int i)
 {
     ChildWindow *wnd = getActiveDoc();
     if(wnd)
-        wnd->markMcmt(i, CRNode::NT_LABEL);
+        wnd->markMcmt(i, CR::NT_LABEL);
 }
 
 void MainWindow::onMarkBlockMenu(int i)
 {
     ChildWindow *wnd = getActiveDoc();
     if(wnd)
-        wnd->markMcmt(i, CRNode::NT_BLOCK);
+        wnd->markMcmt(i, CR::NT_BLOCK);
 }
 
 void MainWindow::onMarkLSigMenu(int i)
 {
     ChildWindow *wnd = getActiveDoc();
     if(wnd)
-        wnd->markMcmt(i, CRNode::NT_LSIG);
+        wnd->markMcmt(i, CR::NT_LSIG);
 }
 
 void MainWindow::onMarkBSigMenu(int i)
 {
     ChildWindow *wnd = getActiveDoc();
     if(wnd)
-        wnd->markMcmt(i, CRNode::NT_BSIG);
+        wnd->markMcmt(i, CR::NT_BSIG);
 }
 
 void MainWindow::onMarkTagMenu(int i)
 {
     ChildWindow *wnd = getActiveDoc();
     if(wnd)
-        wnd->markMcmt(i, CRNode::NT_TAG);
+        wnd->markMcmt(i, CR::NT_TAG);
 }
 
 void MainWindow::onMarkAreaNew()
 {
     ChildWindow *wnd = getActiveDoc();
     if(wnd)
-        wnd->markMcmt(-1, CRNode::NT_AREA);
+        wnd->markMcmt(-1, CR::NT_AREA);
 }
 
 void MainWindow::onMarkLabelNew()
 {
     ChildWindow *wnd = getActiveDoc();
     if(wnd)
-        wnd->markMcmt(-1, CRNode::NT_LABEL);
+        wnd->markMcmt(-1, CR::NT_LABEL);
 }
 
 void MainWindow::onMarkBlockNew()
 {
     ChildWindow *wnd = getActiveDoc();
     if(wnd)
-        wnd->markMcmt(-1, CRNode::NT_BLOCK);
+        wnd->markMcmt(-1, CR::NT_BLOCK);
 }
 
 void MainWindow::onMarkLSigNew()
 {
     ChildWindow *wnd = getActiveDoc();
     if(wnd)
-        wnd->markMcmt(-1, CRNode::NT_LSIG);
+        wnd->markMcmt(-1, CR::NT_LSIG);
 }
 
 void MainWindow::onMarkBSigNew()
 {
     ChildWindow *wnd = getActiveDoc();
     if(wnd)
-        wnd->markMcmt(-1, CRNode::NT_BSIG);
+        wnd->markMcmt(-1, CR::NT_BSIG);
 }
 
 void MainWindow::onMarkTagNew()
 {
     ChildWindow *wnd = getActiveDoc();
     if(wnd)
-        wnd->markMcmt(-1, CRNode::NT_TAG);
+        wnd->markMcmt(-1, CR::NT_TAG);
 }
 
 
@@ -560,42 +560,42 @@ void MainWindow::onMarkAreaClicked()
 {
     ChildWindow *wnd = getActiveDoc();
     if(wnd)
-        wnd->markMcmt(0, CRNode::NT_AREA);
+        wnd->markMcmt(0, CR::NT_AREA);
 }
 
 void MainWindow::onMarkLabelClicked()
 {
     ChildWindow *wnd = getActiveDoc();
     if(wnd)
-        wnd->markMcmt(0, CRNode::NT_LABEL);
+        wnd->markMcmt(0, CR::NT_LABEL);
 }
 
 void MainWindow::onMarkBlockClicked()
 {
     ChildWindow *wnd = getActiveDoc();
     if(wnd)
-        wnd->markMcmt(0, CRNode::NT_BLOCK);
+        wnd->markMcmt(0, CR::NT_BLOCK);
 }
 
 void MainWindow::onMarkLSigClicked()
 {
     ChildWindow *wnd = getActiveDoc();
     if(wnd)
-        wnd->markMcmt(0, CRNode::NT_LSIG);
+        wnd->markMcmt(0, CR::NT_LSIG);
 }
 
 void MainWindow::onMarkBSigClicked()
 {
     ChildWindow *wnd = getActiveDoc();
     if(wnd)
-        wnd->markMcmt(0, CRNode::NT_BSIG);
+        wnd->markMcmt(0, CR::NT_BSIG);
 }
 
 void MainWindow::onMarkTagClicked()
 {
     ChildWindow *wnd = getActiveDoc();
     if(wnd)
-        wnd->markMcmt(0, CRNode::NT_TAG);
+        wnd->markMcmt(0, CR::NT_TAG);
 }
 
 void MainWindow::onNavPrev()
@@ -669,7 +669,7 @@ void MainWindow::onToolsTest()
 
 			if(tok.value == TOKlinecmt) {
 				QByteArray bt(tok.ptr, tok.length);
-				qDebug() << "//" << tok.loc.linnum << "," << tok.loc.charnum << "s=" << tok.length << "v=" << bt;
+				qDebug() << "//" << tok.loc.row << "," << tok.loc.col << "s=" << tok.length << "v=" << bt;
 			}
             
 		}

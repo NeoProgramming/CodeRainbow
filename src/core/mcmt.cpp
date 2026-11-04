@@ -2,8 +2,9 @@
 #include "nlexer.h"
 #include "core.h"
 #include <tchar.h>
-#include <boost/algorithm/string/join.hpp>
-#include <boost/algorithm/string/trim.hpp>
+#include <cwctype>
+//@ #include <boost/algorithm/string/join.hpp>
+//@ #include <boost/algorithm/string/trim.hpp>
 
 void createMarkers(CRMark &mi, String &beg, String &end)
 {
@@ -305,14 +306,23 @@ bool extractId(String &str, int index)
 void replaceNonId(String &str)
 {
     // replace non-identifiers with underscores
-//    qDebug() << "replaceNonId: " << str;
-    boost::trim(str);
+	// str.replace(QRegExp("[^a-zA-Z\\d]+"), "_");
+	//@ boost::trim(str);
+	// trim
+	auto notSpace = [](wchar_t ch) { return !std::iswspace(ch); };
+	auto b = std::find_if(str.begin(), str.end(), notSpace);
+	auto e = std::find_if(str.rbegin(), str.rend(), notSpace).base();
+	if (b < e)
+		str.assign(b, e);
+	else
+		str.clear();
+
+	// replace non-identifiers with underscores
 	int len = str.length();
 	for(int i=0; i<len; i++) {
 		if(!ct::isIdnext(str[i]))
 			str[i] = '_';
-	}
-    //str.replace(QRegExp("[^a-zA-Z\\d]+"), "_");
+	}    
 }
 
 void ensureUniqueId(CRNode *fnode, String &id)

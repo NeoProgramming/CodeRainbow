@@ -1,4 +1,5 @@
 #include "text.h"
+#include <QDebug>
 
 /* QString operator=(const String &str)
 {

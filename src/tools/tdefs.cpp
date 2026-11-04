@@ -1,4 +1,5 @@
 #include "tdefs.h"
+#include <filesystem>
 
 std::wstring_convert<std::codecvt_utf8<wchar_t>> Converter;
 
@@ -69,7 +70,7 @@ String pathToRel(const Path &base, const String &path)
 //    int q = path.indexOf('?');
 //    if(q>=0)
 //        return base.relativeFilePath(path.left(q)) + path.mid(q);
-	return boost::filesystem::relative(path, base).generic_wstring(); // base.relative_path( relativeFilePath(path);
+	return std::filesystem::relative(path, base).generic_wstring(); // base.relative_path( relativeFilePath(path);
 }
 
 String pathToAbs(const Path &base, const String &path)
@@ -80,10 +81,22 @@ String pathToAbs(const Path &base, const String &path)
 //    int q = path.indexOf('?');
 //    if(q>=0)
 //        return QDir::cleanPath( base.absoluteFilePath(path.left(q)) ) + path.mid(q);
-	boost::system::error_code ec;
-	return boost::filesystem::canonical(boost::filesystem::absolute(path, base), ec).make_preferred().wstring();
-//	return boost::filesystem::canonical(boost::filesystem::absolute(path, base), ec).generic_wstring();
-//    return boost::filesystem::absolute(path, base).generic_wstring(); // QDir::cleanPath( base.absoluteFilePath(path) );
+	std::error_code ec;
+
+	// Вручную объединяем base и path: если path относительный, добавляем base
+	Path p(path);
+	if (p.is_relative())
+		p = base / p;
+	
+	Path abs = std::filesystem::absolute(p, ec);
+	if (ec)
+		return Path(path).make_preferred().wstring();
+
+	Path canon = std::filesystem::weakly_canonical(abs, ec);
+	if (ec)
+		return abs.make_preferred().wstring();
+
+	return canon.make_preferred().wstring();
 }
 
 String regex_escape(const String &str)

@@ -1,7 +1,7 @@
 #include "projectloader.h"
 #include "../tools/tfbase.h"
 #include "../tools/dosmatch.h"
-#include <boost/filesystem.hpp>
+#include <filesystem>
 
 //@ port to Qt
 
@@ -10,11 +10,11 @@ bool ProjectLoader::loadSrcDir(CRNode *node, const String& dirpath, const StrLis
 	// load subnode from source directory on filesystem
     // scan ALL dirs (without use masks)
     
-	for (boost::filesystem::directory_iterator it(dirpath); it!=boost::filesystem::directory_iterator(); ++it) {
+	for (std::filesystem::directory_iterator it(dirpath); it!= std::filesystem::directory_iterator(); ++it) {
         //QString path = it.next();
         //QFileInfo fi = it.fileInfo();
 		String path = it->path().wstring();
-		if(boost::filesystem::is_directory( it->path() )) {
+		if(std::filesystem::is_directory( it->path() )) {
 			CRNode *dnode = nullptr;
 			if(regen_base) {
 				dnode = regen_base->findChildPath(path);
@@ -30,7 +30,7 @@ bool ProjectLoader::loadSrcDir(CRNode *node, const String& dirpath, const StrLis
 			if(dnode->branchesCount() == 0)
 				node->removeBranch(dnode);
 		}
-		else if(boost::filesystem::is_regular_file(it->path()) && checkMaskList(it->path().filename().wstring(), masks) ) {
+		else if(std::filesystem::is_regular_file(it->path()) && checkMaskList(it->path().filename().wstring(), masks) ) {
 			CRNode *fnode = nullptr;
 			if(regen_base) {
 				fnode = regen_base->findChildPath(path);
@@ -52,7 +52,7 @@ bool ProjectLoader::loadFileList(CRNode *node, const String& dirpath, const StrL
     // from paths list
 	Path dir(dirpath);
     for(auto i = flist.begin(), e = flist.end(); i!=e; ++i) {
-		String rpath = boost::filesystem::relative(*i, dir).generic_wstring();// .wstring();
+		String rpath = std::filesystem::relative(*i, dir).generic_wstring();// .wstring();
 
         // if regeneration - first look for the file
         CRNode *fnode = nullptr;

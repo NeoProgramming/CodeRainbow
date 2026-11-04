@@ -563,7 +563,7 @@ CRNode* CRTree::getFileNode(const String &fpath)
 
 CRNode* CRTree::addFileNode(const String &fpath, CRNode *par)
 {
-	boost::filesystem::path fi(fpath);
+	std::filesystem::path fi(fpath);
 	return addNode(par ? par : &fbase, CR::NT_FILE, _T(""), fi.filename().wstring(), fpath, _T(""), CLR_NONE);
 }
 

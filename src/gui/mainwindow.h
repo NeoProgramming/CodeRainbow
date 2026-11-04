@@ -108,7 +108,8 @@ private:
 private:
     QIcon   iconApp;
 
-
+public:	//@add
+	QString pathRecentProject;
 };
 
 #endif // MAINWINDOW_H

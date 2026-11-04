@@ -8,11 +8,11 @@
 #include "../core/mcmt.h"
 #include "mainwindow.h"
 #include "ctrlpanel.h"
-
+#include "text.h"
 
 ChildWindow::ChildWindow(MainWindow *mw, CRNode* idn)
 	: QWidget()
-    , markMaker(idn, mw)
+    //@ , markMaker(idn, mw)
 {
 	setAttribute(Qt::WA_DeleteOnClose);
     wndMain = mw;
@@ -20,10 +20,10 @@ ChildWindow::ChildWindow(MainWindow *mw, CRNode* idn)
 
 	m_pEdit = new TextEditWidget(this);
 	m_pEdit->show();
-    loadFile(markMaker.m_nodeFile->path);
+    loadFile(QString::fromStdWString( markMaker.m_nodeFile->getPath() ));
 
 	connect(m_pEdit->getDocument(), SIGNAL(modificationChanged(bool)), this, SLOT(onDocumentWasModified(bool)));
-    connect(&markMaker, SIGNAL(treeItemAdded(CRNode*,CRNode*)), this, SLOT(onTreeItemAdded(CRNode*,CRNode*)));
+//@und    connect(&markMaker, SIGNAL(treeItemAdded(CRNode*,CRNode*)), this, SLOT(onTreeItemAdded(CRNode*,CRNode*)));
 }
 
 ChildWindow::~ChildWindow()
@@ -49,7 +49,7 @@ void ChildWindow::init(QMdiSubWindow *subwnd)
 
 void ChildWindow::onTreeItemAdded(CRNode *nodeActive, CRNode*node)
 {
-    wndMain->panelCtrl->addTreeItem(nodeActive->item, node);
+    wndMain->panelCtrl->addTreeItem(nodeActive->getParam<QTreeWidgetItem*>(), node);
 }
 
 void ChildWindow::findMcmt(const QString &mcmt)
@@ -138,7 +138,33 @@ void ChildWindow::markMcmt(int ri, CR::Type type)
 {
     // universal wrapper for calling from MainWidow; here we get the cursor
     QTextCursor cursor = m_pEdit->getTextEdit()->textCursor();
-    markMaker.mark(ri, type, cursor);
+//@    markMaker.mark(ri, type, cursor);
+	int index;
+	QString str = extractCaretLine(cursor, &index);   // из gui/text.h
+
+	int r = markMaker.beginMakeMarker(
+		markMaker.m_nodeFile->getPath(),      // fpath
+		ri, type,
+		str.toStdWString(), index);
+	if (r == 0)
+		return;
+	if (r == 2) {
+		MarkupDlg dlg(markMaker.m_nodeFile->getPath(),
+			&markMaker.m_mi, &markMaker.m_ni, this);
+		if (!dlg.execDlg())
+			return;
+	}
+	markMaker.endMakeMarker(nullptr, nullptr);        // без колбэка — gui сам обновит дерево
+
+	makeMarkup(cursor,
+		QString::fromStdWString(markMaker.m_beg),
+		QString::fromStdWString(markMaker.m_end));
+
+	// обновить UI
+	Gui::updateMarkMenu(&pCR->user.markButtons[CRUser::Idx(type)]);
+	// дерево/панель обновляет MainWindow (onTreeItemAdded или перезагрузка)
+	wndMain->panelCtrl->loadTree();   // или точечное обновление через onTreeItemAdded
+	// перекрасить текущий документ (Highlighter сам перепарсит по сигналу)
 }
 
 void ChildWindow::navPrev()

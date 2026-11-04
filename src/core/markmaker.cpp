@@ -1,9 +1,9 @@
 #include "markmaker.h"
-#include <boost/algorithm/string.hpp>
+//@#include <boost/algorithm/string.hpp>
 #include "crtree.h"
 #include "mcmt.h"
 #include "nlexer.h"
-
+#include <cwctype>
 
 void MarkMaker::clear()
 {
@@ -135,7 +135,13 @@ int MarkMaker::beginMakeMarker(const String &fpath, int ri, CR::Type type, const
 
     // use this variable
     m_str = str;
-	boost::trim(m_str);
+	//@boost::trim(m_str);
+	auto ws = [](wchar_t ch) { return !std::iswspace(ch); };
+	m_str.erase(m_str.begin(), std::find_if(m_str.begin(), m_str.end(), ws));
+	m_str.erase(std::find_if(m_str.rbegin(), m_str.rend(), ws).base(), m_str.end());
+
+
+
     // information about the node
     m_fpath = fpath;
     m_nodeFile = pCR->getFileNode(fpath);   // trying to find, but there may not be a node

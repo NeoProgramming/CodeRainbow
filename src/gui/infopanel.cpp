@@ -80,7 +80,7 @@ void InfoPanel::loadText(CRNode *node)
         ui.textEdit->setEnabled(false);
     }
     else {
-        ui.textEdit->setPlainText(node->text);
+        ui.textEdit->setPlainText( QString::fromStdWString(node->text) );
         ui.textEdit->setEnabled(true);
     }
 }
@@ -115,7 +115,7 @@ void InfoPanel::onMsgRemoveAll()
 void InfoPanel::onEditorLostFocus()
 {
     if(m_Node) {
-        pCR->setText(m_Node, ui.textEdit->toPlainText());
+        pCR->setText(m_Node, ui.textEdit->toPlainText().toStdWString());
     }
 }
 

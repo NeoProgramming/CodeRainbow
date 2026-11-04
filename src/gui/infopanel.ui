@@ -157,7 +157,7 @@
   <customwidget>
    <class>NoteEdit</class>
    <extends>QTextEdit</extends>
-   <header>src/gui/editor/noteedit.h</header>
+   <header>editor/noteedit.h</header>
   </customwidget>
  </customwidgets>
  <resources/>

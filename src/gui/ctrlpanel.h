@@ -41,7 +41,7 @@ private slots:
     void onNodeCloseAllWindows();
 private:
     void updateNode(QTreeWidgetItem *item, CRNode* node);
-    void addChild(CRNode *parNode, CRNode::Type t, const QString &name, const QString &path);
+    void addChild(CRNode *parNode, CR::Type t, const QString &name, const QString &path);
     void loadTreeNode(QTreeWidgetItem *item, CRNode* node);
     void setItemBold(QTreeWidgetItem *item, bool bold);
     void removeItem(QTreeWidgetItem *item);

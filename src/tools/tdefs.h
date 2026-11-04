@@ -5,7 +5,7 @@
 #include <locale>
 #include <sstream>
 #include <tchar.h>
-#include <boost/filesystem.hpp>
+#include <filesystem>
 
 
 typedef unsigned int Clr;
@@ -20,7 +20,7 @@ typedef const Char* CStr;
 typedef std::wstring String;
 typedef std::list<std::wstring> StrList;
 
-typedef boost::filesystem::path Path;
+typedef std::filesystem::path Path;
 
 extern std::wstring_convert<std::codecvt_utf8<wchar_t>> Converter;
 

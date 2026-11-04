@@ -5,7 +5,7 @@
 #include "editor/texteditwidget.h"
 #include "dialogs/markupdlg.h"
 #include "../core/crnode.h"
-#include "markmaker.h"
+#include "../core/markmaker.h"
 
 class MainWindow;
 
